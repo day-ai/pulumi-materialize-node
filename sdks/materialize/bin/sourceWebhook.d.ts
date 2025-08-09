@@ -1,0 +1,212 @@
+import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
+export declare class SourceWebhook extends pulumi.CustomResource {
+    /**
+     * Get an existing SourceWebhook resource's state with the given name, ID, and optional extra
+     * properties used to qualify the lookup.
+     *
+     * @param name The _unique_ name of the resulting resource.
+     * @param id The _unique_ provider ID of the resource to lookup.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    static get(name: string, id: pulumi.Input<pulumi.ID>, state?: SourceWebhookState, opts?: pulumi.CustomResourceOptions): SourceWebhook;
+    /**
+     * Returns true if the given object is an instance of SourceWebhook.  This is designed to work even
+     * when multiple copies of the Pulumi SDK have been loaded into the same process.
+     */
+    static isInstance(obj: any): obj is SourceWebhook;
+    /**
+     * The body format of the webhook.
+     */
+    readonly bodyFormat: pulumi.Output<string>;
+    /**
+     * The check expression for the webhook.
+     */
+    readonly checkExpression: pulumi.Output<string | undefined>;
+    /**
+     * The check options for the webhook.
+     */
+    readonly checkOptions: pulumi.Output<outputs.SourceWebhookCheckOption[] | undefined>;
+    /**
+     * The cluster to maintain this source.
+     */
+    readonly clusterName: pulumi.Output<string | undefined>;
+    /**
+     * Comment on an object in the database.
+     */
+    readonly comment: pulumi.Output<string | undefined>;
+    /**
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
+     * `materialize` if environment variable is not set.
+     */
+    readonly databaseName: pulumi.Output<string | undefined>;
+    /**
+     * Map a header value from a request into a column.
+     */
+    readonly includeHeader: pulumi.Output<outputs.SourceWebhookIncludeHeader[] | undefined>;
+    /**
+     * Include headers in the webhook.
+     */
+    readonly includeHeaders: pulumi.Output<outputs.SourceWebhookIncludeHeaders | undefined>;
+    /**
+     * The identifier for the source.
+     */
+    readonly name: pulumi.Output<string>;
+    /**
+     * The owernship role of the object.
+     */
+    readonly ownershipRole: pulumi.Output<string>;
+    /**
+     * The fully qualified name of the source.
+     */
+    readonly qualifiedSqlName: pulumi.Output<string>;
+    /**
+     * The region to use for the resource connection. If not set, the default region is used.
+     */
+    readonly region: pulumi.Output<string>;
+    /**
+     * The identifier for the source schema in Materialize. Defaults to `public`.
+     */
+    readonly schemaName: pulumi.Output<string | undefined>;
+    /**
+     * The size of the cluster maintaining this source.
+     */
+    readonly size: pulumi.Output<string>;
+    readonly sourceWebhookId: pulumi.Output<string>;
+    /**
+     * The webhook URL that can be used to send data to this source.
+     */
+    readonly url: pulumi.Output<string>;
+    /**
+     * Create a SourceWebhook resource with the given unique name, arguments, and options.
+     *
+     * @param name The _unique_ name of the resource.
+     * @param args The arguments to use to populate this resource's properties.
+     * @param opts A bag of options that control this resource's behavior.
+     */
+    constructor(name: string, args: SourceWebhookArgs, opts?: pulumi.CustomResourceOptions);
+}
+/**
+ * Input properties used for looking up and filtering SourceWebhook resources.
+ */
+export interface SourceWebhookState {
+    /**
+     * The body format of the webhook.
+     */
+    bodyFormat?: pulumi.Input<string>;
+    /**
+     * The check expression for the webhook.
+     */
+    checkExpression?: pulumi.Input<string>;
+    /**
+     * The check options for the webhook.
+     */
+    checkOptions?: pulumi.Input<pulumi.Input<inputs.SourceWebhookCheckOption>[]>;
+    /**
+     * The cluster to maintain this source.
+     */
+    clusterName?: pulumi.Input<string>;
+    /**
+     * Comment on an object in the database.
+     */
+    comment?: pulumi.Input<string>;
+    /**
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
+     * `materialize` if environment variable is not set.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * Map a header value from a request into a column.
+     */
+    includeHeader?: pulumi.Input<pulumi.Input<inputs.SourceWebhookIncludeHeader>[]>;
+    /**
+     * Include headers in the webhook.
+     */
+    includeHeaders?: pulumi.Input<inputs.SourceWebhookIncludeHeaders>;
+    /**
+     * The identifier for the source.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The owernship role of the object.
+     */
+    ownershipRole?: pulumi.Input<string>;
+    /**
+     * The fully qualified name of the source.
+     */
+    qualifiedSqlName?: pulumi.Input<string>;
+    /**
+     * The region to use for the resource connection. If not set, the default region is used.
+     */
+    region?: pulumi.Input<string>;
+    /**
+     * The identifier for the source schema in Materialize. Defaults to `public`.
+     */
+    schemaName?: pulumi.Input<string>;
+    /**
+     * The size of the cluster maintaining this source.
+     */
+    size?: pulumi.Input<string>;
+    sourceWebhookId?: pulumi.Input<string>;
+    /**
+     * The webhook URL that can be used to send data to this source.
+     */
+    url?: pulumi.Input<string>;
+}
+/**
+ * The set of arguments for constructing a SourceWebhook resource.
+ */
+export interface SourceWebhookArgs {
+    /**
+     * The body format of the webhook.
+     */
+    bodyFormat: pulumi.Input<string>;
+    /**
+     * The check expression for the webhook.
+     */
+    checkExpression?: pulumi.Input<string>;
+    /**
+     * The check options for the webhook.
+     */
+    checkOptions?: pulumi.Input<pulumi.Input<inputs.SourceWebhookCheckOption>[]>;
+    /**
+     * The cluster to maintain this source.
+     */
+    clusterName?: pulumi.Input<string>;
+    /**
+     * Comment on an object in the database.
+     */
+    comment?: pulumi.Input<string>;
+    /**
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
+     * `materialize` if environment variable is not set.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * Map a header value from a request into a column.
+     */
+    includeHeader?: pulumi.Input<pulumi.Input<inputs.SourceWebhookIncludeHeader>[]>;
+    /**
+     * Include headers in the webhook.
+     */
+    includeHeaders?: pulumi.Input<inputs.SourceWebhookIncludeHeaders>;
+    /**
+     * The identifier for the source.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The owernship role of the object.
+     */
+    ownershipRole?: pulumi.Input<string>;
+    /**
+     * The region to use for the resource connection. If not set, the default region is used.
+     */
+    region?: pulumi.Input<string>;
+    /**
+     * The identifier for the source schema in Materialize. Defaults to `public`.
+     */
+    schemaName?: pulumi.Input<string>;
+    sourceWebhookId?: pulumi.Input<string>;
+}

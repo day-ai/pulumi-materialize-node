@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@pulumi/materialize": "file:sdks/materialize"
+  }
+}

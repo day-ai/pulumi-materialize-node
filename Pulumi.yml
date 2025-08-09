@@ -1,0 +1,9 @@
+name: pulumi-materialize-node
+runtime: nodejs
+description: Scaffold/harness Pulumi project to be able to auto-compile Materialize provider
+packages:
+  materialize:
+    source: terraform-provider
+    version: 0.13.0
+    parameters:
+      - MaterializeInc/materialize
