@@ -35,25 +35,41 @@ export class Role extends pulumi.CustomResource {
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
-     * Grants the role the ability to inheritance of privileges of other roles. Unlike PostgreSQL, Materialize does not
-     * currently support `NOINHERIT`
+     * Grants the role the ability to inheritance of privileges of other roles. Unlike PostgreSQL, Materialize does not currently support `NOINHERIT`
      */
-    public /*out*/ readonly inherit!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly inherit: pulumi.Output<boolean>;
+    /**
+     * Whether the role can log in. Only available in self-hosted Materialize environments with password authentication enabled. Defaults to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+     */
+    declare public readonly login: pulumi.Output<boolean | undefined>;
     /**
      * The identifier for the role.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    /**
+     * Password for the role. Only available in self-hosted Materialize environments with password authentication enabled. Required for password-based authentication. Use<span pulumi-lang-nodejs=" passwordWo " pulumi-lang-dotnet=" PasswordWo " pulumi-lang-go=" passwordWo " pulumi-lang-python=" password_wo " pulumi-lang-yaml=" passwordWo " pulumi-lang-java=" passwordWo "> password_wo </span>for write-only ephemeral values that won't be stored in state.
+     */
+    declare public readonly password: pulumi.Output<string | undefined>;
+    declare public readonly passwordWo: pulumi.Output<string | undefined>;
+    /**
+     * Version number for the write-only password. Increment this to trigger an update of the password value when using password_wo. Must be used with password_wo.
+     */
+    declare public readonly passwordWoVersion: pulumi.Output<number | undefined>;
     /**
      * The fully qualified name of the role.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
-    public readonly roleId!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
+    declare public readonly roleId: pulumi.Output<string>;
+    /**
+     * Whether the role is a superuser. Only available in self-hosted Materialize environments with password authentication enabled. Defaults to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+     */
+    declare public readonly superuser: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a Role resource with the given unique name, arguments, and options.
@@ -68,22 +84,34 @@ export class Role extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RoleState | undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["inherit"] = state ? state.inherit : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleId"] = state ? state.roleId : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["inherit"] = state?.inherit;
+            resourceInputs["login"] = state?.login;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["passwordWo"] = state?.passwordWo;
+            resourceInputs["passwordWoVersion"] = state?.passwordWoVersion;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleId"] = state?.roleId;
+            resourceInputs["superuser"] = state?.superuser;
         } else {
             const args = argsOrState as RoleArgs | undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleId"] = args ? args.roleId : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["login"] = args?.login;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
+            resourceInputs["passwordWo"] = args?.passwordWo ? pulumi.secret(args.passwordWo) : undefined;
+            resourceInputs["passwordWoVersion"] = args?.passwordWoVersion;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleId"] = args?.roleId;
+            resourceInputs["superuser"] = args?.superuser;
             resourceInputs["inherit"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["password", "passwordWo"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Role.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
     }
 }
@@ -97,14 +125,26 @@ export interface RoleState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * Grants the role the ability to inheritance of privileges of other roles. Unlike PostgreSQL, Materialize does not
-     * currently support `NOINHERIT`
+     * Grants the role the ability to inheritance of privileges of other roles. Unlike PostgreSQL, Materialize does not currently support `NOINHERIT`
      */
     inherit?: pulumi.Input<boolean>;
+    /**
+     * Whether the role can log in. Only available in self-hosted Materialize environments with password authentication enabled. Defaults to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+     */
+    login?: pulumi.Input<boolean>;
     /**
      * The identifier for the role.
      */
     name?: pulumi.Input<string>;
+    /**
+     * Password for the role. Only available in self-hosted Materialize environments with password authentication enabled. Required for password-based authentication. Use<span pulumi-lang-nodejs=" passwordWo " pulumi-lang-dotnet=" PasswordWo " pulumi-lang-go=" passwordWo " pulumi-lang-python=" password_wo " pulumi-lang-yaml=" passwordWo " pulumi-lang-java=" passwordWo "> password_wo </span>for write-only ephemeral values that won't be stored in state.
+     */
+    password?: pulumi.Input<string>;
+    passwordWo?: pulumi.Input<string>;
+    /**
+     * Version number for the write-only password. Increment this to trigger an update of the password value when using password_wo. Must be used with password_wo.
+     */
+    passwordWoVersion?: pulumi.Input<number>;
     /**
      * The fully qualified name of the role.
      */
@@ -114,6 +154,10 @@ export interface RoleState {
      */
     region?: pulumi.Input<string>;
     roleId?: pulumi.Input<string>;
+    /**
+     * Whether the role is a superuser. Only available in self-hosted Materialize environments with password authentication enabled. Defaults to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+     */
+    superuser?: pulumi.Input<boolean>;
 }
 
 /**
@@ -125,12 +169,29 @@ export interface RoleArgs {
      */
     comment?: pulumi.Input<string>;
     /**
+     * Whether the role can log in. Only available in self-hosted Materialize environments with password authentication enabled. Defaults to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+     */
+    login?: pulumi.Input<boolean>;
+    /**
      * The identifier for the role.
      */
     name?: pulumi.Input<string>;
+    /**
+     * Password for the role. Only available in self-hosted Materialize environments with password authentication enabled. Required for password-based authentication. Use<span pulumi-lang-nodejs=" passwordWo " pulumi-lang-dotnet=" PasswordWo " pulumi-lang-go=" passwordWo " pulumi-lang-python=" password_wo " pulumi-lang-yaml=" passwordWo " pulumi-lang-java=" passwordWo "> password_wo </span>for write-only ephemeral values that won't be stored in state.
+     */
+    password?: pulumi.Input<string>;
+    passwordWo?: pulumi.Input<string>;
+    /**
+     * Version number for the write-only password. Increment this to trigger an update of the password value when using password_wo. Must be used with password_wo.
+     */
+    passwordWoVersion?: pulumi.Input<number>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
     region?: pulumi.Input<string>;
     roleId?: pulumi.Input<string>;
+    /**
+     * Whether the role is a superuser. Only available in self-hosted Materialize environments with password authentication enabled. Defaults to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+     */
+    superuser?: pulumi.Input<boolean>;
 }

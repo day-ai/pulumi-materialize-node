@@ -37,70 +37,60 @@ export class SourceLoadGenerator extends pulumi.CustomResource {
     /**
      * Auction Options.
      */
-    public readonly auctionOptions!: pulumi.Output<outputs.SourceLoadGeneratorAuctionOptions | undefined>;
+    declare public readonly auctionOptions: pulumi.Output<outputs.SourceLoadGeneratorAuctionOptions | undefined>;
     /**
      * The cluster to maintain this source.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
-     * Counter Options.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly counterOptions!: pulumi.Output<outputs.SourceLoadGeneratorCounterOptions | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly exposeProgress: pulumi.Output<outputs.SourceLoadGeneratorExposeProgress | undefined>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The load generator types: [AUCTION MARKETING TPCH].
      */
-    public readonly exposeProgress!: pulumi.Output<outputs.SourceLoadGeneratorExposeProgress | undefined>;
-    /**
-     * KEY VALUE Load Generator Options.
-     */
-    public readonly keyValueOptions!: pulumi.Output<outputs.SourceLoadGeneratorKeyValueOptions | undefined>;
-    /**
-     * The load generator types: [AUCTION MARKETING COUNTER TPCH KEY VALUE].
-     */
-    public readonly loadGeneratorType!: pulumi.Output<string>;
+    declare public readonly loadGeneratorType: pulumi.Output<string>;
     /**
      * Marketing Options.
      */
-    public readonly marketingOptions!: pulumi.Output<outputs.SourceLoadGeneratorMarketingOptions | undefined>;
+    declare public readonly marketingOptions: pulumi.Output<outputs.SourceLoadGeneratorMarketingOptions | undefined>;
     /**
      * The identifier for the source.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The fully qualified name of the source.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
     /**
      * The size of the cluster maintaining this source.
      */
-    public /*out*/ readonly size!: pulumi.Output<string>;
-    public readonly sourceLoadGeneratorId!: pulumi.Output<string>;
+    declare public /*out*/ readonly size: pulumi.Output<string>;
+    declare public readonly sourceLoadGeneratorId: pulumi.Output<string>;
     /**
      * TPCH Options.
      */
-    public readonly tpchOptions!: pulumi.Output<outputs.SourceLoadGeneratorTpchOptions | undefined>;
+    declare public readonly tpchOptions: pulumi.Output<outputs.SourceLoadGeneratorTpchOptions | undefined>;
 
     /**
      * Create a SourceLoadGenerator resource with the given unique name, arguments, and options.
@@ -115,43 +105,39 @@ export class SourceLoadGenerator extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SourceLoadGeneratorState | undefined;
-            resourceInputs["auctionOptions"] = state ? state.auctionOptions : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["counterOptions"] = state ? state.counterOptions : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["exposeProgress"] = state ? state.exposeProgress : undefined;
-            resourceInputs["keyValueOptions"] = state ? state.keyValueOptions : undefined;
-            resourceInputs["loadGeneratorType"] = state ? state.loadGeneratorType : undefined;
-            resourceInputs["marketingOptions"] = state ? state.marketingOptions : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["sourceLoadGeneratorId"] = state ? state.sourceLoadGeneratorId : undefined;
-            resourceInputs["tpchOptions"] = state ? state.tpchOptions : undefined;
+            resourceInputs["auctionOptions"] = state?.auctionOptions;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["exposeProgress"] = state?.exposeProgress;
+            resourceInputs["loadGeneratorType"] = state?.loadGeneratorType;
+            resourceInputs["marketingOptions"] = state?.marketingOptions;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["sourceLoadGeneratorId"] = state?.sourceLoadGeneratorId;
+            resourceInputs["tpchOptions"] = state?.tpchOptions;
         } else {
             const args = argsOrState as SourceLoadGeneratorArgs | undefined;
-            if ((!args || args.loadGeneratorType === undefined) && !opts.urn) {
+            if (args?.loadGeneratorType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadGeneratorType'");
             }
-            resourceInputs["auctionOptions"] = args ? args.auctionOptions : undefined;
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["counterOptions"] = args ? args.counterOptions : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["exposeProgress"] = args ? args.exposeProgress : undefined;
-            resourceInputs["keyValueOptions"] = args ? args.keyValueOptions : undefined;
-            resourceInputs["loadGeneratorType"] = args ? args.loadGeneratorType : undefined;
-            resourceInputs["marketingOptions"] = args ? args.marketingOptions : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sourceLoadGeneratorId"] = args ? args.sourceLoadGeneratorId : undefined;
-            resourceInputs["tpchOptions"] = args ? args.tpchOptions : undefined;
+            resourceInputs["auctionOptions"] = args?.auctionOptions;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["exposeProgress"] = args?.exposeProgress;
+            resourceInputs["loadGeneratorType"] = args?.loadGeneratorType;
+            resourceInputs["marketingOptions"] = args?.marketingOptions;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sourceLoadGeneratorId"] = args?.sourceLoadGeneratorId;
+            resourceInputs["tpchOptions"] = args?.tpchOptions;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
         }
@@ -177,25 +163,15 @@ export interface SourceLoadGeneratorState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * Counter Options.
-     */
-    counterOptions?: pulumi.Input<inputs.SourceLoadGeneratorCounterOptions>;
-    /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourceLoadGeneratorExposeProgress>;
     /**
-     * KEY VALUE Load Generator Options.
-     */
-    keyValueOptions?: pulumi.Input<inputs.SourceLoadGeneratorKeyValueOptions>;
-    /**
-     * The load generator types: [AUCTION MARKETING COUNTER TPCH KEY VALUE].
+     * The load generator types: [AUCTION MARKETING TPCH].
      */
     loadGeneratorType?: pulumi.Input<string>;
     /**
@@ -219,7 +195,7 @@ export interface SourceLoadGeneratorState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -250,25 +226,15 @@ export interface SourceLoadGeneratorArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * Counter Options.
-     */
-    counterOptions?: pulumi.Input<inputs.SourceLoadGeneratorCounterOptions>;
-    /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourceLoadGeneratorExposeProgress>;
     /**
-     * KEY VALUE Load Generator Options.
-     */
-    keyValueOptions?: pulumi.Input<inputs.SourceLoadGeneratorKeyValueOptions>;
-    /**
-     * The load generator types: [AUCTION MARKETING COUNTER TPCH KEY VALUE].
+     * The load generator types: [AUCTION MARKETING TPCH].
      */
     loadGeneratorType: pulumi.Input<string>;
     /**
@@ -288,7 +254,7 @@ export interface SourceLoadGeneratorArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sourceLoadGeneratorId?: pulumi.Input<string>;

@@ -35,20 +35,20 @@ export class SsoGroupMapping extends pulumi.CustomResource {
     /**
      * Whether the group mapping is enabled.
      */
-    public /*out*/ readonly enabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly enabled: pulumi.Output<boolean>;
     /**
      * The name of the SSO group.
      */
-    public readonly group!: pulumi.Output<string>;
+    declare public readonly group: pulumi.Output<string>;
     /**
      * List of role names associated with the group.
      */
-    public readonly roles!: pulumi.Output<string[]>;
+    declare public readonly roles: pulumi.Output<string[]>;
     /**
      * The ID of the associated SSO configuration.
      */
-    public readonly ssoConfigId!: pulumi.Output<string>;
-    public readonly ssoGroupMappingId!: pulumi.Output<string>;
+    declare public readonly ssoConfigId: pulumi.Output<string>;
+    declare public readonly ssoGroupMappingId: pulumi.Output<string>;
 
     /**
      * Create a SsoGroupMapping resource with the given unique name, arguments, and options.
@@ -63,26 +63,26 @@ export class SsoGroupMapping extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SsoGroupMappingState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["group"] = state ? state.group : undefined;
-            resourceInputs["roles"] = state ? state.roles : undefined;
-            resourceInputs["ssoConfigId"] = state ? state.ssoConfigId : undefined;
-            resourceInputs["ssoGroupMappingId"] = state ? state.ssoGroupMappingId : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["group"] = state?.group;
+            resourceInputs["roles"] = state?.roles;
+            resourceInputs["ssoConfigId"] = state?.ssoConfigId;
+            resourceInputs["ssoGroupMappingId"] = state?.ssoGroupMappingId;
         } else {
             const args = argsOrState as SsoGroupMappingArgs | undefined;
-            if ((!args || args.group === undefined) && !opts.urn) {
+            if (args?.group === undefined && !opts.urn) {
                 throw new Error("Missing required property 'group'");
             }
-            if ((!args || args.roles === undefined) && !opts.urn) {
+            if (args?.roles === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roles'");
             }
-            if ((!args || args.ssoConfigId === undefined) && !opts.urn) {
+            if (args?.ssoConfigId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ssoConfigId'");
             }
-            resourceInputs["group"] = args ? args.group : undefined;
-            resourceInputs["roles"] = args ? args.roles : undefined;
-            resourceInputs["ssoConfigId"] = args ? args.ssoConfigId : undefined;
-            resourceInputs["ssoGroupMappingId"] = args ? args.ssoGroupMappingId : undefined;
+            resourceInputs["group"] = args?.group;
+            resourceInputs["roles"] = args?.roles;
+            resourceInputs["ssoConfigId"] = args?.ssoConfigId;
+            resourceInputs["ssoGroupMappingId"] = args?.ssoGroupMappingId;
             resourceInputs["enabled"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

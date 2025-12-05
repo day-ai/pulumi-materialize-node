@@ -16,7 +16,7 @@ class Database extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new Database(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new Database(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of Database.  This is designed to work even
@@ -33,19 +33,19 @@ class Database extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["region"] = state?.region;
         }
         else {
             const args = argsOrState;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Database.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

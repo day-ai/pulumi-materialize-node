@@ -37,62 +37,58 @@ export class Cluster extends pulumi.CustomResource {
     /**
      * The specific availability zones of the cluster.
      */
-    public readonly availabilityZones!: pulumi.Output<string[]>;
-    public readonly clusterId!: pulumi.Output<string>;
+    declare public readonly availabilityZones: pulumi.Output<string[]>;
+    declare public readonly clusterId: pulumi.Output<string>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */
-    public readonly disk!: pulumi.Output<boolean>;
+    declare public readonly disk: pulumi.Output<boolean>;
     /**
-     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is
-     * particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID
-     * changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is
-     * updated.
+     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is updated.
      */
-    public readonly identifyByName!: pulumi.Output<boolean | undefined>;
+    declare public readonly identifyByName: pulumi.Output<boolean | undefined>;
     /**
      * Whether to introspect the gathering of the introspection data.
      */
-    public readonly introspectionDebugging!: pulumi.Output<boolean | undefined>;
+    declare public readonly introspectionDebugging: pulumi.Output<boolean | undefined>;
     /**
      * The interval at which to collect introspection data.
      */
-    public readonly introspectionInterval!: pulumi.Output<string | undefined>;
+    declare public readonly introspectionInterval: pulumi.Output<string | undefined>;
     /**
      * The identifier for the cluster.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The number of replicas of each dataflow-powered object to maintain.
      */
-    public readonly replicationFactor!: pulumi.Output<number>;
+    declare public readonly replicationFactor: pulumi.Output<number>;
     /**
      * Defines the scheduling parameters for the cluster.
      */
-    public readonly scheduling!: pulumi.Output<outputs.ClusterScheduling | undefined>;
+    declare public readonly scheduling: pulumi.Output<outputs.ClusterScheduling | undefined>;
     /**
      * The size of the managed cluster.
      */
-    public readonly size!: pulumi.Output<string | undefined>;
+    declare public readonly size: pulumi.Output<string | undefined>;
     /**
      * Defines the parameters for the WAIT UNTIL READY options
      */
-    public readonly waitUntilReady!: pulumi.Output<outputs.ClusterWaitUntilReady | undefined>;
+    declare public readonly waitUntilReady: pulumi.Output<outputs.ClusterWaitUntilReady | undefined>;
 
     /**
      * Create a Cluster resource with the given unique name, arguments, and options.
@@ -107,36 +103,36 @@ export class Cluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterState | undefined;
-            resourceInputs["availabilityZones"] = state ? state.availabilityZones : undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["disk"] = state ? state.disk : undefined;
-            resourceInputs["identifyByName"] = state ? state.identifyByName : undefined;
-            resourceInputs["introspectionDebugging"] = state ? state.introspectionDebugging : undefined;
-            resourceInputs["introspectionInterval"] = state ? state.introspectionInterval : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["replicationFactor"] = state ? state.replicationFactor : undefined;
-            resourceInputs["scheduling"] = state ? state.scheduling : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["waitUntilReady"] = state ? state.waitUntilReady : undefined;
+            resourceInputs["availabilityZones"] = state?.availabilityZones;
+            resourceInputs["clusterId"] = state?.clusterId;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["disk"] = state?.disk;
+            resourceInputs["identifyByName"] = state?.identifyByName;
+            resourceInputs["introspectionDebugging"] = state?.introspectionDebugging;
+            resourceInputs["introspectionInterval"] = state?.introspectionInterval;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["replicationFactor"] = state?.replicationFactor;
+            resourceInputs["scheduling"] = state?.scheduling;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["waitUntilReady"] = state?.waitUntilReady;
         } else {
             const args = argsOrState as ClusterArgs | undefined;
-            resourceInputs["availabilityZones"] = args ? args.availabilityZones : undefined;
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["disk"] = args ? args.disk : undefined;
-            resourceInputs["identifyByName"] = args ? args.identifyByName : undefined;
-            resourceInputs["introspectionDebugging"] = args ? args.introspectionDebugging : undefined;
-            resourceInputs["introspectionInterval"] = args ? args.introspectionInterval : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["replicationFactor"] = args ? args.replicationFactor : undefined;
-            resourceInputs["scheduling"] = args ? args.scheduling : undefined;
-            resourceInputs["size"] = args ? args.size : undefined;
-            resourceInputs["waitUntilReady"] = args ? args.waitUntilReady : undefined;
+            resourceInputs["availabilityZones"] = args?.availabilityZones;
+            resourceInputs["clusterId"] = args?.clusterId;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["disk"] = args?.disk;
+            resourceInputs["identifyByName"] = args?.identifyByName;
+            resourceInputs["introspectionDebugging"] = args?.introspectionDebugging;
+            resourceInputs["introspectionInterval"] = args?.introspectionInterval;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["replicationFactor"] = args?.replicationFactor;
+            resourceInputs["scheduling"] = args?.scheduling;
+            resourceInputs["size"] = args?.size;
+            resourceInputs["waitUntilReady"] = args?.waitUntilReady;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Cluster.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
@@ -157,17 +153,13 @@ export interface ClusterState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */
     disk?: pulumi.Input<boolean>;
     /**
-     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is
-     * particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID
-     * changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is
-     * updated.
+     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is updated.
      */
     identifyByName?: pulumi.Input<boolean>;
     /**
@@ -222,17 +214,13 @@ export interface ClusterArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */
     disk?: pulumi.Input<boolean>;
     /**
-     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is
-     * particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID
-     * changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is
-     * updated.
+     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is updated.
      */
     identifyByName?: pulumi.Input<boolean>;
     /**

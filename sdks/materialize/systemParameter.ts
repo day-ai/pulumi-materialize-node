@@ -35,16 +35,16 @@ export class SystemParameter extends pulumi.CustomResource {
     /**
      * The name of the system parameter.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
-    public readonly systemParameterId!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
+    declare public readonly systemParameterId: pulumi.Output<string>;
     /**
      * The value to set for the system parameter.
      */
-    public readonly value!: pulumi.Output<string>;
+    declare public readonly value: pulumi.Output<string>;
 
     /**
      * Create a SystemParameter resource with the given unique name, arguments, and options.
@@ -59,19 +59,19 @@ export class SystemParameter extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SystemParameterState | undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["systemParameterId"] = state ? state.systemParameterId : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["systemParameterId"] = state?.systemParameterId;
+            resourceInputs["value"] = state?.value;
         } else {
             const args = argsOrState as SystemParameterArgs | undefined;
-            if ((!args || args.value === undefined) && !opts.urn) {
+            if (args?.value === undefined && !opts.urn) {
                 throw new Error("Missing required property 'value'");
             }
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["systemParameterId"] = args ? args.systemParameterId : undefined;
-            resourceInputs["value"] = args ? args.value : undefined;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["systemParameterId"] = args?.systemParameterId;
+            resourceInputs["value"] = args?.value;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SystemParameter.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

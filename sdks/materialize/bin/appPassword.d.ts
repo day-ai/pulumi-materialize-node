@@ -29,8 +29,7 @@ export declare class AppPassword extends pulumi.CustomResource {
      */
     readonly password: pulumi.Output<string>;
     /**
-     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app
-     * passwords.
+     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app passwords.
      */
     readonly roles: pulumi.Output<string[] | undefined>;
     readonly secret: pulumi.Output<string>;
@@ -69,8 +68,7 @@ export interface AppPasswordState {
      */
     password?: pulumi.Input<string>;
     /**
-     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app
-     * passwords.
+     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app passwords.
      */
     roles?: pulumi.Input<pulumi.Input<string>[]>;
     secret?: pulumi.Input<string>;
@@ -93,8 +91,7 @@ export interface AppPasswordArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app
-     * passwords.
+     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app passwords.
      */
     roles?: pulumi.Input<pulumi.Input<string>[]>;
     /**

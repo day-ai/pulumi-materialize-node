@@ -16,7 +16,7 @@ class SecretGrantDefaultPrivilege extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new SecretGrantDefaultPrivilege(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new SecretGrantDefaultPrivilege(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of SecretGrantDefaultPrivilege.  This is designed to work even
@@ -33,32 +33,32 @@ class SecretGrantDefaultPrivilege extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["granteeName"] = state ? state.granteeName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["secretGrantDefaultPrivilegeId"] = state ? state.secretGrantDefaultPrivilegeId : undefined;
-            resourceInputs["targetRoleName"] = state ? state.targetRoleName : undefined;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["granteeName"] = state?.granteeName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["secretGrantDefaultPrivilegeId"] = state?.secretGrantDefaultPrivilegeId;
+            resourceInputs["targetRoleName"] = state?.targetRoleName;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.granteeName === undefined) && !opts.urn) {
+            if (args?.granteeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'granteeName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.targetRoleName === undefined) && !opts.urn) {
+            if (args?.targetRoleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetRoleName'");
             }
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["granteeName"] = args ? args.granteeName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["secretGrantDefaultPrivilegeId"] = args ? args.secretGrantDefaultPrivilegeId : undefined;
-            resourceInputs["targetRoleName"] = args ? args.targetRoleName : undefined;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["granteeName"] = args?.granteeName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["secretGrantDefaultPrivilegeId"] = args?.secretGrantDefaultPrivilegeId;
+            resourceInputs["targetRoleName"] = args?.targetRoleName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SecretGrantDefaultPrivilege.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

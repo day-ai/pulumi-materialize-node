@@ -16,7 +16,7 @@ class SsoDomain extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new SsoDomain(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new SsoDomain(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of SsoDomain.  This is designed to work even
@@ -33,22 +33,22 @@ class SsoDomain extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["domain"] = state ? state.domain : undefined;
-            resourceInputs["ssoConfigId"] = state ? state.ssoConfigId : undefined;
-            resourceInputs["ssoDomainId"] = state ? state.ssoDomainId : undefined;
-            resourceInputs["validated"] = state ? state.validated : undefined;
+            resourceInputs["domain"] = state?.domain;
+            resourceInputs["ssoConfigId"] = state?.ssoConfigId;
+            resourceInputs["ssoDomainId"] = state?.ssoDomainId;
+            resourceInputs["validated"] = state?.validated;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.domain === undefined) && !opts.urn) {
+            if (args?.domain === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domain'");
             }
-            if ((!args || args.ssoConfigId === undefined) && !opts.urn) {
+            if (args?.ssoConfigId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ssoConfigId'");
             }
-            resourceInputs["domain"] = args ? args.domain : undefined;
-            resourceInputs["ssoConfigId"] = args ? args.ssoConfigId : undefined;
-            resourceInputs["ssoDomainId"] = args ? args.ssoDomainId : undefined;
+            resourceInputs["domain"] = args?.domain;
+            resourceInputs["ssoConfigId"] = args?.ssoConfigId;
+            resourceInputs["ssoDomainId"] = args?.ssoDomainId;
             resourceInputs["validated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

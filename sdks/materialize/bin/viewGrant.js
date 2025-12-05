@@ -16,7 +16,7 @@ class ViewGrant extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new ViewGrant(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new ViewGrant(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of ViewGrant.  This is designed to work even
@@ -33,38 +33,38 @@ class ViewGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["viewGrantId"] = state ? state.viewGrantId : undefined;
-            resourceInputs["viewName"] = state ? state.viewName : undefined;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["viewGrantId"] = state?.viewGrantId;
+            resourceInputs["viewName"] = state?.viewName;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.databaseName === undefined) && !opts.urn) {
+            if (args?.databaseName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            if ((!args || args.schemaName === undefined) && !opts.urn) {
+            if (args?.schemaName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemaName'");
             }
-            if ((!args || args.viewName === undefined) && !opts.urn) {
+            if (args?.viewName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'viewName'");
             }
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["viewGrantId"] = args ? args.viewGrantId : undefined;
-            resourceInputs["viewName"] = args ? args.viewName : undefined;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["viewGrantId"] = args?.viewGrantId;
+            resourceInputs["viewName"] = args?.viewName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ViewGrant.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

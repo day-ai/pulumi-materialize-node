@@ -16,7 +16,7 @@ class SourceLoadGenerator extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new SourceLoadGenerator(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new SourceLoadGenerator(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of SourceLoadGenerator.  This is designed to work even
@@ -33,44 +33,40 @@ class SourceLoadGenerator extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["auctionOptions"] = state ? state.auctionOptions : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["counterOptions"] = state ? state.counterOptions : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["exposeProgress"] = state ? state.exposeProgress : undefined;
-            resourceInputs["keyValueOptions"] = state ? state.keyValueOptions : undefined;
-            resourceInputs["loadGeneratorType"] = state ? state.loadGeneratorType : undefined;
-            resourceInputs["marketingOptions"] = state ? state.marketingOptions : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["sourceLoadGeneratorId"] = state ? state.sourceLoadGeneratorId : undefined;
-            resourceInputs["tpchOptions"] = state ? state.tpchOptions : undefined;
+            resourceInputs["auctionOptions"] = state?.auctionOptions;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["exposeProgress"] = state?.exposeProgress;
+            resourceInputs["loadGeneratorType"] = state?.loadGeneratorType;
+            resourceInputs["marketingOptions"] = state?.marketingOptions;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["sourceLoadGeneratorId"] = state?.sourceLoadGeneratorId;
+            resourceInputs["tpchOptions"] = state?.tpchOptions;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.loadGeneratorType === undefined) && !opts.urn) {
+            if (args?.loadGeneratorType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'loadGeneratorType'");
             }
-            resourceInputs["auctionOptions"] = args ? args.auctionOptions : undefined;
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["counterOptions"] = args ? args.counterOptions : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["exposeProgress"] = args ? args.exposeProgress : undefined;
-            resourceInputs["keyValueOptions"] = args ? args.keyValueOptions : undefined;
-            resourceInputs["loadGeneratorType"] = args ? args.loadGeneratorType : undefined;
-            resourceInputs["marketingOptions"] = args ? args.marketingOptions : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sourceLoadGeneratorId"] = args ? args.sourceLoadGeneratorId : undefined;
-            resourceInputs["tpchOptions"] = args ? args.tpchOptions : undefined;
+            resourceInputs["auctionOptions"] = args?.auctionOptions;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["exposeProgress"] = args?.exposeProgress;
+            resourceInputs["loadGeneratorType"] = args?.loadGeneratorType;
+            resourceInputs["marketingOptions"] = args?.marketingOptions;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sourceLoadGeneratorId"] = args?.sourceLoadGeneratorId;
+            resourceInputs["tpchOptions"] = args?.tpchOptions;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
         }

@@ -16,7 +16,7 @@ class SsoGroupMapping extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new SsoGroupMapping(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new SsoGroupMapping(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of SsoGroupMapping.  This is designed to work even
@@ -33,27 +33,27 @@ class SsoGroupMapping extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["group"] = state ? state.group : undefined;
-            resourceInputs["roles"] = state ? state.roles : undefined;
-            resourceInputs["ssoConfigId"] = state ? state.ssoConfigId : undefined;
-            resourceInputs["ssoGroupMappingId"] = state ? state.ssoGroupMappingId : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["group"] = state?.group;
+            resourceInputs["roles"] = state?.roles;
+            resourceInputs["ssoConfigId"] = state?.ssoConfigId;
+            resourceInputs["ssoGroupMappingId"] = state?.ssoGroupMappingId;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.group === undefined) && !opts.urn) {
+            if (args?.group === undefined && !opts.urn) {
                 throw new Error("Missing required property 'group'");
             }
-            if ((!args || args.roles === undefined) && !opts.urn) {
+            if (args?.roles === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roles'");
             }
-            if ((!args || args.ssoConfigId === undefined) && !opts.urn) {
+            if (args?.ssoConfigId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ssoConfigId'");
             }
-            resourceInputs["group"] = args ? args.group : undefined;
-            resourceInputs["roles"] = args ? args.roles : undefined;
-            resourceInputs["ssoConfigId"] = args ? args.ssoConfigId : undefined;
-            resourceInputs["ssoGroupMappingId"] = args ? args.ssoGroupMappingId : undefined;
+            resourceInputs["group"] = args?.group;
+            resourceInputs["roles"] = args?.roles;
+            resourceInputs["ssoConfigId"] = args?.ssoConfigId;
+            resourceInputs["ssoGroupMappingId"] = args?.ssoGroupMappingId;
             resourceInputs["enabled"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

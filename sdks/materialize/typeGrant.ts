@@ -35,28 +35,28 @@ export class TypeGrant extends pulumi.CustomResource {
     /**
      * The database that the type belongs to.
      */
-    public readonly databaseName!: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string>;
     /**
      * The privilege to grant to the object.
      */
-    public readonly privilege!: pulumi.Output<string>;
+    declare public readonly privilege: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The name of the role to grant privilege to.
      */
-    public readonly roleName!: pulumi.Output<string>;
+    declare public readonly roleName: pulumi.Output<string>;
     /**
      * The schema that the type being to.
      */
-    public readonly schemaName!: pulumi.Output<string>;
-    public readonly typeGrantId!: pulumi.Output<string>;
+    declare public readonly schemaName: pulumi.Output<string>;
+    declare public readonly typeGrantId: pulumi.Output<string>;
     /**
      * The type that is being granted on.
      */
-    public readonly typeName!: pulumi.Output<string>;
+    declare public readonly typeName: pulumi.Output<string>;
 
     /**
      * Create a TypeGrant resource with the given unique name, arguments, and options.
@@ -71,37 +71,37 @@ export class TypeGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TypeGrantState | undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["typeGrantId"] = state ? state.typeGrantId : undefined;
-            resourceInputs["typeName"] = state ? state.typeName : undefined;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["typeGrantId"] = state?.typeGrantId;
+            resourceInputs["typeName"] = state?.typeName;
         } else {
             const args = argsOrState as TypeGrantArgs | undefined;
-            if ((!args || args.databaseName === undefined) && !opts.urn) {
+            if (args?.databaseName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            if ((!args || args.schemaName === undefined) && !opts.urn) {
+            if (args?.schemaName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemaName'");
             }
-            if ((!args || args.typeName === undefined) && !opts.urn) {
+            if (args?.typeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'typeName'");
             }
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["typeGrantId"] = args ? args.typeGrantId : undefined;
-            resourceInputs["typeName"] = args ? args.typeName : undefined;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["typeGrantId"] = args?.typeGrantId;
+            resourceInputs["typeName"] = args?.typeName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(TypeGrant.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

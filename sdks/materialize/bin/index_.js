@@ -16,7 +16,7 @@ class Index extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new Index(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new Index(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of Index.  This is designed to work even
@@ -33,36 +33,36 @@ class Index extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["colExprs"] = state ? state.colExprs : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["default"] = state ? state.default : undefined;
-            resourceInputs["indexId"] = state ? state.indexId : undefined;
-            resourceInputs["method"] = state ? state.method : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objName"] = state ? state.objName : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["colExprs"] = state?.colExprs;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["default"] = state?.default;
+            resourceInputs["indexId"] = state?.indexId;
+            resourceInputs["method"] = state?.method;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objName"] = state?.objName;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.clusterName === undefined) && !opts.urn) {
+            if (args?.clusterName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterName'");
             }
-            if ((!args || args.objName === undefined) && !opts.urn) {
+            if (args?.objName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'objName'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["colExprs"] = args ? args.colExprs : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["default"] = args ? args.default : undefined;
-            resourceInputs["indexId"] = args ? args.indexId : undefined;
-            resourceInputs["method"] = args ? args.method : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["objName"] = args ? args.objName : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["colExprs"] = args?.colExprs;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["default"] = args?.default;
+            resourceInputs["indexId"] = args?.indexId;
+            resourceInputs["method"] = args?.method;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["objName"] = args?.objName;
+            resourceInputs["region"] = args?.region;
             resourceInputs["databaseName"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["schemaName"] = undefined /*out*/;

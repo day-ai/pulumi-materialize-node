@@ -18,8 +18,7 @@ export declare class ConnectionAws extends pulumi.CustomResource {
      */
     static isInstance(obj: any): obj is ConnectionAws;
     /**
-     * The access key ID to connect with.. Can be supplied as either free text using `text` or reference to a secret object
-     * using `secret`.
+     * The access key ID to connect with.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly accessKeyId: pulumi.Output<outputs.ConnectionAwsAccessKeyId | undefined>;
     /**
@@ -40,8 +39,7 @@ export declare class ConnectionAws extends pulumi.CustomResource {
     readonly comment: pulumi.Output<string | undefined>;
     readonly connectionAwsId: pulumi.Output<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
@@ -49,8 +47,7 @@ export declare class ConnectionAws extends pulumi.CustomResource {
      */
     readonly endpoint: pulumi.Output<string | undefined>;
     /**
-     * The external ID used for trust relationship when assume_role_arn is specified. This is a read-only attribute that is
-     * automatically generated.
+     * The external ID used for trust relationship when<span pulumi-lang-nodejs=" assumeRoleArn " pulumi-lang-dotnet=" AssumeRoleArn " pulumi-lang-go=" assumeRoleArn " pulumi-lang-python=" assume_role_arn " pulumi-lang-yaml=" assumeRoleArn " pulumi-lang-java=" assumeRoleArn "> assume_role_arn </span>is specified. This is a read-only attribute that is automatically generated.
      */
     readonly externalId: pulumi.Output<string>;
     /**
@@ -70,7 +67,7 @@ export declare class ConnectionAws extends pulumi.CustomResource {
      */
     readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
@@ -78,8 +75,7 @@ export declare class ConnectionAws extends pulumi.CustomResource {
      */
     readonly secretAccessKey: pulumi.Output<outputs.ConnectionAwsSecretAccessKey | undefined>;
     /**
-     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using `text` or
-     * reference to a secret object using `secret`.
+     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly sessionToken: pulumi.Output<outputs.ConnectionAwsSessionToken | undefined>;
     /**
@@ -100,8 +96,7 @@ export declare class ConnectionAws extends pulumi.CustomResource {
  */
 export interface ConnectionAwsState {
     /**
-     * The access key ID to connect with.. Can be supplied as either free text using `text` or reference to a secret object
-     * using `secret`.
+     * The access key ID to connect with.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     accessKeyId?: pulumi.Input<inputs.ConnectionAwsAccessKeyId>;
     /**
@@ -122,8 +117,7 @@ export interface ConnectionAwsState {
     comment?: pulumi.Input<string>;
     connectionAwsId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -131,8 +125,7 @@ export interface ConnectionAwsState {
      */
     endpoint?: pulumi.Input<string>;
     /**
-     * The external ID used for trust relationship when assume_role_arn is specified. This is a read-only attribute that is
-     * automatically generated.
+     * The external ID used for trust relationship when<span pulumi-lang-nodejs=" assumeRoleArn " pulumi-lang-dotnet=" AssumeRoleArn " pulumi-lang-go=" assumeRoleArn " pulumi-lang-python=" assume_role_arn " pulumi-lang-yaml=" assumeRoleArn " pulumi-lang-java=" assumeRoleArn "> assume_role_arn </span>is specified. This is a read-only attribute that is automatically generated.
      */
     externalId?: pulumi.Input<string>;
     /**
@@ -152,7 +145,7 @@ export interface ConnectionAwsState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -160,8 +153,7 @@ export interface ConnectionAwsState {
      */
     secretAccessKey?: pulumi.Input<inputs.ConnectionAwsSecretAccessKey>;
     /**
-     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using `text` or
-     * reference to a secret object using `secret`.
+     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sessionToken?: pulumi.Input<inputs.ConnectionAwsSessionToken>;
     /**
@@ -174,8 +166,7 @@ export interface ConnectionAwsState {
  */
 export interface ConnectionAwsArgs {
     /**
-     * The access key ID to connect with.. Can be supplied as either free text using `text` or reference to a secret object
-     * using `secret`.
+     * The access key ID to connect with.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     accessKeyId?: pulumi.Input<inputs.ConnectionAwsAccessKeyId>;
     /**
@@ -196,8 +187,7 @@ export interface ConnectionAwsArgs {
     comment?: pulumi.Input<string>;
     connectionAwsId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -217,7 +207,7 @@ export interface ConnectionAwsArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -225,8 +215,7 @@ export interface ConnectionAwsArgs {
      */
     secretAccessKey?: pulumi.Input<inputs.ConnectionAwsSecretAccessKey>;
     /**
-     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using `text` or
-     * reference to a secret object using `secret`.
+     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sessionToken?: pulumi.Input<inputs.ConnectionAwsSessionToken>;
     /**

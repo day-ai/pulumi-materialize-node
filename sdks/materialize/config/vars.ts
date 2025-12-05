@@ -30,7 +30,7 @@ Object.defineProperty(exports, "cloudEndpoint", {
 });
 
 /**
- * The Materialize database. Can also come from the `MZ_DATABASE` environment variable. Defaults to `materialize`.
+ * The Materialize database. Can also come from the `MZ_DATABASE` environment variable. Defaults to <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span>.
  */
 export declare const database: string | undefined;
 Object.defineProperty(exports, "database", {

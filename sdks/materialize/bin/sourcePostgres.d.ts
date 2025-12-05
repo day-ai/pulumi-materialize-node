@@ -26,13 +26,15 @@ export declare class SourcePostgres extends pulumi.CustomResource {
      */
     readonly comment: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * Exclude specific columns when reading data from PostgreSQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     */
+    readonly excludeColumns: pulumi.Output<string[] | undefined>;
+    /**
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     readonly exposeProgress: pulumi.Output<outputs.SourcePostgresExposeProgress | undefined>;
     /**
@@ -60,7 +62,7 @@ export declare class SourcePostgres extends pulumi.CustomResource {
      */
     readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
@@ -73,8 +75,7 @@ export declare class SourcePostgres extends pulumi.CustomResource {
      */
     readonly tables: pulumi.Output<outputs.SourcePostgresTable[]>;
     /**
-     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be
-     * updated in place when also updating a corresponding `table` attribute.
+     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     readonly textColumns: pulumi.Output<string[] | undefined>;
     /**
@@ -99,13 +100,15 @@ export interface SourcePostgresState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * Exclude specific columns when reading data from PostgreSQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     */
+    excludeColumns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourcePostgresExposeProgress>;
     /**
@@ -133,7 +136,7 @@ export interface SourcePostgresState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -146,8 +149,7 @@ export interface SourcePostgresState {
      */
     tables?: pulumi.Input<pulumi.Input<inputs.SourcePostgresTable>[]>;
     /**
-     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be
-     * updated in place when also updating a corresponding `table` attribute.
+     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     textColumns?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -164,13 +166,15 @@ export interface SourcePostgresArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * Exclude specific columns when reading data from PostgreSQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     */
+    excludeColumns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourcePostgresExposeProgress>;
     /**
@@ -194,7 +198,7 @@ export interface SourcePostgresArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sourcePostgresId?: pulumi.Input<string>;
@@ -203,8 +207,7 @@ export interface SourcePostgresArgs {
      */
     tables: pulumi.Input<pulumi.Input<inputs.SourcePostgresTable>[]>;
     /**
-     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be
-     * updated in place when also updating a corresponding `table` attribute.
+     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     textColumns?: pulumi.Input<pulumi.Input<string>[]>;
 }

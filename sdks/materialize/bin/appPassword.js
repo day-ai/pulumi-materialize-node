@@ -16,7 +16,7 @@ class AppPassword extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new AppPassword(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new AppPassword(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of AppPassword.  This is designed to work even
@@ -33,22 +33,22 @@ class AppPassword extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["appPasswordId"] = state ? state.appPasswordId : undefined;
-            resourceInputs["createdAt"] = state ? state.createdAt : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["roles"] = state ? state.roles : undefined;
-            resourceInputs["secret"] = state ? state.secret : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["user"] = state ? state.user : undefined;
+            resourceInputs["appPasswordId"] = state?.appPasswordId;
+            resourceInputs["createdAt"] = state?.createdAt;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["roles"] = state?.roles;
+            resourceInputs["secret"] = state?.secret;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["user"] = state?.user;
         }
         else {
             const args = argsOrState;
-            resourceInputs["appPasswordId"] = args ? args.appPasswordId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["roles"] = args ? args.roles : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["user"] = args ? args.user : undefined;
+            resourceInputs["appPasswordId"] = args?.appPasswordId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["roles"] = args?.roles;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["user"] = args?.user;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["password"] = undefined /*out*/;
             resourceInputs["secret"] = undefined /*out*/;

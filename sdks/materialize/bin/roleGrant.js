@@ -16,7 +16,7 @@ class RoleGrant extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new RoleGrant(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new RoleGrant(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of RoleGrant.  This is designed to work even
@@ -33,23 +33,23 @@ class RoleGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["memberName"] = state ? state.memberName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleGrantId"] = state ? state.roleGrantId : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
+            resourceInputs["memberName"] = state?.memberName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleGrantId"] = state?.roleGrantId;
+            resourceInputs["roleName"] = state?.roleName;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.memberName === undefined) && !opts.urn) {
+            if (args?.memberName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'memberName'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            resourceInputs["memberName"] = args ? args.memberName : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleGrantId"] = args ? args.roleGrantId : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
+            resourceInputs["memberName"] = args?.memberName;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleGrantId"] = args?.roleGrantId;
+            resourceInputs["roleName"] = args?.roleName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RoleGrant.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

@@ -35,49 +35,48 @@ export class MaterializedView extends pulumi.CustomResource {
     /**
      * The cluster to maintain the materialized view.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
      * The SQL statement used to create the materialized view.
      */
-    public /*out*/ readonly createSql!: pulumi.Output<string>;
+    declare public /*out*/ readonly createSql: pulumi.Output<string>;
     /**
-     * The identifier for the materialized view database in Materialize. Defaults to `MZ_DATABASE` environment variable if set
-     * or `materialize` if environment variable is not set.
+     * The identifier for the materialized view database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
-    public readonly materializedViewId!: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
+    declare public readonly materializedViewId: pulumi.Output<string>;
     /**
      * The identifier for the materialized view.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A list of columns for which to create non-null assertions.
      */
-    public readonly notNullAssertions!: pulumi.Output<string[] | undefined>;
+    declare public readonly notNullAssertions: pulumi.Output<string[] | undefined>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The fully qualified name of the materialized view.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the materialized view schema in Materialize. Defaults to `public`.
+     * The identifier for the materialized view schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
     /**
      * The SQL statement for the materialized view.
      */
-    public readonly statement!: pulumi.Output<string>;
+    declare public readonly statement: pulumi.Output<string>;
 
     /**
      * Create a MaterializedView resource with the given unique name, arguments, and options.
@@ -92,36 +91,36 @@ export class MaterializedView extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MaterializedViewState | undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["createSql"] = state ? state.createSql : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["materializedViewId"] = state ? state.materializedViewId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["notNullAssertions"] = state ? state.notNullAssertions : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["statement"] = state ? state.statement : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["createSql"] = state?.createSql;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["materializedViewId"] = state?.materializedViewId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["notNullAssertions"] = state?.notNullAssertions;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["statement"] = state?.statement;
         } else {
             const args = argsOrState as MaterializedViewArgs | undefined;
-            if ((!args || args.clusterName === undefined) && !opts.urn) {
+            if (args?.clusterName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterName'");
             }
-            if ((!args || args.statement === undefined) && !opts.urn) {
+            if (args?.statement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'statement'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["materializedViewId"] = args ? args.materializedViewId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["notNullAssertions"] = args ? args.notNullAssertions : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["statement"] = args ? args.statement : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["materializedViewId"] = args?.materializedViewId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["notNullAssertions"] = args?.notNullAssertions;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["statement"] = args?.statement;
             resourceInputs["createSql"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
@@ -147,8 +146,7 @@ export interface MaterializedViewState {
      */
     createSql?: pulumi.Input<string>;
     /**
-     * The identifier for the materialized view database in Materialize. Defaults to `MZ_DATABASE` environment variable if set
-     * or `materialize` if environment variable is not set.
+     * The identifier for the materialized view database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     materializedViewId?: pulumi.Input<string>;
@@ -173,7 +171,7 @@ export interface MaterializedViewState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the materialized view schema in Materialize. Defaults to `public`.
+     * The identifier for the materialized view schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -195,8 +193,7 @@ export interface MaterializedViewArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the materialized view database in Materialize. Defaults to `MZ_DATABASE` environment variable if set
-     * or `materialize` if environment variable is not set.
+     * The identifier for the materialized view database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     materializedViewId?: pulumi.Input<string>;
@@ -217,7 +214,7 @@ export interface MaterializedViewArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the materialized view schema in Materialize. Defaults to `public`.
+     * The identifier for the materialized view schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**

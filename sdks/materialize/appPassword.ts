@@ -32,33 +32,32 @@ export class AppPassword extends pulumi.CustomResource {
         return obj['__pulumiType'] === AppPassword.__pulumiType;
     }
 
-    public readonly appPasswordId!: pulumi.Output<string>;
+    declare public readonly appPasswordId: pulumi.Output<string>;
     /**
      * The time at which the app password was created.
      */
-    public /*out*/ readonly createdAt!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdAt: pulumi.Output<string>;
     /**
      * A human-readable name for the app password.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The value of the app password.
      */
-    public /*out*/ readonly password!: pulumi.Output<string>;
+    declare public /*out*/ readonly password: pulumi.Output<string>;
     /**
-     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app
-     * passwords.
+     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app passwords.
      */
-    public readonly roles!: pulumi.Output<string[] | undefined>;
-    public /*out*/ readonly secret!: pulumi.Output<string>;
+    declare public readonly roles: pulumi.Output<string[] | undefined>;
+    declare public /*out*/ readonly secret: pulumi.Output<string>;
     /**
      * The type of the app password: personal or service.
      */
-    public readonly type!: pulumi.Output<string | undefined>;
+    declare public readonly type: pulumi.Output<string | undefined>;
     /**
      * The user to associate with the app password. Only valid with service-type app passwords.
      */
-    public readonly user!: pulumi.Output<string | undefined>;
+    declare public readonly user: pulumi.Output<string | undefined>;
 
     /**
      * Create a AppPassword resource with the given unique name, arguments, and options.
@@ -73,21 +72,21 @@ export class AppPassword extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AppPasswordState | undefined;
-            resourceInputs["appPasswordId"] = state ? state.appPasswordId : undefined;
-            resourceInputs["createdAt"] = state ? state.createdAt : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["roles"] = state ? state.roles : undefined;
-            resourceInputs["secret"] = state ? state.secret : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["user"] = state ? state.user : undefined;
+            resourceInputs["appPasswordId"] = state?.appPasswordId;
+            resourceInputs["createdAt"] = state?.createdAt;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["roles"] = state?.roles;
+            resourceInputs["secret"] = state?.secret;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["user"] = state?.user;
         } else {
             const args = argsOrState as AppPasswordArgs | undefined;
-            resourceInputs["appPasswordId"] = args ? args.appPasswordId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["roles"] = args ? args.roles : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["user"] = args ? args.user : undefined;
+            resourceInputs["appPasswordId"] = args?.appPasswordId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["roles"] = args?.roles;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["user"] = args?.user;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["password"] = undefined /*out*/;
             resourceInputs["secret"] = undefined /*out*/;
@@ -117,8 +116,7 @@ export interface AppPasswordState {
      */
     password?: pulumi.Input<string>;
     /**
-     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app
-     * passwords.
+     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app passwords.
      */
     roles?: pulumi.Input<pulumi.Input<string>[]>;
     secret?: pulumi.Input<string>;
@@ -142,8 +140,7 @@ export interface AppPasswordArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app
-     * passwords.
+     * The roles to assign to the app password. Allowed values are 'Member' and 'Admin'. Only valid with service-type app passwords.
      */
     roles?: pulumi.Input<pulumi.Input<string>[]>;
     /**

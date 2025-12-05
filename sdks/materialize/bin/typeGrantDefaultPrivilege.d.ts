@@ -36,8 +36,7 @@ export declare class TypeGrantDefaultPrivilege extends pulumi.CustomResource {
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
     readonly targetRoleName: pulumi.Output<string>;
     readonly typeGrantDefaultPrivilegeId: pulumi.Output<string>;
@@ -75,8 +74,7 @@ export interface TypeGrantDefaultPrivilegeState {
      */
     schemaName?: pulumi.Input<string>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
     targetRoleName?: pulumi.Input<string>;
     typeGrantDefaultPrivilegeId?: pulumi.Input<string>;
@@ -106,8 +104,7 @@ export interface TypeGrantDefaultPrivilegeArgs {
      */
     schemaName?: pulumi.Input<string>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
     targetRoleName: pulumi.Input<string>;
     typeGrantDefaultPrivilegeId?: pulumi.Input<string>;

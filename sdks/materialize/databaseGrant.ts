@@ -32,23 +32,23 @@ export class DatabaseGrant extends pulumi.CustomResource {
         return obj['__pulumiType'] === DatabaseGrant.__pulumiType;
     }
 
-    public readonly databaseGrantId!: pulumi.Output<string>;
+    declare public readonly databaseGrantId: pulumi.Output<string>;
     /**
      * The database that is being granted on.
      */
-    public readonly databaseName!: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string>;
     /**
      * The privilege to grant to the object.
      */
-    public readonly privilege!: pulumi.Output<string>;
+    declare public readonly privilege: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The name of the role to grant privilege to.
      */
-    public readonly roleName!: pulumi.Output<string>;
+    declare public readonly roleName: pulumi.Output<string>;
 
     /**
      * Create a DatabaseGrant resource with the given unique name, arguments, and options.
@@ -63,27 +63,27 @@ export class DatabaseGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatabaseGrantState | undefined;
-            resourceInputs["databaseGrantId"] = state ? state.databaseGrantId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
+            resourceInputs["databaseGrantId"] = state?.databaseGrantId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
         } else {
             const args = argsOrState as DatabaseGrantArgs | undefined;
-            if ((!args || args.databaseName === undefined) && !opts.urn) {
+            if (args?.databaseName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            resourceInputs["databaseGrantId"] = args ? args.databaseGrantId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
+            resourceInputs["databaseGrantId"] = args?.databaseGrantId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DatabaseGrant.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

@@ -35,28 +35,28 @@ export class SecretGrant extends pulumi.CustomResource {
     /**
      * The database that the secret belongs to.
      */
-    public readonly databaseName!: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string>;
     /**
      * The privilege to grant to the object.
      */
-    public readonly privilege!: pulumi.Output<string>;
+    declare public readonly privilege: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The name of the role to grant privilege to.
      */
-    public readonly roleName!: pulumi.Output<string>;
+    declare public readonly roleName: pulumi.Output<string>;
     /**
      * The schema that the secret being to.
      */
-    public readonly schemaName!: pulumi.Output<string>;
-    public readonly secretGrantId!: pulumi.Output<string>;
+    declare public readonly schemaName: pulumi.Output<string>;
+    declare public readonly secretGrantId: pulumi.Output<string>;
     /**
      * The secret that is being granted on.
      */
-    public readonly secretName!: pulumi.Output<string>;
+    declare public readonly secretName: pulumi.Output<string>;
 
     /**
      * Create a SecretGrant resource with the given unique name, arguments, and options.
@@ -71,37 +71,37 @@ export class SecretGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SecretGrantState | undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["secretGrantId"] = state ? state.secretGrantId : undefined;
-            resourceInputs["secretName"] = state ? state.secretName : undefined;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["secretGrantId"] = state?.secretGrantId;
+            resourceInputs["secretName"] = state?.secretName;
         } else {
             const args = argsOrState as SecretGrantArgs | undefined;
-            if ((!args || args.databaseName === undefined) && !opts.urn) {
+            if (args?.databaseName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            if ((!args || args.schemaName === undefined) && !opts.urn) {
+            if (args?.schemaName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemaName'");
             }
-            if ((!args || args.secretName === undefined) && !opts.urn) {
+            if (args?.secretName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'secretName'");
             }
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["secretGrantId"] = args ? args.secretGrantId : undefined;
-            resourceInputs["secretName"] = args ? args.secretName : undefined;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["secretGrantId"] = args?.secretGrantId;
+            resourceInputs["secretName"] = args?.secretName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SecretGrant.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

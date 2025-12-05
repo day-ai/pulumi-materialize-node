@@ -35,20 +35,20 @@ export class Database extends pulumi.CustomResource {
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
-    public readonly databaseId!: pulumi.Output<string>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
+    declare public readonly databaseId: pulumi.Output<string>;
     /**
      * The identifier for the database.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
 
     /**
      * Create a Database resource with the given unique name, arguments, and options.
@@ -63,18 +63,18 @@ export class Database extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DatabaseState | undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["region"] = state?.region;
         } else {
             const args = argsOrState as DatabaseArgs | undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Database.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

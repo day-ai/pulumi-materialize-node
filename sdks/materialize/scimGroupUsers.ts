@@ -35,12 +35,12 @@ export class ScimGroupUsers extends pulumi.CustomResource {
     /**
      * The ID of the SCIM group.
      */
-    public readonly groupId!: pulumi.Output<string>;
-    public readonly scimGroupUsersId!: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
+    declare public readonly scimGroupUsersId: pulumi.Output<string>;
     /**
      * The set of user IDs to assign to the SCIM group.
      */
-    public readonly users!: pulumi.Output<string[] | undefined>;
+    declare public readonly users: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a ScimGroupUsers resource with the given unique name, arguments, and options.
@@ -55,17 +55,17 @@ export class ScimGroupUsers extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ScimGroupUsersState | undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["scimGroupUsersId"] = state ? state.scimGroupUsersId : undefined;
-            resourceInputs["users"] = state ? state.users : undefined;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["scimGroupUsersId"] = state?.scimGroupUsersId;
+            resourceInputs["users"] = state?.users;
         } else {
             const args = argsOrState as ScimGroupUsersArgs | undefined;
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["scimGroupUsersId"] = args ? args.scimGroupUsersId : undefined;
-            resourceInputs["users"] = args ? args.users : undefined;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["scimGroupUsersId"] = args?.scimGroupUsersId;
+            resourceInputs["users"] = args?.users;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ScimGroupUsers.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

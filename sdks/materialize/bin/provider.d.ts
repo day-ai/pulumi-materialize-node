@@ -20,7 +20,7 @@ export declare class Provider extends pulumi.ProviderResource {
      */
     readonly cloudEndpoint: pulumi.Output<string | undefined>;
     /**
-     * The Materialize database. Can also come from the `MZ_DATABASE` environment variable. Defaults to `materialize`.
+     * The Materialize database. Can also come from the `MZ_DATABASE` environment variable. Defaults to <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span>.
      */
     readonly database: pulumi.Output<string | undefined>;
     /**
@@ -75,7 +75,7 @@ export interface ProviderArgs {
      */
     cloudEndpoint?: pulumi.Input<string>;
     /**
-     * The Materialize database. Can also come from the `MZ_DATABASE` environment variable. Defaults to `materialize`.
+     * The Materialize database. Can also come from the `MZ_DATABASE` environment variable. Defaults to <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span>.
      */
     database?: pulumi.Input<string>;
     /**

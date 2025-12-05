@@ -25,8 +25,7 @@ export declare class ConnectionAwsPrivatelink extends pulumi.CustomResource {
     readonly comment: pulumi.Output<string | undefined>;
     readonly connectionAwsPrivatelinkId: pulumi.Output<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
@@ -50,7 +49,7 @@ export declare class ConnectionAwsPrivatelink extends pulumi.CustomResource {
      */
     readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
@@ -84,8 +83,7 @@ export interface ConnectionAwsPrivatelinkState {
     comment?: pulumi.Input<string>;
     connectionAwsPrivatelinkId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -109,7 +107,7 @@ export interface ConnectionAwsPrivatelinkState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -135,8 +133,7 @@ export interface ConnectionAwsPrivatelinkArgs {
     comment?: pulumi.Input<string>;
     connectionAwsPrivatelinkId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -152,7 +149,7 @@ export interface ConnectionAwsPrivatelinkArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**

@@ -35,37 +35,41 @@ export class Secret extends pulumi.CustomResource {
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the secret database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the secret database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
      * The identifier for the secret.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The fully qualified name of the secret.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the secret schema in Materialize. Defaults to `public`.
+     * The identifier for the secret schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
-    public readonly secretId!: pulumi.Output<string>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
+    declare public readonly secretId: pulumi.Output<string>;
     /**
-     * The value for the secret. The value expression may not reference any relations, and must be a bytea string literal.
+     * The value for the secret. The value expression may not reference any relations, and must be a bytea string literal. Use<span pulumi-lang-nodejs=" valueWo " pulumi-lang-dotnet=" ValueWo " pulumi-lang-go=" valueWo " pulumi-lang-python=" value_wo " pulumi-lang-yaml=" valueWo " pulumi-lang-java=" valueWo "> value_wo </span>for write-only ephemeral values that won't be stored in state.
      */
-    public readonly value!: pulumi.Output<string>;
+    declare public readonly value: pulumi.Output<string | undefined>;
+    declare public readonly valueWo: pulumi.Output<string | undefined>;
+    /**
+     * Version number for the write-only value. Increment this to trigger an update of the secret value when using value_wo. Must be used with value_wo.
+     */
+    declare public readonly valueWoVersion: pulumi.Output<number | undefined>;
 
     /**
      * Create a Secret resource with the given unique name, arguments, and options.
@@ -74,38 +78,39 @@ export class Secret extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: SecretArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: SecretArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: SecretArgs | SecretState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SecretState | undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["secretId"] = state ? state.secretId : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["secretId"] = state?.secretId;
+            resourceInputs["value"] = state?.value;
+            resourceInputs["valueWo"] = state?.valueWo;
+            resourceInputs["valueWoVersion"] = state?.valueWoVersion;
         } else {
             const args = argsOrState as SecretArgs | undefined;
-            if ((!args || args.value === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'value'");
-            }
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["secretId"] = args ? args.secretId : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["secretId"] = args?.secretId;
             resourceInputs["value"] = args?.value ? pulumi.secret(args.value) : undefined;
+            resourceInputs["valueWo"] = args?.valueWo ? pulumi.secret(args.valueWo) : undefined;
+            resourceInputs["valueWoVersion"] = args?.valueWoVersion;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["value"] };
+        const secretOpts = { additionalSecretOutputs: ["value", "valueWo"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Secret.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
     }
@@ -120,8 +125,7 @@ export interface SecretState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the secret database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the secret database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -141,14 +145,19 @@ export interface SecretState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the secret schema in Materialize. Defaults to `public`.
+     * The identifier for the secret schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     secretId?: pulumi.Input<string>;
     /**
-     * The value for the secret. The value expression may not reference any relations, and must be a bytea string literal.
+     * The value for the secret. The value expression may not reference any relations, and must be a bytea string literal. Use<span pulumi-lang-nodejs=" valueWo " pulumi-lang-dotnet=" ValueWo " pulumi-lang-go=" valueWo " pulumi-lang-python=" value_wo " pulumi-lang-yaml=" valueWo " pulumi-lang-java=" valueWo "> value_wo </span>for write-only ephemeral values that won't be stored in state.
      */
     value?: pulumi.Input<string>;
+    valueWo?: pulumi.Input<string>;
+    /**
+     * Version number for the write-only value. Increment this to trigger an update of the secret value when using value_wo. Must be used with value_wo.
+     */
+    valueWoVersion?: pulumi.Input<number>;
 }
 
 /**
@@ -160,8 +169,7 @@ export interface SecretArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the secret database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the secret database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -177,12 +185,17 @@ export interface SecretArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the secret schema in Materialize. Defaults to `public`.
+     * The identifier for the secret schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     secretId?: pulumi.Input<string>;
     /**
-     * The value for the secret. The value expression may not reference any relations, and must be a bytea string literal.
+     * The value for the secret. The value expression may not reference any relations, and must be a bytea string literal. Use<span pulumi-lang-nodejs=" valueWo " pulumi-lang-dotnet=" ValueWo " pulumi-lang-go=" valueWo " pulumi-lang-python=" value_wo " pulumi-lang-yaml=" valueWo " pulumi-lang-java=" valueWo "> value_wo </span>for write-only ephemeral values that won't be stored in state.
      */
-    value: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+    valueWo?: pulumi.Input<string>;
+    /**
+     * Version number for the write-only value. Increment this to trigger an update of the secret value when using value_wo. Must be used with value_wo.
+     */
+    valueWoVersion?: pulumi.Input<number>;
 }

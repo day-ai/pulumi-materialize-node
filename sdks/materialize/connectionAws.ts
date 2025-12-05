@@ -35,74 +35,70 @@ export class ConnectionAws extends pulumi.CustomResource {
     }
 
     /**
-     * The access key ID to connect with.. Can be supplied as either free text using `text` or reference to a secret object
-     * using `secret`.
+     * The access key ID to connect with.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
-    public readonly accessKeyId!: pulumi.Output<outputs.ConnectionAwsAccessKeyId | undefined>;
+    declare public readonly accessKeyId: pulumi.Output<outputs.ConnectionAwsAccessKeyId | undefined>;
     /**
      * The Amazon Resource Name (ARN) of the IAM role to assume.
      */
-    public readonly assumeRoleArn!: pulumi.Output<string | undefined>;
+    declare public readonly assumeRoleArn: pulumi.Output<string | undefined>;
     /**
      * The session name to use when assuming the role.
      */
-    public readonly assumeRoleSessionName!: pulumi.Output<string | undefined>;
+    declare public readonly assumeRoleSessionName: pulumi.Output<string | undefined>;
     /**
      * The AWS region to connect to.
      */
-    public readonly awsRegion!: pulumi.Output<string | undefined>;
+    declare public readonly awsRegion: pulumi.Output<string | undefined>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
-    public readonly connectionAwsId!: pulumi.Output<string>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
+    declare public readonly connectionAwsId: pulumi.Output<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
      * Override the default AWS endpoint URL.
      */
-    public readonly endpoint!: pulumi.Output<string | undefined>;
+    declare public readonly endpoint: pulumi.Output<string | undefined>;
     /**
-     * The external ID used for trust relationship when assume_role_arn is specified. This is a read-only attribute that is
-     * automatically generated.
+     * The external ID used for trust relationship when<span pulumi-lang-nodejs=" assumeRoleArn " pulumi-lang-dotnet=" AssumeRoleArn " pulumi-lang-go=" assumeRoleArn " pulumi-lang-python=" assume_role_arn " pulumi-lang-yaml=" assumeRoleArn " pulumi-lang-java=" assumeRoleArn "> assume_role_arn </span>is specified. This is a read-only attribute that is automatically generated.
      */
-    public /*out*/ readonly externalId!: pulumi.Output<string>;
+    declare public /*out*/ readonly externalId: pulumi.Output<string>;
     /**
      * The identifier for the connection.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The fully qualified name of the connection.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
     /**
      * The secret access key corresponding to the specified access key ID.
      */
-    public readonly secretAccessKey!: pulumi.Output<outputs.ConnectionAwsSecretAccessKey | undefined>;
+    declare public readonly secretAccessKey: pulumi.Output<outputs.ConnectionAwsSecretAccessKey | undefined>;
     /**
-     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using `text` or
-     * reference to a secret object using `secret`.
+     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
-    public readonly sessionToken!: pulumi.Output<outputs.ConnectionAwsSessionToken | undefined>;
+    declare public readonly sessionToken: pulumi.Output<outputs.ConnectionAwsSessionToken | undefined>;
     /**
      * If the connection should wait for validation.
      */
-    public readonly validate!: pulumi.Output<boolean | undefined>;
+    declare public readonly validate: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a ConnectionAws resource with the given unique name, arguments, and options.
@@ -117,40 +113,40 @@ export class ConnectionAws extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConnectionAwsState | undefined;
-            resourceInputs["accessKeyId"] = state ? state.accessKeyId : undefined;
-            resourceInputs["assumeRoleArn"] = state ? state.assumeRoleArn : undefined;
-            resourceInputs["assumeRoleSessionName"] = state ? state.assumeRoleSessionName : undefined;
-            resourceInputs["awsRegion"] = state ? state.awsRegion : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["connectionAwsId"] = state ? state.connectionAwsId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["endpoint"] = state ? state.endpoint : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["secretAccessKey"] = state ? state.secretAccessKey : undefined;
-            resourceInputs["sessionToken"] = state ? state.sessionToken : undefined;
-            resourceInputs["validate"] = state ? state.validate : undefined;
+            resourceInputs["accessKeyId"] = state?.accessKeyId;
+            resourceInputs["assumeRoleArn"] = state?.assumeRoleArn;
+            resourceInputs["assumeRoleSessionName"] = state?.assumeRoleSessionName;
+            resourceInputs["awsRegion"] = state?.awsRegion;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["connectionAwsId"] = state?.connectionAwsId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["endpoint"] = state?.endpoint;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["secretAccessKey"] = state?.secretAccessKey;
+            resourceInputs["sessionToken"] = state?.sessionToken;
+            resourceInputs["validate"] = state?.validate;
         } else {
             const args = argsOrState as ConnectionAwsArgs | undefined;
-            resourceInputs["accessKeyId"] = args ? args.accessKeyId : undefined;
-            resourceInputs["assumeRoleArn"] = args ? args.assumeRoleArn : undefined;
-            resourceInputs["assumeRoleSessionName"] = args ? args.assumeRoleSessionName : undefined;
-            resourceInputs["awsRegion"] = args ? args.awsRegion : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["connectionAwsId"] = args ? args.connectionAwsId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["endpoint"] = args ? args.endpoint : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["secretAccessKey"] = args ? args.secretAccessKey : undefined;
-            resourceInputs["sessionToken"] = args ? args.sessionToken : undefined;
-            resourceInputs["validate"] = args ? args.validate : undefined;
+            resourceInputs["accessKeyId"] = args?.accessKeyId;
+            resourceInputs["assumeRoleArn"] = args?.assumeRoleArn;
+            resourceInputs["assumeRoleSessionName"] = args?.assumeRoleSessionName;
+            resourceInputs["awsRegion"] = args?.awsRegion;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["connectionAwsId"] = args?.connectionAwsId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["endpoint"] = args?.endpoint;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["secretAccessKey"] = args?.secretAccessKey;
+            resourceInputs["sessionToken"] = args?.sessionToken;
+            resourceInputs["validate"] = args?.validate;
             resourceInputs["externalId"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
@@ -164,8 +160,7 @@ export class ConnectionAws extends pulumi.CustomResource {
  */
 export interface ConnectionAwsState {
     /**
-     * The access key ID to connect with.. Can be supplied as either free text using `text` or reference to a secret object
-     * using `secret`.
+     * The access key ID to connect with.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     accessKeyId?: pulumi.Input<inputs.ConnectionAwsAccessKeyId>;
     /**
@@ -186,8 +181,7 @@ export interface ConnectionAwsState {
     comment?: pulumi.Input<string>;
     connectionAwsId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -195,8 +189,7 @@ export interface ConnectionAwsState {
      */
     endpoint?: pulumi.Input<string>;
     /**
-     * The external ID used for trust relationship when assume_role_arn is specified. This is a read-only attribute that is
-     * automatically generated.
+     * The external ID used for trust relationship when<span pulumi-lang-nodejs=" assumeRoleArn " pulumi-lang-dotnet=" AssumeRoleArn " pulumi-lang-go=" assumeRoleArn " pulumi-lang-python=" assume_role_arn " pulumi-lang-yaml=" assumeRoleArn " pulumi-lang-java=" assumeRoleArn "> assume_role_arn </span>is specified. This is a read-only attribute that is automatically generated.
      */
     externalId?: pulumi.Input<string>;
     /**
@@ -216,7 +209,7 @@ export interface ConnectionAwsState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -224,8 +217,7 @@ export interface ConnectionAwsState {
      */
     secretAccessKey?: pulumi.Input<inputs.ConnectionAwsSecretAccessKey>;
     /**
-     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using `text` or
-     * reference to a secret object using `secret`.
+     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sessionToken?: pulumi.Input<inputs.ConnectionAwsSessionToken>;
     /**
@@ -239,8 +231,7 @@ export interface ConnectionAwsState {
  */
 export interface ConnectionAwsArgs {
     /**
-     * The access key ID to connect with.. Can be supplied as either free text using `text` or reference to a secret object
-     * using `secret`.
+     * The access key ID to connect with.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     accessKeyId?: pulumi.Input<inputs.ConnectionAwsAccessKeyId>;
     /**
@@ -261,8 +252,7 @@ export interface ConnectionAwsArgs {
     comment?: pulumi.Input<string>;
     connectionAwsId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -282,7 +272,7 @@ export interface ConnectionAwsArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -290,8 +280,7 @@ export interface ConnectionAwsArgs {
      */
     secretAccessKey?: pulumi.Input<inputs.ConnectionAwsSecretAccessKey>;
     /**
-     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using `text` or
-     * reference to a secret object using `secret`.
+     * The session token corresponding to the specified access key ID.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sessionToken?: pulumi.Input<inputs.ConnectionAwsSessionToken>;
     /**

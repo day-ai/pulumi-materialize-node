@@ -16,7 +16,7 @@ class NetworkPolicy extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new NetworkPolicy(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new NetworkPolicy(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of NetworkPolicy.  This is designed to work even
@@ -33,22 +33,22 @@ class NetworkPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkPolicyId"] = state ? state.networkPolicyId : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkPolicyId"] = state?.networkPolicyId;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["rules"] = state?.rules;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.rules === undefined) && !opts.urn) {
+            if (args?.rules === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rules'");
             }
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkPolicyId"] = args ? args.networkPolicyId : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkPolicyId"] = args?.networkPolicyId;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["rules"] = args?.rules;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NetworkPolicy.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

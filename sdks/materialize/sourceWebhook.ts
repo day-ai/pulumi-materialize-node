@@ -37,65 +37,64 @@ export class SourceWebhook extends pulumi.CustomResource {
     /**
      * The body format of the webhook.
      */
-    public readonly bodyFormat!: pulumi.Output<string>;
+    declare public readonly bodyFormat: pulumi.Output<string>;
     /**
      * The check expression for the webhook.
      */
-    public readonly checkExpression!: pulumi.Output<string | undefined>;
+    declare public readonly checkExpression: pulumi.Output<string | undefined>;
     /**
      * The check options for the webhook.
      */
-    public readonly checkOptions!: pulumi.Output<outputs.SourceWebhookCheckOption[] | undefined>;
+    declare public readonly checkOptions: pulumi.Output<outputs.SourceWebhookCheckOption[] | undefined>;
     /**
      * The cluster to maintain this source.
      */
-    public readonly clusterName!: pulumi.Output<string | undefined>;
+    declare public readonly clusterName: pulumi.Output<string | undefined>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
      * Map a header value from a request into a column.
      */
-    public readonly includeHeader!: pulumi.Output<outputs.SourceWebhookIncludeHeader[] | undefined>;
+    declare public readonly includeHeader: pulumi.Output<outputs.SourceWebhookIncludeHeader[] | undefined>;
     /**
      * Include headers in the webhook.
      */
-    public readonly includeHeaders!: pulumi.Output<outputs.SourceWebhookIncludeHeaders | undefined>;
+    declare public readonly includeHeaders: pulumi.Output<outputs.SourceWebhookIncludeHeaders | undefined>;
     /**
      * The identifier for the source.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The fully qualified name of the source.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
     /**
      * The size of the cluster maintaining this source.
      */
-    public /*out*/ readonly size!: pulumi.Output<string>;
-    public readonly sourceWebhookId!: pulumi.Output<string>;
+    declare public /*out*/ readonly size: pulumi.Output<string>;
+    declare public readonly sourceWebhookId: pulumi.Output<string>;
     /**
      * The webhook URL that can be used to send data to this source.
      */
-    public /*out*/ readonly url!: pulumi.Output<string>;
+    declare public /*out*/ readonly url: pulumi.Output<string>;
 
     /**
      * Create a SourceWebhook resource with the given unique name, arguments, and options.
@@ -110,40 +109,40 @@ export class SourceWebhook extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SourceWebhookState | undefined;
-            resourceInputs["bodyFormat"] = state ? state.bodyFormat : undefined;
-            resourceInputs["checkExpression"] = state ? state.checkExpression : undefined;
-            resourceInputs["checkOptions"] = state ? state.checkOptions : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["includeHeader"] = state ? state.includeHeader : undefined;
-            resourceInputs["includeHeaders"] = state ? state.includeHeaders : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["sourceWebhookId"] = state ? state.sourceWebhookId : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
+            resourceInputs["bodyFormat"] = state?.bodyFormat;
+            resourceInputs["checkExpression"] = state?.checkExpression;
+            resourceInputs["checkOptions"] = state?.checkOptions;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["includeHeader"] = state?.includeHeader;
+            resourceInputs["includeHeaders"] = state?.includeHeaders;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["sourceWebhookId"] = state?.sourceWebhookId;
+            resourceInputs["url"] = state?.url;
         } else {
             const args = argsOrState as SourceWebhookArgs | undefined;
-            if ((!args || args.bodyFormat === undefined) && !opts.urn) {
+            if (args?.bodyFormat === undefined && !opts.urn) {
                 throw new Error("Missing required property 'bodyFormat'");
             }
-            resourceInputs["bodyFormat"] = args ? args.bodyFormat : undefined;
-            resourceInputs["checkExpression"] = args ? args.checkExpression : undefined;
-            resourceInputs["checkOptions"] = args ? args.checkOptions : undefined;
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["includeHeader"] = args ? args.includeHeader : undefined;
-            resourceInputs["includeHeaders"] = args ? args.includeHeaders : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sourceWebhookId"] = args ? args.sourceWebhookId : undefined;
+            resourceInputs["bodyFormat"] = args?.bodyFormat;
+            resourceInputs["checkExpression"] = args?.checkExpression;
+            resourceInputs["checkOptions"] = args?.checkOptions;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["includeHeader"] = args?.includeHeader;
+            resourceInputs["includeHeaders"] = args?.includeHeaders;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sourceWebhookId"] = args?.sourceWebhookId;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
             resourceInputs["url"] = undefined /*out*/;
@@ -178,8 +177,7 @@ export interface SourceWebhookState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -207,7 +205,7 @@ export interface SourceWebhookState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -246,8 +244,7 @@ export interface SourceWebhookArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -271,7 +268,7 @@ export interface SourceWebhookArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sourceWebhookId?: pulumi.Input<string>;

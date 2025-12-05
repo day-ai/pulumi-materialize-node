@@ -32,19 +32,19 @@ export class GrantSystemPrivilege extends pulumi.CustomResource {
         return obj['__pulumiType'] === GrantSystemPrivilege.__pulumiType;
     }
 
-    public readonly grantSystemPrivilegeId!: pulumi.Output<string>;
+    declare public readonly grantSystemPrivilegeId: pulumi.Output<string>;
     /**
      * The system privilege to grant.
      */
-    public readonly privilege!: pulumi.Output<string>;
+    declare public readonly privilege: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The name of the role to grant privilege to.
      */
-    public readonly roleName!: pulumi.Output<string>;
+    declare public readonly roleName: pulumi.Output<string>;
 
     /**
      * Create a GrantSystemPrivilege resource with the given unique name, arguments, and options.
@@ -59,22 +59,22 @@ export class GrantSystemPrivilege extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as GrantSystemPrivilegeState | undefined;
-            resourceInputs["grantSystemPrivilegeId"] = state ? state.grantSystemPrivilegeId : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
+            resourceInputs["grantSystemPrivilegeId"] = state?.grantSystemPrivilegeId;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
         } else {
             const args = argsOrState as GrantSystemPrivilegeArgs | undefined;
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            resourceInputs["grantSystemPrivilegeId"] = args ? args.grantSystemPrivilegeId : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
+            resourceInputs["grantSystemPrivilegeId"] = args?.grantSystemPrivilegeId;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(GrantSystemPrivilege.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

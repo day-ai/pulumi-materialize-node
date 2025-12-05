@@ -16,7 +16,7 @@ class ConnectionPostgres extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new ConnectionPostgres(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new ConnectionPostgres(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of ConnectionPostgres.  This is designed to work even
@@ -33,57 +33,57 @@ class ConnectionPostgres extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["awsPrivatelink"] = state ? state.awsPrivatelink : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["connectionPostgresId"] = state ? state.connectionPostgresId : undefined;
-            resourceInputs["database"] = state ? state.database : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["sshTunnel"] = state ? state.sshTunnel : undefined;
-            resourceInputs["sslCertificate"] = state ? state.sslCertificate : undefined;
-            resourceInputs["sslCertificateAuthority"] = state ? state.sslCertificateAuthority : undefined;
-            resourceInputs["sslKey"] = state ? state.sslKey : undefined;
-            resourceInputs["sslMode"] = state ? state.sslMode : undefined;
-            resourceInputs["user"] = state ? state.user : undefined;
-            resourceInputs["validate"] = state ? state.validate : undefined;
+            resourceInputs["awsPrivatelink"] = state?.awsPrivatelink;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["connectionPostgresId"] = state?.connectionPostgresId;
+            resourceInputs["database"] = state?.database;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["sshTunnel"] = state?.sshTunnel;
+            resourceInputs["sslCertificate"] = state?.sslCertificate;
+            resourceInputs["sslCertificateAuthority"] = state?.sslCertificateAuthority;
+            resourceInputs["sslKey"] = state?.sslKey;
+            resourceInputs["sslMode"] = state?.sslMode;
+            resourceInputs["user"] = state?.user;
+            resourceInputs["validate"] = state?.validate;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.database === undefined) && !opts.urn) {
+            if (args?.database === undefined && !opts.urn) {
                 throw new Error("Missing required property 'database'");
             }
-            if ((!args || args.host === undefined) && !opts.urn) {
+            if (args?.host === undefined && !opts.urn) {
                 throw new Error("Missing required property 'host'");
             }
-            if ((!args || args.user === undefined) && !opts.urn) {
+            if (args?.user === undefined && !opts.urn) {
                 throw new Error("Missing required property 'user'");
             }
-            resourceInputs["awsPrivatelink"] = args ? args.awsPrivatelink : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["connectionPostgresId"] = args ? args.connectionPostgresId : undefined;
-            resourceInputs["database"] = args ? args.database : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sshTunnel"] = args ? args.sshTunnel : undefined;
-            resourceInputs["sslCertificate"] = args ? args.sslCertificate : undefined;
-            resourceInputs["sslCertificateAuthority"] = args ? args.sslCertificateAuthority : undefined;
-            resourceInputs["sslKey"] = args ? args.sslKey : undefined;
-            resourceInputs["sslMode"] = args ? args.sslMode : undefined;
-            resourceInputs["user"] = args ? args.user : undefined;
-            resourceInputs["validate"] = args ? args.validate : undefined;
+            resourceInputs["awsPrivatelink"] = args?.awsPrivatelink;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["connectionPostgresId"] = args?.connectionPostgresId;
+            resourceInputs["database"] = args?.database;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["password"] = args?.password;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sshTunnel"] = args?.sshTunnel;
+            resourceInputs["sslCertificate"] = args?.sslCertificate;
+            resourceInputs["sslCertificateAuthority"] = args?.sslCertificateAuthority;
+            resourceInputs["sslKey"] = args?.sslKey;
+            resourceInputs["sslMode"] = args?.sslMode;
+            resourceInputs["user"] = args?.user;
+            resourceInputs["validate"] = args?.validate;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

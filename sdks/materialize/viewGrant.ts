@@ -35,28 +35,28 @@ export class ViewGrant extends pulumi.CustomResource {
     /**
      * The database that the view belongs to.
      */
-    public readonly databaseName!: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string>;
     /**
      * The privilege to grant to the object.
      */
-    public readonly privilege!: pulumi.Output<string>;
+    declare public readonly privilege: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The name of the role to grant privilege to.
      */
-    public readonly roleName!: pulumi.Output<string>;
+    declare public readonly roleName: pulumi.Output<string>;
     /**
      * The schema that the view being to.
      */
-    public readonly schemaName!: pulumi.Output<string>;
-    public readonly viewGrantId!: pulumi.Output<string>;
+    declare public readonly schemaName: pulumi.Output<string>;
+    declare public readonly viewGrantId: pulumi.Output<string>;
     /**
      * The view that is being granted on.
      */
-    public readonly viewName!: pulumi.Output<string>;
+    declare public readonly viewName: pulumi.Output<string>;
 
     /**
      * Create a ViewGrant resource with the given unique name, arguments, and options.
@@ -71,37 +71,37 @@ export class ViewGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ViewGrantState | undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["viewGrantId"] = state ? state.viewGrantId : undefined;
-            resourceInputs["viewName"] = state ? state.viewName : undefined;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["viewGrantId"] = state?.viewGrantId;
+            resourceInputs["viewName"] = state?.viewName;
         } else {
             const args = argsOrState as ViewGrantArgs | undefined;
-            if ((!args || args.databaseName === undefined) && !opts.urn) {
+            if (args?.databaseName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            if ((!args || args.schemaName === undefined) && !opts.urn) {
+            if (args?.schemaName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemaName'");
             }
-            if ((!args || args.viewName === undefined) && !opts.urn) {
+            if (args?.viewName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'viewName'");
             }
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["viewGrantId"] = args ? args.viewGrantId : undefined;
-            resourceInputs["viewName"] = args ? args.viewName : undefined;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["viewGrantId"] = args?.viewGrantId;
+            resourceInputs["viewName"] = args?.viewName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ViewGrant.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

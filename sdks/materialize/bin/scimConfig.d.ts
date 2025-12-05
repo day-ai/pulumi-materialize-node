@@ -29,12 +29,11 @@ export declare class ScimConfig extends pulumi.CustomResource {
     readonly provisioningUrl: pulumi.Output<string>;
     readonly scimConfigId: pulumi.Output<string>;
     /**
-     * The source of the SCIM 2.0 configuration. Supported values are `okta`, `azure-ad`, and `other`.
+     * The source of the SCIM 2.0 configuration. Supported values are <span pulumi-lang-nodejs="`okta`" pulumi-lang-dotnet="`Okta`" pulumi-lang-go="`okta`" pulumi-lang-python="`okta`" pulumi-lang-yaml="`okta`" pulumi-lang-java="`okta`">`okta`</span>, `azure-ad`, and <span pulumi-lang-nodejs="`other`" pulumi-lang-dotnet="`Other`" pulumi-lang-go="`other`" pulumi-lang-python="`other`" pulumi-lang-yaml="`other`" pulumi-lang-java="`other`">`other`</span>.
      */
     readonly source: pulumi.Output<string>;
     /**
-     * Indicates whether automatic synchronization of data with the IdP is enabled, ensuring that changes in details or status
-     * in the IdP are updated accordingly.
+     * Indicates whether automatic synchronization of data with the IdP is enabled, ensuring that changes in details or status in the IdP are updated accordingly.
      */
     readonly syncToUserManagement: pulumi.Output<boolean>;
     readonly tenantId: pulumi.Output<string>;
@@ -69,12 +68,11 @@ export interface ScimConfigState {
     provisioningUrl?: pulumi.Input<string>;
     scimConfigId?: pulumi.Input<string>;
     /**
-     * The source of the SCIM 2.0 configuration. Supported values are `okta`, `azure-ad`, and `other`.
+     * The source of the SCIM 2.0 configuration. Supported values are <span pulumi-lang-nodejs="`okta`" pulumi-lang-dotnet="`Okta`" pulumi-lang-go="`okta`" pulumi-lang-python="`okta`" pulumi-lang-yaml="`okta`" pulumi-lang-java="`okta`">`okta`</span>, `azure-ad`, and <span pulumi-lang-nodejs="`other`" pulumi-lang-dotnet="`Other`" pulumi-lang-go="`other`" pulumi-lang-python="`other`" pulumi-lang-yaml="`other`" pulumi-lang-java="`other`">`other`</span>.
      */
     source?: pulumi.Input<string>;
     /**
-     * Indicates whether automatic synchronization of data with the IdP is enabled, ensuring that changes in details or status
-     * in the IdP are updated accordingly.
+     * Indicates whether automatic synchronization of data with the IdP is enabled, ensuring that changes in details or status in the IdP are updated accordingly.
      */
     syncToUserManagement?: pulumi.Input<boolean>;
     tenantId?: pulumi.Input<string>;
@@ -93,7 +91,7 @@ export interface ScimConfigArgs {
     connectionName: pulumi.Input<string>;
     scimConfigId?: pulumi.Input<string>;
     /**
-     * The source of the SCIM 2.0 configuration. Supported values are `okta`, `azure-ad`, and `other`.
+     * The source of the SCIM 2.0 configuration. Supported values are <span pulumi-lang-nodejs="`okta`" pulumi-lang-dotnet="`Okta`" pulumi-lang-go="`okta`" pulumi-lang-python="`okta`" pulumi-lang-yaml="`okta`" pulumi-lang-java="`okta`">`okta`</span>, `azure-ad`, and <span pulumi-lang-nodejs="`other`" pulumi-lang-dotnet="`Other`" pulumi-lang-go="`other`" pulumi-lang-python="`other`" pulumi-lang-yaml="`other`" pulumi-lang-java="`other`">`other`</span>.
      */
     source: pulumi.Input<string>;
 }

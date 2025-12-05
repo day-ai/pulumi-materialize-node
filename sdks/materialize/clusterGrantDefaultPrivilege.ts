@@ -32,24 +32,23 @@ export class ClusterGrantDefaultPrivilege extends pulumi.CustomResource {
         return obj['__pulumiType'] === ClusterGrantDefaultPrivilege.__pulumiType;
     }
 
-    public readonly clusterGrantDefaultPrivilegeId!: pulumi.Output<string>;
+    declare public readonly clusterGrantDefaultPrivilegeId: pulumi.Output<string>;
     /**
      * The role name that will gain the default privilege. Use the `PUBLIC` pseudo-role to grant privileges to all roles.
      */
-    public readonly granteeName!: pulumi.Output<string>;
+    declare public readonly granteeName: pulumi.Output<string>;
     /**
      * The privilege to grant to the object.
      */
-    public readonly privilege!: pulumi.Output<string>;
+    declare public readonly privilege: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
-    public readonly targetRoleName!: pulumi.Output<string>;
+    declare public readonly targetRoleName: pulumi.Output<string>;
 
     /**
      * Create a ClusterGrantDefaultPrivilege resource with the given unique name, arguments, and options.
@@ -64,27 +63,27 @@ export class ClusterGrantDefaultPrivilege extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterGrantDefaultPrivilegeState | undefined;
-            resourceInputs["clusterGrantDefaultPrivilegeId"] = state ? state.clusterGrantDefaultPrivilegeId : undefined;
-            resourceInputs["granteeName"] = state ? state.granteeName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["targetRoleName"] = state ? state.targetRoleName : undefined;
+            resourceInputs["clusterGrantDefaultPrivilegeId"] = state?.clusterGrantDefaultPrivilegeId;
+            resourceInputs["granteeName"] = state?.granteeName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["targetRoleName"] = state?.targetRoleName;
         } else {
             const args = argsOrState as ClusterGrantDefaultPrivilegeArgs | undefined;
-            if ((!args || args.granteeName === undefined) && !opts.urn) {
+            if (args?.granteeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'granteeName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.targetRoleName === undefined) && !opts.urn) {
+            if (args?.targetRoleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetRoleName'");
             }
-            resourceInputs["clusterGrantDefaultPrivilegeId"] = args ? args.clusterGrantDefaultPrivilegeId : undefined;
-            resourceInputs["granteeName"] = args ? args.granteeName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["targetRoleName"] = args ? args.targetRoleName : undefined;
+            resourceInputs["clusterGrantDefaultPrivilegeId"] = args?.clusterGrantDefaultPrivilegeId;
+            resourceInputs["granteeName"] = args?.granteeName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["targetRoleName"] = args?.targetRoleName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ClusterGrantDefaultPrivilege.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
@@ -109,8 +108,7 @@ export interface ClusterGrantDefaultPrivilegeState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
     targetRoleName?: pulumi.Input<string>;
 }
@@ -133,8 +131,7 @@ export interface ClusterGrantDefaultPrivilegeArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
     targetRoleName: pulumi.Input<string>;
 }

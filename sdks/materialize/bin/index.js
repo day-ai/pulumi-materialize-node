@@ -16,9 +16,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getSink = exports.getSecretOutput = exports.getSecret = exports.getScimGroupsOutput = exports.getScimGroups = exports.getScimConfigsOutput = exports.getScimConfigs = exports.getSchemaOutput = exports.getSchema = exports.getRoleOutput = exports.getRole = exports.getRegionOutput = exports.getRegion = exports.getNetworkPolicyOutput = exports.getNetworkPolicy = exports.getMaterializedViewOutput = exports.getMaterializedView = exports.getIndexOutput = exports.getIndex = exports.getEgressIpsOutput = exports.getEgressIps = exports.getDatabaseOutput = exports.getDatabase = exports.getCurrentDatabaseOutput = exports.getCurrentDatabase = exports.getCurrentClusterOutput = exports.getCurrentCluster = exports.getConnectionOutput = exports.getConnection = exports.getClusterReplicaOutput = exports.getClusterReplica = exports.getClusterOutput = exports.getCluster = exports.DatabaseGrantDefaultPrivilege = exports.DatabaseGrant = exports.Database = exports.ConnectionSshTunnel = exports.ConnectionPostgres = exports.ConnectionMysql = exports.ConnectionKafka = exports.ConnectionGrantDefaultPrivilege = exports.ConnectionGrant = exports.ConnectionConfluentSchemaRegistry = exports.ConnectionAwsPrivatelink = exports.ConnectionAws = exports.ClusterReplica = exports.ClusterGrantDefaultPrivilege = exports.ClusterGrant = exports.Cluster = exports.AppPassword = void 0;
-exports.Type = exports.TableGrantDefaultPrivilege = exports.TableGrant = exports.Table = exports.SystemParameter = exports.SsoGroupMapping = exports.SsoDomain = exports.SsoDefaultRoles = exports.SsoConfig = exports.SourceWebhook = exports.SourcePostgres = exports.SourceMysql = exports.SourceLoadGenerator = exports.SourceKafka = exports.SourceGrant = exports.SinkKafka = exports.SecretGrantDefaultPrivilege = exports.SecretGrant = exports.Secret = exports.ScimGroupUsers = exports.ScimGroupRoles = exports.ScimGroup = exports.ScimConfig = exports.SchemaGrantDefaultPrivilege = exports.SchemaGrant = exports.Schema = exports.RoleParameter = exports.RoleGrant = exports.Role = exports.Region = exports.NetworkPolicy = exports.MaterializedViewGrant = exports.MaterializedView = exports.Index = exports.GrantSystemPrivilege = exports.getViewOutput = exports.getView = exports.getUserOutput = exports.getUser = exports.getTypeOutput = exports.getType = exports.getTableOutput = exports.getTable = exports.getSystemParameterOutput = exports.getSystemParameter = exports.getSsoConfigOutput = exports.getSsoConfig = exports.getSourceOutput = exports.getSource = exports.getSinkOutput = void 0;
-exports.types = exports.config = exports.ViewGrant = exports.View = exports.User = exports.TypeGrantDefaultPrivilege = exports.TypeGrant = void 0;
+exports.getSecretOutput = exports.getSecret = exports.getScimGroupsOutput = exports.getScimGroups = exports.getScimConfigsOutput = exports.getScimConfigs = exports.getSchemaOutput = exports.getSchema = exports.getRoleOutput = exports.getRole = exports.getRegionOutput = exports.getRegion = exports.getNetworkPolicyOutput = exports.getNetworkPolicy = exports.getMaterializedViewOutput = exports.getMaterializedView = exports.getIndexOutput = exports.getIndex = exports.getEgressIpsOutput = exports.getEgressIps = exports.getDatabaseOutput = exports.getDatabase = exports.getCurrentDatabaseOutput = exports.getCurrentDatabase = exports.getCurrentClusterOutput = exports.getCurrentCluster = exports.getConnectionOutput = exports.getConnection = exports.getClusterReplicaOutput = exports.getClusterReplica = exports.getClusterOutput = exports.getCluster = exports.DatabaseGrantDefaultPrivilege = exports.DatabaseGrant = exports.Database = exports.ConnectionSshTunnel = exports.ConnectionSqlserver = exports.ConnectionPostgres = exports.ConnectionMysql = exports.ConnectionKafka = exports.ConnectionGrantDefaultPrivilege = exports.ConnectionGrant = exports.ConnectionConfluentSchemaRegistry = exports.ConnectionAwsPrivatelink = exports.ConnectionAws = exports.ClusterReplica = exports.ClusterGrantDefaultPrivilege = exports.ClusterGrant = exports.Cluster = exports.AppPassword = void 0;
+exports.TableGrant = exports.Table = exports.SystemParameter = exports.SsoGroupMapping = exports.SsoDomain = exports.SsoDefaultRoles = exports.SsoConfig = exports.SourceWebhook = exports.SourceSqlserver = exports.SourcePostgres = exports.SourceMysql = exports.SourceLoadGenerator = exports.SourceKafka = exports.SourceGrant = exports.SinkKafka = exports.SecretGrantDefaultPrivilege = exports.SecretGrant = exports.Secret = exports.ScimGroupUsers = exports.ScimGroupRoles = exports.ScimGroup = exports.ScimConfig = exports.SchemaGrantDefaultPrivilege = exports.SchemaGrant = exports.Schema = exports.RoleParameter = exports.RoleGrant = exports.Role = exports.Region = exports.NetworkPolicy = exports.MaterializedViewGrant = exports.MaterializedView = exports.Index = exports.GrantSystemPrivilege = exports.getViewOutput = exports.getView = exports.getUserOutput = exports.getUser = exports.getTypeOutput = exports.getType = exports.getTableOutput = exports.getTable = exports.getSystemParameterOutput = exports.getSystemParameter = exports.getSsoConfigOutput = exports.getSsoConfig = exports.getSourceOutput = exports.getSource = exports.getSinkOutput = exports.getSink = void 0;
+exports.types = exports.config = exports.ViewGrant = exports.View = exports.User = exports.TypeGrantDefaultPrivilege = exports.TypeGrant = exports.Type = exports.TableGrantDefaultPrivilege = void 0;
 const pulumi = require("@pulumi/pulumi");
 const utilities = require("./utilities");
 exports.AppPassword = null;
@@ -47,6 +47,8 @@ exports.ConnectionMysql = null;
 utilities.lazyLoad(exports, ["ConnectionMysql"], () => require("./connectionMysql"));
 exports.ConnectionPostgres = null;
 utilities.lazyLoad(exports, ["ConnectionPostgres"], () => require("./connectionPostgres"));
+exports.ConnectionSqlserver = null;
+utilities.lazyLoad(exports, ["ConnectionSqlserver"], () => require("./connectionSqlserver"));
 exports.ConnectionSshTunnel = null;
 utilities.lazyLoad(exports, ["ConnectionSshTunnel"], () => require("./connectionSshTunnel"));
 exports.Database = null;
@@ -179,6 +181,8 @@ exports.SourceMysql = null;
 utilities.lazyLoad(exports, ["SourceMysql"], () => require("./sourceMysql"));
 exports.SourcePostgres = null;
 utilities.lazyLoad(exports, ["SourcePostgres"], () => require("./sourcePostgres"));
+exports.SourceSqlserver = null;
+utilities.lazyLoad(exports, ["SourceSqlserver"], () => require("./sourceSqlserver"));
 exports.SourceWebhook = null;
 utilities.lazyLoad(exports, ["SourceWebhook"], () => require("./sourceWebhook"));
 exports.SsoConfig = null;
@@ -244,6 +248,8 @@ const _module = {
                 return new exports.ConnectionMysql(name, undefined, { urn });
             case "materialize:index/connectionPostgres:ConnectionPostgres":
                 return new exports.ConnectionPostgres(name, undefined, { urn });
+            case "materialize:index/connectionSqlserver:ConnectionSqlserver":
+                return new exports.ConnectionSqlserver(name, undefined, { urn });
             case "materialize:index/connectionSshTunnel:ConnectionSshTunnel":
                 return new exports.ConnectionSshTunnel(name, undefined, { urn });
             case "materialize:index/database:Database":
@@ -302,6 +308,8 @@ const _module = {
                 return new exports.SourceMysql(name, undefined, { urn });
             case "materialize:index/sourcePostgres:SourcePostgres":
                 return new exports.SourcePostgres(name, undefined, { urn });
+            case "materialize:index/sourceSqlserver:SourceSqlserver":
+                return new exports.SourceSqlserver(name, undefined, { urn });
             case "materialize:index/sourceWebhook:SourceWebhook":
                 return new exports.SourceWebhook(name, undefined, { urn });
             case "materialize:index/ssoConfig:SsoConfig":
@@ -350,6 +358,7 @@ pulumi.runtime.registerResourceModule("materialize", "index/connectionGrantDefau
 pulumi.runtime.registerResourceModule("materialize", "index/connectionKafka", _module);
 pulumi.runtime.registerResourceModule("materialize", "index/connectionMysql", _module);
 pulumi.runtime.registerResourceModule("materialize", "index/connectionPostgres", _module);
+pulumi.runtime.registerResourceModule("materialize", "index/connectionSqlserver", _module);
 pulumi.runtime.registerResourceModule("materialize", "index/connectionSshTunnel", _module);
 pulumi.runtime.registerResourceModule("materialize", "index/database", _module);
 pulumi.runtime.registerResourceModule("materialize", "index/databaseGrant", _module);
@@ -379,6 +388,7 @@ pulumi.runtime.registerResourceModule("materialize", "index/sourceKafka", _modul
 pulumi.runtime.registerResourceModule("materialize", "index/sourceLoadGenerator", _module);
 pulumi.runtime.registerResourceModule("materialize", "index/sourceMysql", _module);
 pulumi.runtime.registerResourceModule("materialize", "index/sourcePostgres", _module);
+pulumi.runtime.registerResourceModule("materialize", "index/sourceSqlserver", _module);
 pulumi.runtime.registerResourceModule("materialize", "index/sourceWebhook", _module);
 pulumi.runtime.registerResourceModule("materialize", "index/ssoConfig", _module);
 pulumi.runtime.registerResourceModule("materialize", "index/ssoDefaultRoles", _module);

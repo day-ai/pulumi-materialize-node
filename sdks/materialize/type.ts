@@ -37,49 +37,48 @@ export class Type extends pulumi.CustomResource {
     /**
      * Type category.
      */
-    public /*out*/ readonly category!: pulumi.Output<string>;
+    declare public /*out*/ readonly category: pulumi.Output<string>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
      * List properties.
      */
-    public readonly listProperties!: pulumi.Output<outputs.TypeListProperties | undefined>;
+    declare public readonly listProperties: pulumi.Output<outputs.TypeListProperties | undefined>;
     /**
      * Map properties.
      */
-    public readonly mapProperties!: pulumi.Output<outputs.TypeMapProperties | undefined>;
+    declare public readonly mapProperties: pulumi.Output<outputs.TypeMapProperties | undefined>;
     /**
      * The identifier for the type.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The fully qualified name of the type.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * Row properties.
      */
-    public readonly rowProperties!: pulumi.Output<outputs.TypeRowProperty[] | undefined>;
+    declare public readonly rowProperties: pulumi.Output<outputs.TypeRowProperty[] | undefined>;
     /**
-     * The identifier for the type schema in Materialize. Defaults to `public`.
+     * The identifier for the type schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
-    public readonly typeId!: pulumi.Output<string>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
+    declare public readonly typeId: pulumi.Output<string>;
 
     /**
      * Create a Type resource with the given unique name, arguments, and options.
@@ -94,30 +93,30 @@ export class Type extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TypeState | undefined;
-            resourceInputs["category"] = state ? state.category : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["listProperties"] = state ? state.listProperties : undefined;
-            resourceInputs["mapProperties"] = state ? state.mapProperties : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["rowProperties"] = state ? state.rowProperties : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["typeId"] = state ? state.typeId : undefined;
+            resourceInputs["category"] = state?.category;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["listProperties"] = state?.listProperties;
+            resourceInputs["mapProperties"] = state?.mapProperties;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["rowProperties"] = state?.rowProperties;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["typeId"] = state?.typeId;
         } else {
             const args = argsOrState as TypeArgs | undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["listProperties"] = args ? args.listProperties : undefined;
-            resourceInputs["mapProperties"] = args ? args.mapProperties : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["rowProperties"] = args ? args.rowProperties : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["typeId"] = args ? args.typeId : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["listProperties"] = args?.listProperties;
+            resourceInputs["mapProperties"] = args?.mapProperties;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["rowProperties"] = args?.rowProperties;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["typeId"] = args?.typeId;
             resourceInputs["category"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
@@ -139,8 +138,7 @@ export interface TypeState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -172,7 +170,7 @@ export interface TypeState {
      */
     rowProperties?: pulumi.Input<pulumi.Input<inputs.TypeRowProperty>[]>;
     /**
-     * The identifier for the type schema in Materialize. Defaults to `public`.
+     * The identifier for the type schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     typeId?: pulumi.Input<string>;
@@ -187,8 +185,7 @@ export interface TypeArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -216,7 +213,7 @@ export interface TypeArgs {
      */
     rowProperties?: pulumi.Input<pulumi.Input<inputs.TypeRowProperty>[]>;
     /**
-     * The identifier for the type schema in Materialize. Defaults to `public`.
+     * The identifier for the type schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     typeId?: pulumi.Input<string>;

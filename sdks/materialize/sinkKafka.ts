@@ -37,98 +37,96 @@ export class SinkKafka extends pulumi.CustomResource {
     /**
      * The cluster to maintain this sink.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
      * The type of compression to apply to messages before they are sent to Kafka.
      */
-    public readonly compressionType!: pulumi.Output<string | undefined>;
+    declare public readonly compressionType: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
      * How to interpret records (e.g. Debezium, Upsert).
      */
-    public readonly envelope!: pulumi.Output<outputs.SinkKafkaEnvelope | undefined>;
+    declare public readonly envelope: pulumi.Output<outputs.SinkKafkaEnvelope | undefined>;
     /**
      * How to decode raw bytes from different formats into data structures it can understand at runtime.
      */
-    public readonly format!: pulumi.Output<outputs.SinkKafkaFormat | undefined>;
+    declare public readonly format: pulumi.Output<outputs.SinkKafkaFormat | undefined>;
     /**
      * The name of the source, table or materialized view you want to send to the sink.
      */
-    public readonly from!: pulumi.Output<outputs.SinkKafkaFrom>;
+    declare public readonly from: pulumi.Output<outputs.SinkKafkaFrom>;
     /**
-     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of
-     * type map[text => text] or map[text => bytea].
+     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of type map[text => text] or map[text => bytea].
      */
-    public readonly headers!: pulumi.Output<string | undefined>;
+    declare public readonly headers: pulumi.Output<string | undefined>;
     /**
      * The name of the Kafka connection to use in the sink.
      */
-    public readonly kafkaConnection!: pulumi.Output<outputs.SinkKafkaKafkaConnection>;
+    declare public readonly kafkaConnection: pulumi.Output<outputs.SinkKafkaKafkaConnection>;
     /**
      * Disable Materialize's validation of the key's uniqueness.
      */
-    public readonly keyNotEnforced!: pulumi.Output<boolean | undefined>;
+    declare public readonly keyNotEnforced: pulumi.Output<boolean | undefined>;
     /**
      * An optional list of columns to use for the Kafka key. If unspecified, the Kafka key is left unset.
      */
-    public readonly keys!: pulumi.Output<string[] | undefined>;
+    declare public readonly keys: pulumi.Output<string[] | undefined>;
     /**
      * The identifier for the sink.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * A SQL expression used to partition the data in the Kafka sink. Can only be used with `ENVELOPE UPSERT`.
      */
-    public readonly partitionBy!: pulumi.Output<string | undefined>;
+    declare public readonly partitionBy: pulumi.Output<string | undefined>;
     /**
      * The fully qualified name of the sink.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the sink schema in Materialize. Defaults to `public`.
+     * The identifier for the sink schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
-    public readonly sinkKafkaId!: pulumi.Output<string>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
+    declare public readonly sinkKafkaId: pulumi.Output<string>;
     /**
      * The size of the cluster maintaining this sink.
      */
-    public /*out*/ readonly size!: pulumi.Output<string>;
+    declare public /*out*/ readonly size: pulumi.Output<string>;
     /**
      * Whether to emit the consolidated results of the query before the sink was created at the start of the sink.
      */
-    public readonly snapshot!: pulumi.Output<boolean | undefined>;
+    declare public readonly snapshot: pulumi.Output<boolean | undefined>;
     /**
      * The Kafka topic you want to subscribe to.
      */
-    public readonly topic!: pulumi.Output<string>;
+    declare public readonly topic: pulumi.Output<string>;
     /**
      * Any topic-level configs to use when creating the Kafka topic (if the Kafka topic does not already exist).
      */
-    public readonly topicConfig!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly topicConfig: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The partition count to use when creating the Kafka topic (if the Kafka topic does not already exist).
      */
-    public readonly topicPartitionCount!: pulumi.Output<number | undefined>;
+    declare public readonly topicPartitionCount: pulumi.Output<number | undefined>;
     /**
      * The replication factor to use when creating the Kafka topic (if the Kafka topic does not already exist).
      */
-    public readonly topicReplicationFactor!: pulumi.Output<number | undefined>;
+    declare public readonly topicReplicationFactor: pulumi.Output<number | undefined>;
 
     /**
      * Create a SinkKafka resource with the given unique name, arguments, and options.
@@ -143,63 +141,63 @@ export class SinkKafka extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SinkKafkaState | undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["compressionType"] = state ? state.compressionType : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["envelope"] = state ? state.envelope : undefined;
-            resourceInputs["format"] = state ? state.format : undefined;
-            resourceInputs["from"] = state ? state.from : undefined;
-            resourceInputs["headers"] = state ? state.headers : undefined;
-            resourceInputs["kafkaConnection"] = state ? state.kafkaConnection : undefined;
-            resourceInputs["keyNotEnforced"] = state ? state.keyNotEnforced : undefined;
-            resourceInputs["keys"] = state ? state.keys : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["partitionBy"] = state ? state.partitionBy : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["sinkKafkaId"] = state ? state.sinkKafkaId : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["snapshot"] = state ? state.snapshot : undefined;
-            resourceInputs["topic"] = state ? state.topic : undefined;
-            resourceInputs["topicConfig"] = state ? state.topicConfig : undefined;
-            resourceInputs["topicPartitionCount"] = state ? state.topicPartitionCount : undefined;
-            resourceInputs["topicReplicationFactor"] = state ? state.topicReplicationFactor : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["compressionType"] = state?.compressionType;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["envelope"] = state?.envelope;
+            resourceInputs["format"] = state?.format;
+            resourceInputs["from"] = state?.from;
+            resourceInputs["headers"] = state?.headers;
+            resourceInputs["kafkaConnection"] = state?.kafkaConnection;
+            resourceInputs["keyNotEnforced"] = state?.keyNotEnforced;
+            resourceInputs["keys"] = state?.keys;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["partitionBy"] = state?.partitionBy;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["sinkKafkaId"] = state?.sinkKafkaId;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["snapshot"] = state?.snapshot;
+            resourceInputs["topic"] = state?.topic;
+            resourceInputs["topicConfig"] = state?.topicConfig;
+            resourceInputs["topicPartitionCount"] = state?.topicPartitionCount;
+            resourceInputs["topicReplicationFactor"] = state?.topicReplicationFactor;
         } else {
             const args = argsOrState as SinkKafkaArgs | undefined;
-            if ((!args || args.from === undefined) && !opts.urn) {
+            if (args?.from === undefined && !opts.urn) {
                 throw new Error("Missing required property 'from'");
             }
-            if ((!args || args.kafkaConnection === undefined) && !opts.urn) {
+            if (args?.kafkaConnection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kafkaConnection'");
             }
-            if ((!args || args.topic === undefined) && !opts.urn) {
+            if (args?.topic === undefined && !opts.urn) {
                 throw new Error("Missing required property 'topic'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["compressionType"] = args ? args.compressionType : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["envelope"] = args ? args.envelope : undefined;
-            resourceInputs["format"] = args ? args.format : undefined;
-            resourceInputs["from"] = args ? args.from : undefined;
-            resourceInputs["headers"] = args ? args.headers : undefined;
-            resourceInputs["kafkaConnection"] = args ? args.kafkaConnection : undefined;
-            resourceInputs["keyNotEnforced"] = args ? args.keyNotEnforced : undefined;
-            resourceInputs["keys"] = args ? args.keys : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["partitionBy"] = args ? args.partitionBy : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sinkKafkaId"] = args ? args.sinkKafkaId : undefined;
-            resourceInputs["snapshot"] = args ? args.snapshot : undefined;
-            resourceInputs["topic"] = args ? args.topic : undefined;
-            resourceInputs["topicConfig"] = args ? args.topicConfig : undefined;
-            resourceInputs["topicPartitionCount"] = args ? args.topicPartitionCount : undefined;
-            resourceInputs["topicReplicationFactor"] = args ? args.topicReplicationFactor : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["compressionType"] = args?.compressionType;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["envelope"] = args?.envelope;
+            resourceInputs["format"] = args?.format;
+            resourceInputs["from"] = args?.from;
+            resourceInputs["headers"] = args?.headers;
+            resourceInputs["kafkaConnection"] = args?.kafkaConnection;
+            resourceInputs["keyNotEnforced"] = args?.keyNotEnforced;
+            resourceInputs["keys"] = args?.keys;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["partitionBy"] = args?.partitionBy;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sinkKafkaId"] = args?.sinkKafkaId;
+            resourceInputs["snapshot"] = args?.snapshot;
+            resourceInputs["topic"] = args?.topic;
+            resourceInputs["topicConfig"] = args?.topicConfig;
+            resourceInputs["topicPartitionCount"] = args?.topicPartitionCount;
+            resourceInputs["topicReplicationFactor"] = args?.topicReplicationFactor;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
         }
@@ -225,8 +223,7 @@ export interface SinkKafkaState {
      */
     compressionType?: pulumi.Input<string>;
     /**
-     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -242,8 +239,7 @@ export interface SinkKafkaState {
      */
     from?: pulumi.Input<inputs.SinkKafkaFrom>;
     /**
-     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of
-     * type map[text => text] or map[text => bytea].
+     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of type map[text => text] or map[text => bytea].
      */
     headers?: pulumi.Input<string>;
     /**
@@ -279,7 +275,7 @@ export interface SinkKafkaState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the sink schema in Materialize. Defaults to `public`.
+     * The identifier for the sink schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sinkKafkaId?: pulumi.Input<string>;
@@ -326,8 +322,7 @@ export interface SinkKafkaArgs {
      */
     compressionType?: pulumi.Input<string>;
     /**
-     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -343,8 +338,7 @@ export interface SinkKafkaArgs {
      */
     from: pulumi.Input<inputs.SinkKafkaFrom>;
     /**
-     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of
-     * type map[text => text] or map[text => bytea].
+     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of type map[text => text] or map[text => bytea].
      */
     headers?: pulumi.Input<string>;
     /**
@@ -376,7 +370,7 @@ export interface SinkKafkaArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the sink schema in Materialize. Defaults to `public`.
+     * The identifier for the sink schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sinkKafkaId?: pulumi.Input<string>;

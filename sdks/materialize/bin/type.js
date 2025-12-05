@@ -16,7 +16,7 @@ class Type extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new Type(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new Type(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of Type.  This is designed to work even
@@ -33,31 +33,31 @@ class Type extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["category"] = state ? state.category : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["listProperties"] = state ? state.listProperties : undefined;
-            resourceInputs["mapProperties"] = state ? state.mapProperties : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["rowProperties"] = state ? state.rowProperties : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["typeId"] = state ? state.typeId : undefined;
+            resourceInputs["category"] = state?.category;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["listProperties"] = state?.listProperties;
+            resourceInputs["mapProperties"] = state?.mapProperties;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["rowProperties"] = state?.rowProperties;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["typeId"] = state?.typeId;
         }
         else {
             const args = argsOrState;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["listProperties"] = args ? args.listProperties : undefined;
-            resourceInputs["mapProperties"] = args ? args.mapProperties : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["rowProperties"] = args ? args.rowProperties : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["typeId"] = args ? args.typeId : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["listProperties"] = args?.listProperties;
+            resourceInputs["mapProperties"] = args?.mapProperties;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["rowProperties"] = args?.rowProperties;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["typeId"] = args?.typeId;
             resourceInputs["category"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }

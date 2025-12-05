@@ -28,39 +28,39 @@ export class Provider extends pulumi.ProviderResource {
     /**
      * The base endpoint for Materialize.
      */
-    public readonly baseEndpoint!: pulumi.Output<string | undefined>;
+    declare public readonly baseEndpoint: pulumi.Output<string | undefined>;
     /**
      * The endpoint for the Materialize Cloud API.
      */
-    public readonly cloudEndpoint!: pulumi.Output<string | undefined>;
+    declare public readonly cloudEndpoint: pulumi.Output<string | undefined>;
     /**
-     * The Materialize database. Can also come from the `MZ_DATABASE` environment variable. Defaults to `materialize`.
+     * The Materialize database. Can also come from the `MZ_DATABASE` environment variable. Defaults to <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span>.
      */
-    public readonly database!: pulumi.Output<string | undefined>;
+    declare public readonly database: pulumi.Output<string | undefined>;
     /**
      * The default region if not specified in the resource
      */
-    public readonly defaultRegion!: pulumi.Output<string | undefined>;
+    declare public readonly defaultRegion: pulumi.Output<string | undefined>;
     /**
      * The endpoint for the Materialize API.
      */
-    public readonly endpoint!: pulumi.Output<string | undefined>;
+    declare public readonly endpoint: pulumi.Output<string | undefined>;
     /**
      * The Materialize host. Can also come from the `MZ_HOST` environment variable.
      */
-    public readonly host!: pulumi.Output<string | undefined>;
+    declare public readonly host: pulumi.Output<string | undefined>;
     /**
      * Materialize host. Can also come from the `MZ_PASSWORD` environment variable.
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * For testing purposes, the SSL mode to use.
      */
-    public readonly sslmode!: pulumi.Output<string | undefined>;
+    declare public readonly sslmode: pulumi.Output<string | undefined>;
     /**
      * The Materialize username. Can also come from the `MZ_USERNAME` environment variable.
      */
-    public readonly username!: pulumi.Output<string | undefined>;
+    declare public readonly username: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -73,16 +73,16 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            resourceInputs["baseEndpoint"] = args ? args.baseEndpoint : undefined;
-            resourceInputs["cloudEndpoint"] = args ? args.cloudEndpoint : undefined;
-            resourceInputs["database"] = args ? args.database : undefined;
-            resourceInputs["defaultRegion"] = args ? args.defaultRegion : undefined;
-            resourceInputs["endpoint"] = args ? args.endpoint : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
+            resourceInputs["baseEndpoint"] = args?.baseEndpoint;
+            resourceInputs["cloudEndpoint"] = args?.cloudEndpoint;
+            resourceInputs["database"] = args?.database;
+            resourceInputs["defaultRegion"] = args?.defaultRegion;
+            resourceInputs["endpoint"] = args?.endpoint;
+            resourceInputs["host"] = args?.host;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["port"] = pulumi.output(args ? args.port : undefined).apply(JSON.stringify);
-            resourceInputs["sslmode"] = args ? args.sslmode : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["port"] = pulumi.output(args?.port).apply(JSON.stringify);
+            resourceInputs["sslmode"] = args?.sslmode;
+            resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };
@@ -114,7 +114,7 @@ export interface ProviderArgs {
      */
     cloudEndpoint?: pulumi.Input<string>;
     /**
-     * The Materialize database. Can also come from the `MZ_DATABASE` environment variable. Defaults to `materialize`.
+     * The Materialize database. Can also come from the `MZ_DATABASE` environment variable. Defaults to <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span>.
      */
     database?: pulumi.Input<string>;
     /**

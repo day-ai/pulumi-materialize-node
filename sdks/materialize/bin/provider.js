@@ -33,16 +33,16 @@ class Provider extends pulumi.ProviderResource {
         let resourceInputs = {};
         opts = opts || {};
         {
-            resourceInputs["baseEndpoint"] = args ? args.baseEndpoint : undefined;
-            resourceInputs["cloudEndpoint"] = args ? args.cloudEndpoint : undefined;
-            resourceInputs["database"] = args ? args.database : undefined;
-            resourceInputs["defaultRegion"] = args ? args.defaultRegion : undefined;
-            resourceInputs["endpoint"] = args ? args.endpoint : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["password"] = (args === null || args === void 0 ? void 0 : args.password) ? pulumi.secret(args.password) : undefined;
-            resourceInputs["port"] = pulumi.output(args ? args.port : undefined).apply(JSON.stringify);
-            resourceInputs["sslmode"] = args ? args.sslmode : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["baseEndpoint"] = args?.baseEndpoint;
+            resourceInputs["cloudEndpoint"] = args?.cloudEndpoint;
+            resourceInputs["database"] = args?.database;
+            resourceInputs["defaultRegion"] = args?.defaultRegion;
+            resourceInputs["endpoint"] = args?.endpoint;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
+            resourceInputs["port"] = pulumi.output(args?.port).apply(JSON.stringify);
+            resourceInputs["sslmode"] = args?.sslmode;
+            resourceInputs["username"] = args?.username;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         const secretOpts = { additionalSecretOutputs: ["password"] };

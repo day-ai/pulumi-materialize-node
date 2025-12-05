@@ -35,20 +35,20 @@ export class RoleParameter extends pulumi.CustomResource {
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The name of the role to grant privilege to.
      */
-    public readonly roleName!: pulumi.Output<string>;
-    public readonly roleParameterId!: pulumi.Output<string>;
+    declare public readonly roleName: pulumi.Output<string>;
+    declare public readonly roleParameterId: pulumi.Output<string>;
     /**
      * The name of the session variable to modify.
      */
-    public readonly variableName!: pulumi.Output<string>;
+    declare public readonly variableName: pulumi.Output<string>;
     /**
      * The value to assign to the session variable.
      */
-    public readonly variableValue!: pulumi.Output<string>;
+    declare public readonly variableValue: pulumi.Output<string>;
 
     /**
      * Create a RoleParameter resource with the given unique name, arguments, and options.
@@ -63,27 +63,27 @@ export class RoleParameter extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RoleParameterState | undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
-            resourceInputs["roleParameterId"] = state ? state.roleParameterId : undefined;
-            resourceInputs["variableName"] = state ? state.variableName : undefined;
-            resourceInputs["variableValue"] = state ? state.variableValue : undefined;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
+            resourceInputs["roleParameterId"] = state?.roleParameterId;
+            resourceInputs["variableName"] = state?.variableName;
+            resourceInputs["variableValue"] = state?.variableValue;
         } else {
             const args = argsOrState as RoleParameterArgs | undefined;
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            if ((!args || args.variableName === undefined) && !opts.urn) {
+            if (args?.variableName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'variableName'");
             }
-            if ((!args || args.variableValue === undefined) && !opts.urn) {
+            if (args?.variableValue === undefined && !opts.urn) {
                 throw new Error("Missing required property 'variableValue'");
             }
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
-            resourceInputs["roleParameterId"] = args ? args.roleParameterId : undefined;
-            resourceInputs["variableName"] = args ? args.variableName : undefined;
-            resourceInputs["variableValue"] = args ? args.variableValue : undefined;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
+            resourceInputs["roleParameterId"] = args?.roleParameterId;
+            resourceInputs["variableName"] = args?.variableName;
+            resourceInputs["variableValue"] = args?.variableValue;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RoleParameter.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

@@ -16,7 +16,7 @@ class Role extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new Role(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new Role(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of Role.  This is designed to work even
@@ -33,23 +33,35 @@ class Role extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["inherit"] = state ? state.inherit : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleId"] = state ? state.roleId : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["inherit"] = state?.inherit;
+            resourceInputs["login"] = state?.login;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["passwordWo"] = state?.passwordWo;
+            resourceInputs["passwordWoVersion"] = state?.passwordWoVersion;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleId"] = state?.roleId;
+            resourceInputs["superuser"] = state?.superuser;
         }
         else {
             const args = argsOrState;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleId"] = args ? args.roleId : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["login"] = args?.login;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
+            resourceInputs["passwordWo"] = args?.passwordWo ? pulumi.secret(args.passwordWo) : undefined;
+            resourceInputs["passwordWoVersion"] = args?.passwordWoVersion;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleId"] = args?.roleId;
+            resourceInputs["superuser"] = args?.superuser;
             resourceInputs["inherit"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["password", "passwordWo"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Role.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
     }
 }

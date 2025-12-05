@@ -27,8 +27,7 @@ export declare class ConnectionMysql extends pulumi.CustomResource {
     readonly comment: pulumi.Output<string | undefined>;
     readonly connectionMysqlId: pulumi.Output<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
@@ -60,7 +59,7 @@ export declare class ConnectionMysql extends pulumi.CustomResource {
      */
     readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
@@ -68,13 +67,11 @@ export declare class ConnectionMysql extends pulumi.CustomResource {
      */
     readonly sshTunnel: pulumi.Output<outputs.ConnectionMysqlSshTunnel | undefined>;
     /**
-     * The client certificate for the MySQL database.. Can be supplied as either free text using `text` or reference to a
-     * secret object using `secret`.
+     * The client certificate for the MySQL database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly sslCertificate: pulumi.Output<outputs.ConnectionMysqlSslCertificate | undefined>;
     /**
-     * The CA certificate for the MySQL database.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The CA certificate for the MySQL database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly sslCertificateAuthority: pulumi.Output<outputs.ConnectionMysqlSslCertificateAuthority | undefined>;
     /**
@@ -86,8 +83,7 @@ export declare class ConnectionMysql extends pulumi.CustomResource {
      */
     readonly sslMode: pulumi.Output<string | undefined>;
     /**
-     * The MySQL database username.. Can be supplied as either free text using `text` or reference to a secret object using
-     * `secret`.
+     * The MySQL database username.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly user: pulumi.Output<outputs.ConnectionMysqlUser>;
     /**
@@ -117,8 +113,7 @@ export interface ConnectionMysqlState {
     comment?: pulumi.Input<string>;
     connectionMysqlId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -150,7 +145,7 @@ export interface ConnectionMysqlState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -158,13 +153,11 @@ export interface ConnectionMysqlState {
      */
     sshTunnel?: pulumi.Input<inputs.ConnectionMysqlSshTunnel>;
     /**
-     * The client certificate for the MySQL database.. Can be supplied as either free text using `text` or reference to a
-     * secret object using `secret`.
+     * The client certificate for the MySQL database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificate?: pulumi.Input<inputs.ConnectionMysqlSslCertificate>;
     /**
-     * The CA certificate for the MySQL database.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The CA certificate for the MySQL database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificateAuthority?: pulumi.Input<inputs.ConnectionMysqlSslCertificateAuthority>;
     /**
@@ -176,8 +169,7 @@ export interface ConnectionMysqlState {
      */
     sslMode?: pulumi.Input<string>;
     /**
-     * The MySQL database username.. Can be supplied as either free text using `text` or reference to a secret object using
-     * `secret`.
+     * The MySQL database username.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     user?: pulumi.Input<inputs.ConnectionMysqlUser>;
     /**
@@ -199,8 +191,7 @@ export interface ConnectionMysqlArgs {
     comment?: pulumi.Input<string>;
     connectionMysqlId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -228,7 +219,7 @@ export interface ConnectionMysqlArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -236,13 +227,11 @@ export interface ConnectionMysqlArgs {
      */
     sshTunnel?: pulumi.Input<inputs.ConnectionMysqlSshTunnel>;
     /**
-     * The client certificate for the MySQL database.. Can be supplied as either free text using `text` or reference to a
-     * secret object using `secret`.
+     * The client certificate for the MySQL database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificate?: pulumi.Input<inputs.ConnectionMysqlSslCertificate>;
     /**
-     * The CA certificate for the MySQL database.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The CA certificate for the MySQL database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificateAuthority?: pulumi.Input<inputs.ConnectionMysqlSslCertificateAuthority>;
     /**
@@ -254,8 +243,7 @@ export interface ConnectionMysqlArgs {
      */
     sslMode?: pulumi.Input<string>;
     /**
-     * The MySQL database username.. Can be supplied as either free text using `text` or reference to a secret object using
-     * `secret`.
+     * The MySQL database username.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     user: pulumi.Input<inputs.ConnectionMysqlUser>;
     /**

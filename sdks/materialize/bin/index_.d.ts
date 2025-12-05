@@ -34,7 +34,7 @@ export declare class Index extends pulumi.CustomResource {
      */
     readonly databaseName: pulumi.Output<string>;
     /**
-     * Creates a default index using all inferred columns are used. Required if col_expr is not set.
+     * Creates a default index using all inferred columns are used. Required if<span pulumi-lang-nodejs=" colExpr " pulumi-lang-dotnet=" ColExpr " pulumi-lang-go=" colExpr " pulumi-lang-python=" col_expr " pulumi-lang-yaml=" colExpr " pulumi-lang-java=" colExpr "> col_expr </span>is not set.
      */
     readonly default: pulumi.Output<boolean | undefined>;
     readonly indexId: pulumi.Output<string>;
@@ -92,7 +92,7 @@ export interface IndexState {
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * Creates a default index using all inferred columns are used. Required if col_expr is not set.
+     * Creates a default index using all inferred columns are used. Required if<span pulumi-lang-nodejs=" colExpr " pulumi-lang-dotnet=" ColExpr " pulumi-lang-go=" colExpr " pulumi-lang-python=" col_expr " pulumi-lang-yaml=" colExpr " pulumi-lang-java=" colExpr "> col_expr </span>is not set.
      */
     default?: pulumi.Input<boolean>;
     indexId?: pulumi.Input<string>;
@@ -138,7 +138,7 @@ export interface IndexArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * Creates a default index using all inferred columns are used. Required if col_expr is not set.
+     * Creates a default index using all inferred columns are used. Required if<span pulumi-lang-nodejs=" colExpr " pulumi-lang-dotnet=" ColExpr " pulumi-lang-go=" colExpr " pulumi-lang-python=" col_expr " pulumi-lang-yaml=" colExpr " pulumi-lang-java=" colExpr "> col_expr </span>is not set.
      */
     default?: pulumi.Input<boolean>;
     indexId?: pulumi.Input<string>;

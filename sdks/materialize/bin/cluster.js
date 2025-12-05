@@ -16,7 +16,7 @@ class Cluster extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new Cluster(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new Cluster(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of Cluster.  This is designed to work even
@@ -33,37 +33,37 @@ class Cluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["availabilityZones"] = state ? state.availabilityZones : undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["disk"] = state ? state.disk : undefined;
-            resourceInputs["identifyByName"] = state ? state.identifyByName : undefined;
-            resourceInputs["introspectionDebugging"] = state ? state.introspectionDebugging : undefined;
-            resourceInputs["introspectionInterval"] = state ? state.introspectionInterval : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["replicationFactor"] = state ? state.replicationFactor : undefined;
-            resourceInputs["scheduling"] = state ? state.scheduling : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["waitUntilReady"] = state ? state.waitUntilReady : undefined;
+            resourceInputs["availabilityZones"] = state?.availabilityZones;
+            resourceInputs["clusterId"] = state?.clusterId;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["disk"] = state?.disk;
+            resourceInputs["identifyByName"] = state?.identifyByName;
+            resourceInputs["introspectionDebugging"] = state?.introspectionDebugging;
+            resourceInputs["introspectionInterval"] = state?.introspectionInterval;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["replicationFactor"] = state?.replicationFactor;
+            resourceInputs["scheduling"] = state?.scheduling;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["waitUntilReady"] = state?.waitUntilReady;
         }
         else {
             const args = argsOrState;
-            resourceInputs["availabilityZones"] = args ? args.availabilityZones : undefined;
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["disk"] = args ? args.disk : undefined;
-            resourceInputs["identifyByName"] = args ? args.identifyByName : undefined;
-            resourceInputs["introspectionDebugging"] = args ? args.introspectionDebugging : undefined;
-            resourceInputs["introspectionInterval"] = args ? args.introspectionInterval : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["replicationFactor"] = args ? args.replicationFactor : undefined;
-            resourceInputs["scheduling"] = args ? args.scheduling : undefined;
-            resourceInputs["size"] = args ? args.size : undefined;
-            resourceInputs["waitUntilReady"] = args ? args.waitUntilReady : undefined;
+            resourceInputs["availabilityZones"] = args?.availabilityZones;
+            resourceInputs["clusterId"] = args?.clusterId;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["disk"] = args?.disk;
+            resourceInputs["identifyByName"] = args?.identifyByName;
+            resourceInputs["introspectionDebugging"] = args?.introspectionDebugging;
+            resourceInputs["introspectionInterval"] = args?.introspectionInterval;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["replicationFactor"] = args?.replicationFactor;
+            resourceInputs["scheduling"] = args?.scheduling;
+            resourceInputs["size"] = args?.size;
+            resourceInputs["waitUntilReady"] = args?.waitUntilReady;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Cluster.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

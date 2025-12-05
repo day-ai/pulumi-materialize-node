@@ -26,8 +26,7 @@ export declare class Type extends pulumi.CustomResource {
      */
     readonly comment: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
@@ -59,7 +58,7 @@ export declare class Type extends pulumi.CustomResource {
      */
     readonly rowProperties: pulumi.Output<outputs.TypeRowProperty[] | undefined>;
     /**
-     * The identifier for the type schema in Materialize. Defaults to `public`.
+     * The identifier for the type schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     readonly typeId: pulumi.Output<string>;
@@ -85,8 +84,7 @@ export interface TypeState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -118,7 +116,7 @@ export interface TypeState {
      */
     rowProperties?: pulumi.Input<pulumi.Input<inputs.TypeRowProperty>[]>;
     /**
-     * The identifier for the type schema in Materialize. Defaults to `public`.
+     * The identifier for the type schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     typeId?: pulumi.Input<string>;
@@ -132,8 +130,7 @@ export interface TypeArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the type database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -161,7 +158,7 @@ export interface TypeArgs {
      */
     rowProperties?: pulumi.Input<pulumi.Input<inputs.TypeRowProperty>[]>;
     /**
-     * The identifier for the type schema in Materialize. Defaults to `public`.
+     * The identifier for the type schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     typeId?: pulumi.Input<string>;

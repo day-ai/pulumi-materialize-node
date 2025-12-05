@@ -26,8 +26,7 @@ export declare class SourceKafka extends pulumi.CustomResource {
      */
     readonly comment: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
@@ -35,8 +34,7 @@ export declare class SourceKafka extends pulumi.CustomResource {
      */
     readonly envelope: pulumi.Output<outputs.SourceKafkaEnvelope | undefined>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     readonly exposeProgress: pulumi.Output<outputs.SourceKafkaExposeProgress | undefined>;
     /**
@@ -108,7 +106,7 @@ export declare class SourceKafka extends pulumi.CustomResource {
      */
     readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
@@ -154,8 +152,7 @@ export interface SourceKafkaState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -163,8 +160,7 @@ export interface SourceKafkaState {
      */
     envelope?: pulumi.Input<inputs.SourceKafkaEnvelope>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourceKafkaExposeProgress>;
     /**
@@ -236,7 +232,7 @@ export interface SourceKafkaState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -274,8 +270,7 @@ export interface SourceKafkaArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -283,8 +278,7 @@ export interface SourceKafkaArgs {
      */
     envelope?: pulumi.Input<inputs.SourceKafkaEnvelope>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourceKafkaExposeProgress>;
     /**
@@ -352,7 +346,7 @@ export interface SourceKafkaArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sourceKafkaId?: pulumi.Input<string>;

@@ -16,7 +16,7 @@ class ConnectionConfluentSchemaRegistry extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new ConnectionConfluentSchemaRegistry(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new ConnectionConfluentSchemaRegistry(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of ConnectionConfluentSchemaRegistry.  This is designed to work even
@@ -33,45 +33,45 @@ class ConnectionConfluentSchemaRegistry extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["awsPrivatelink"] = state ? state.awsPrivatelink : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["connectionConfluentSchemaRegistryId"] = state ? state.connectionConfluentSchemaRegistryId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["sshTunnel"] = state ? state.sshTunnel : undefined;
-            resourceInputs["sslCertificate"] = state ? state.sslCertificate : undefined;
-            resourceInputs["sslCertificateAuthority"] = state ? state.sslCertificateAuthority : undefined;
-            resourceInputs["sslKey"] = state ? state.sslKey : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
-            resourceInputs["validate"] = state ? state.validate : undefined;
+            resourceInputs["awsPrivatelink"] = state?.awsPrivatelink;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["connectionConfluentSchemaRegistryId"] = state?.connectionConfluentSchemaRegistryId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["sshTunnel"] = state?.sshTunnel;
+            resourceInputs["sslCertificate"] = state?.sslCertificate;
+            resourceInputs["sslCertificateAuthority"] = state?.sslCertificateAuthority;
+            resourceInputs["sslKey"] = state?.sslKey;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["username"] = state?.username;
+            resourceInputs["validate"] = state?.validate;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            resourceInputs["awsPrivatelink"] = args ? args.awsPrivatelink : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["connectionConfluentSchemaRegistryId"] = args ? args.connectionConfluentSchemaRegistryId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sshTunnel"] = args ? args.sshTunnel : undefined;
-            resourceInputs["sslCertificate"] = args ? args.sslCertificate : undefined;
-            resourceInputs["sslCertificateAuthority"] = args ? args.sslCertificateAuthority : undefined;
-            resourceInputs["sslKey"] = args ? args.sslKey : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
-            resourceInputs["validate"] = args ? args.validate : undefined;
+            resourceInputs["awsPrivatelink"] = args?.awsPrivatelink;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["connectionConfluentSchemaRegistryId"] = args?.connectionConfluentSchemaRegistryId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["password"] = args?.password;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sshTunnel"] = args?.sshTunnel;
+            resourceInputs["sslCertificate"] = args?.sslCertificate;
+            resourceInputs["sslCertificateAuthority"] = args?.sslCertificateAuthority;
+            resourceInputs["sslKey"] = args?.sslKey;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["username"] = args?.username;
+            resourceInputs["validate"] = args?.validate;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -37,20 +37,20 @@ export class NetworkPolicy extends pulumi.CustomResource {
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
      * The name of the network policy.
      */
-    public readonly name!: pulumi.Output<string>;
-    public readonly networkPolicyId!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly networkPolicyId: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * Rules for the network policy.
      */
-    public readonly rules!: pulumi.Output<outputs.NetworkPolicyRule[]>;
+    declare public readonly rules: pulumi.Output<outputs.NetworkPolicyRule[]>;
 
     /**
      * Create a NetworkPolicy resource with the given unique name, arguments, and options.
@@ -65,21 +65,21 @@ export class NetworkPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkPolicyState | undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkPolicyId"] = state ? state.networkPolicyId : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkPolicyId"] = state?.networkPolicyId;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["rules"] = state?.rules;
         } else {
             const args = argsOrState as NetworkPolicyArgs | undefined;
-            if ((!args || args.rules === undefined) && !opts.urn) {
+            if (args?.rules === undefined && !opts.urn) {
                 throw new Error("Missing required property 'rules'");
             }
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkPolicyId"] = args ? args.networkPolicyId : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkPolicyId"] = args?.networkPolicyId;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["rules"] = args?.rules;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NetworkPolicy.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

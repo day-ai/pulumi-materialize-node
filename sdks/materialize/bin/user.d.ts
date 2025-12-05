@@ -29,9 +29,7 @@ export declare class User extends pulumi.CustomResource {
      */
     readonly roles: pulumi.Output<string[]>;
     /**
-     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to
-     * join the organization, if the user already exists in another organization. Changing this property after the resource is
-     * created has no effect.
+     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to join the organization, if the user already exists in another organization. Changing this property after the resource is created has no effect.
      */
     readonly sendActivationEmail: pulumi.Output<boolean | undefined>;
     readonly userId: pulumi.Output<string>;
@@ -63,9 +61,7 @@ export interface UserState {
      */
     roles?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to
-     * join the organization, if the user already exists in another organization. Changing this property after the resource is
-     * created has no effect.
+     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to join the organization, if the user already exists in another organization. Changing this property after the resource is created has no effect.
      */
     sendActivationEmail?: pulumi.Input<boolean>;
     userId?: pulumi.Input<string>;
@@ -84,9 +80,7 @@ export interface UserArgs {
      */
     roles: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to
-     * join the organization, if the user already exists in another organization. Changing this property after the resource is
-     * created has no effect.
+     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to join the organization, if the user already exists in another organization. Changing this property after the resource is created has no effect.
      */
     sendActivationEmail?: pulumi.Input<boolean>;
     userId?: pulumi.Input<string>;

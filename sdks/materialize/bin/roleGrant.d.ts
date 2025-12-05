@@ -16,7 +16,7 @@ export declare class RoleGrant extends pulumi.CustomResource {
      */
     static isInstance(obj: any): obj is RoleGrant;
     /**
-     * The role name to add to role_name as a member.
+     * The role name to add to<span pulumi-lang-nodejs=" roleName " pulumi-lang-dotnet=" RoleName " pulumi-lang-go=" roleName " pulumi-lang-python=" role_name " pulumi-lang-yaml=" roleName " pulumi-lang-java=" roleName "> role_name </span>as a member.
      */
     readonly memberName: pulumi.Output<string>;
     /**
@@ -25,7 +25,7 @@ export declare class RoleGrant extends pulumi.CustomResource {
     readonly region: pulumi.Output<string>;
     readonly roleGrantId: pulumi.Output<string>;
     /**
-     * The role name to add member_name as a member.
+     * The role name to add<span pulumi-lang-nodejs=" memberName " pulumi-lang-dotnet=" MemberName " pulumi-lang-go=" memberName " pulumi-lang-python=" member_name " pulumi-lang-yaml=" memberName " pulumi-lang-java=" memberName "> member_name </span>as a member.
      */
     readonly roleName: pulumi.Output<string>;
     /**
@@ -42,7 +42,7 @@ export declare class RoleGrant extends pulumi.CustomResource {
  */
 export interface RoleGrantState {
     /**
-     * The role name to add to role_name as a member.
+     * The role name to add to<span pulumi-lang-nodejs=" roleName " pulumi-lang-dotnet=" RoleName " pulumi-lang-go=" roleName " pulumi-lang-python=" role_name " pulumi-lang-yaml=" roleName " pulumi-lang-java=" roleName "> role_name </span>as a member.
      */
     memberName?: pulumi.Input<string>;
     /**
@@ -51,7 +51,7 @@ export interface RoleGrantState {
     region?: pulumi.Input<string>;
     roleGrantId?: pulumi.Input<string>;
     /**
-     * The role name to add member_name as a member.
+     * The role name to add<span pulumi-lang-nodejs=" memberName " pulumi-lang-dotnet=" MemberName " pulumi-lang-go=" memberName " pulumi-lang-python=" member_name " pulumi-lang-yaml=" memberName " pulumi-lang-java=" memberName "> member_name </span>as a member.
      */
     roleName?: pulumi.Input<string>;
 }
@@ -60,7 +60,7 @@ export interface RoleGrantState {
  */
 export interface RoleGrantArgs {
     /**
-     * The role name to add to role_name as a member.
+     * The role name to add to<span pulumi-lang-nodejs=" roleName " pulumi-lang-dotnet=" RoleName " pulumi-lang-go=" roleName " pulumi-lang-python=" role_name " pulumi-lang-yaml=" roleName " pulumi-lang-java=" roleName "> role_name </span>as a member.
      */
     memberName: pulumi.Input<string>;
     /**
@@ -69,7 +69,7 @@ export interface RoleGrantArgs {
     region?: pulumi.Input<string>;
     roleGrantId?: pulumi.Input<string>;
     /**
-     * The role name to add member_name as a member.
+     * The role name to add<span pulumi-lang-nodejs=" memberName " pulumi-lang-dotnet=" MemberName " pulumi-lang-go=" memberName " pulumi-lang-python=" member_name " pulumi-lang-yaml=" memberName " pulumi-lang-java=" memberName "> member_name </span>as a member.
      */
     roleName: pulumi.Input<string>;
 }

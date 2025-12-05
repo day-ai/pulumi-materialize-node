@@ -16,7 +16,7 @@ class SinkKafka extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new SinkKafka(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new SinkKafka(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of SinkKafka.  This is designed to work even
@@ -33,64 +33,64 @@ class SinkKafka extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["compressionType"] = state ? state.compressionType : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["envelope"] = state ? state.envelope : undefined;
-            resourceInputs["format"] = state ? state.format : undefined;
-            resourceInputs["from"] = state ? state.from : undefined;
-            resourceInputs["headers"] = state ? state.headers : undefined;
-            resourceInputs["kafkaConnection"] = state ? state.kafkaConnection : undefined;
-            resourceInputs["keyNotEnforced"] = state ? state.keyNotEnforced : undefined;
-            resourceInputs["keys"] = state ? state.keys : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["partitionBy"] = state ? state.partitionBy : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["sinkKafkaId"] = state ? state.sinkKafkaId : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["snapshot"] = state ? state.snapshot : undefined;
-            resourceInputs["topic"] = state ? state.topic : undefined;
-            resourceInputs["topicConfig"] = state ? state.topicConfig : undefined;
-            resourceInputs["topicPartitionCount"] = state ? state.topicPartitionCount : undefined;
-            resourceInputs["topicReplicationFactor"] = state ? state.topicReplicationFactor : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["compressionType"] = state?.compressionType;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["envelope"] = state?.envelope;
+            resourceInputs["format"] = state?.format;
+            resourceInputs["from"] = state?.from;
+            resourceInputs["headers"] = state?.headers;
+            resourceInputs["kafkaConnection"] = state?.kafkaConnection;
+            resourceInputs["keyNotEnforced"] = state?.keyNotEnforced;
+            resourceInputs["keys"] = state?.keys;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["partitionBy"] = state?.partitionBy;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["sinkKafkaId"] = state?.sinkKafkaId;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["snapshot"] = state?.snapshot;
+            resourceInputs["topic"] = state?.topic;
+            resourceInputs["topicConfig"] = state?.topicConfig;
+            resourceInputs["topicPartitionCount"] = state?.topicPartitionCount;
+            resourceInputs["topicReplicationFactor"] = state?.topicReplicationFactor;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.from === undefined) && !opts.urn) {
+            if (args?.from === undefined && !opts.urn) {
                 throw new Error("Missing required property 'from'");
             }
-            if ((!args || args.kafkaConnection === undefined) && !opts.urn) {
+            if (args?.kafkaConnection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kafkaConnection'");
             }
-            if ((!args || args.topic === undefined) && !opts.urn) {
+            if (args?.topic === undefined && !opts.urn) {
                 throw new Error("Missing required property 'topic'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["compressionType"] = args ? args.compressionType : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["envelope"] = args ? args.envelope : undefined;
-            resourceInputs["format"] = args ? args.format : undefined;
-            resourceInputs["from"] = args ? args.from : undefined;
-            resourceInputs["headers"] = args ? args.headers : undefined;
-            resourceInputs["kafkaConnection"] = args ? args.kafkaConnection : undefined;
-            resourceInputs["keyNotEnforced"] = args ? args.keyNotEnforced : undefined;
-            resourceInputs["keys"] = args ? args.keys : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["partitionBy"] = args ? args.partitionBy : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sinkKafkaId"] = args ? args.sinkKafkaId : undefined;
-            resourceInputs["snapshot"] = args ? args.snapshot : undefined;
-            resourceInputs["topic"] = args ? args.topic : undefined;
-            resourceInputs["topicConfig"] = args ? args.topicConfig : undefined;
-            resourceInputs["topicPartitionCount"] = args ? args.topicPartitionCount : undefined;
-            resourceInputs["topicReplicationFactor"] = args ? args.topicReplicationFactor : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["compressionType"] = args?.compressionType;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["envelope"] = args?.envelope;
+            resourceInputs["format"] = args?.format;
+            resourceInputs["from"] = args?.from;
+            resourceInputs["headers"] = args?.headers;
+            resourceInputs["kafkaConnection"] = args?.kafkaConnection;
+            resourceInputs["keyNotEnforced"] = args?.keyNotEnforced;
+            resourceInputs["keys"] = args?.keys;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["partitionBy"] = args?.partitionBy;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sinkKafkaId"] = args?.sinkKafkaId;
+            resourceInputs["snapshot"] = args?.snapshot;
+            resourceInputs["topic"] = args?.topic;
+            resourceInputs["topicConfig"] = args?.topicConfig;
+            resourceInputs["topicPartitionCount"] = args?.topicPartitionCount;
+            resourceInputs["topicReplicationFactor"] = args?.topicReplicationFactor;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
         }

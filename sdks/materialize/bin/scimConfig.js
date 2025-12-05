@@ -16,7 +16,7 @@ class ScimConfig extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new ScimConfig(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new ScimConfig(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of ScimConfig.  This is designed to work even
@@ -33,26 +33,26 @@ class ScimConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["connectionName"] = state ? state.connectionName : undefined;
-            resourceInputs["createdAt"] = state ? state.createdAt : undefined;
-            resourceInputs["provisioningUrl"] = state ? state.provisioningUrl : undefined;
-            resourceInputs["scimConfigId"] = state ? state.scimConfigId : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["syncToUserManagement"] = state ? state.syncToUserManagement : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
+            resourceInputs["connectionName"] = state?.connectionName;
+            resourceInputs["createdAt"] = state?.createdAt;
+            resourceInputs["provisioningUrl"] = state?.provisioningUrl;
+            resourceInputs["scimConfigId"] = state?.scimConfigId;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["syncToUserManagement"] = state?.syncToUserManagement;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["token"] = state?.token;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.connectionName === undefined) && !opts.urn) {
+            if (args?.connectionName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectionName'");
             }
-            if ((!args || args.source === undefined) && !opts.urn) {
+            if (args?.source === undefined && !opts.urn) {
                 throw new Error("Missing required property 'source'");
             }
-            resourceInputs["connectionName"] = args ? args.connectionName : undefined;
-            resourceInputs["scimConfigId"] = args ? args.scimConfigId : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
+            resourceInputs["connectionName"] = args?.connectionName;
+            resourceInputs["scimConfigId"] = args?.scimConfigId;
+            resourceInputs["source"] = args?.source;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["provisioningUrl"] = undefined /*out*/;
             resourceInputs["syncToUserManagement"] = undefined /*out*/;

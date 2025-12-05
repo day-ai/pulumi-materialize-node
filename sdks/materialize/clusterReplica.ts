@@ -35,43 +35,42 @@ export class ClusterReplica extends pulumi.CustomResource {
     /**
      * The specific availability zone of the replica.
      */
-    public readonly availabilityZone!: pulumi.Output<string>;
+    declare public readonly availabilityZone: pulumi.Output<string>;
     /**
      * The cluster whose resources you want to create an additional computation of.
      */
-    public readonly clusterName!: pulumi.Output<string>;
-    public readonly clusterReplicaId!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
+    declare public readonly clusterReplicaId: pulumi.Output<string>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */
-    public readonly disk!: pulumi.Output<boolean>;
+    declare public readonly disk: pulumi.Output<boolean>;
     /**
      * Whether to introspect the gathering of the introspection data.
      */
-    public readonly introspectionDebugging!: pulumi.Output<boolean | undefined>;
+    declare public readonly introspectionDebugging: pulumi.Output<boolean | undefined>;
     /**
      * The interval at which to collect introspection data.
      */
-    public readonly introspectionInterval!: pulumi.Output<string | undefined>;
+    declare public readonly introspectionInterval: pulumi.Output<string | undefined>;
     /**
      * The identifier for the replica.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The size of the replica.
      */
-    public readonly size!: pulumi.Output<string>;
+    declare public readonly size: pulumi.Output<string>;
 
     /**
      * Create a ClusterReplica resource with the given unique name, arguments, and options.
@@ -86,34 +85,34 @@ export class ClusterReplica extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterReplicaState | undefined;
-            resourceInputs["availabilityZone"] = state ? state.availabilityZone : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["clusterReplicaId"] = state ? state.clusterReplicaId : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["disk"] = state ? state.disk : undefined;
-            resourceInputs["introspectionDebugging"] = state ? state.introspectionDebugging : undefined;
-            resourceInputs["introspectionInterval"] = state ? state.introspectionInterval : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
+            resourceInputs["availabilityZone"] = state?.availabilityZone;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["clusterReplicaId"] = state?.clusterReplicaId;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["disk"] = state?.disk;
+            resourceInputs["introspectionDebugging"] = state?.introspectionDebugging;
+            resourceInputs["introspectionInterval"] = state?.introspectionInterval;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["size"] = state?.size;
         } else {
             const args = argsOrState as ClusterReplicaArgs | undefined;
-            if ((!args || args.clusterName === undefined) && !opts.urn) {
+            if (args?.clusterName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterName'");
             }
-            if ((!args || args.size === undefined) && !opts.urn) {
+            if (args?.size === undefined && !opts.urn) {
                 throw new Error("Missing required property 'size'");
             }
-            resourceInputs["availabilityZone"] = args ? args.availabilityZone : undefined;
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["clusterReplicaId"] = args ? args.clusterReplicaId : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["disk"] = args ? args.disk : undefined;
-            resourceInputs["introspectionDebugging"] = args ? args.introspectionDebugging : undefined;
-            resourceInputs["introspectionInterval"] = args ? args.introspectionInterval : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["size"] = args ? args.size : undefined;
+            resourceInputs["availabilityZone"] = args?.availabilityZone;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["clusterReplicaId"] = args?.clusterReplicaId;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["disk"] = args?.disk;
+            resourceInputs["introspectionDebugging"] = args?.introspectionDebugging;
+            resourceInputs["introspectionInterval"] = args?.introspectionInterval;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["size"] = args?.size;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ClusterReplica.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
@@ -138,8 +137,7 @@ export interface ClusterReplicaState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */
@@ -184,8 +182,7 @@ export interface ClusterReplicaArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */

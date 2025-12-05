@@ -35,57 +35,56 @@ export class ConnectionSshTunnel extends pulumi.CustomResource {
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
-    public readonly connectionSshTunnelId!: pulumi.Output<string>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
+    declare public readonly connectionSshTunnelId: pulumi.Output<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
      * The host of the SSH tunnel.
      */
-    public readonly host!: pulumi.Output<string>;
+    declare public readonly host: pulumi.Output<string>;
     /**
      * The identifier for the connection.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The port of the SSH tunnel.
      */
-    public readonly port!: pulumi.Output<number>;
+    declare public readonly port: pulumi.Output<number>;
     /**
      * The first public key associated with the SSH tunnel.
      */
-    public /*out*/ readonly publicKey1!: pulumi.Output<string>;
+    declare public /*out*/ readonly publicKey1: pulumi.Output<string>;
     /**
      * The second public key associated with the SSH tunnel.
      */
-    public /*out*/ readonly publicKey2!: pulumi.Output<string>;
+    declare public /*out*/ readonly publicKey2: pulumi.Output<string>;
     /**
      * The fully qualified name of the connection.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
     /**
      * The user of the SSH tunnel.
      */
-    public readonly user!: pulumi.Output<string>;
+    declare public readonly user: pulumi.Output<string>;
     /**
      * If the connection should wait for validation.
      */
-    public readonly validate!: pulumi.Output<boolean | undefined>;
+    declare public readonly validate: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a ConnectionSshTunnel resource with the given unique name, arguments, and options.
@@ -100,42 +99,42 @@ export class ConnectionSshTunnel extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConnectionSshTunnelState | undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["connectionSshTunnelId"] = state ? state.connectionSshTunnelId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["publicKey1"] = state ? state.publicKey1 : undefined;
-            resourceInputs["publicKey2"] = state ? state.publicKey2 : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["user"] = state ? state.user : undefined;
-            resourceInputs["validate"] = state ? state.validate : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["connectionSshTunnelId"] = state?.connectionSshTunnelId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["publicKey1"] = state?.publicKey1;
+            resourceInputs["publicKey2"] = state?.publicKey2;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["user"] = state?.user;
+            resourceInputs["validate"] = state?.validate;
         } else {
             const args = argsOrState as ConnectionSshTunnelArgs | undefined;
-            if ((!args || args.host === undefined) && !opts.urn) {
+            if (args?.host === undefined && !opts.urn) {
                 throw new Error("Missing required property 'host'");
             }
-            if ((!args || args.port === undefined) && !opts.urn) {
+            if (args?.port === undefined && !opts.urn) {
                 throw new Error("Missing required property 'port'");
             }
-            if ((!args || args.user === undefined) && !opts.urn) {
+            if (args?.user === undefined && !opts.urn) {
                 throw new Error("Missing required property 'user'");
             }
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["connectionSshTunnelId"] = args ? args.connectionSshTunnelId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["user"] = args ? args.user : undefined;
-            resourceInputs["validate"] = args ? args.validate : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["connectionSshTunnelId"] = args?.connectionSshTunnelId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["user"] = args?.user;
+            resourceInputs["validate"] = args?.validate;
             resourceInputs["publicKey1"] = undefined /*out*/;
             resourceInputs["publicKey2"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
@@ -155,8 +154,7 @@ export interface ConnectionSshTunnelState {
     comment?: pulumi.Input<string>;
     connectionSshTunnelId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -192,7 +190,7 @@ export interface ConnectionSshTunnelState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -215,8 +213,7 @@ export interface ConnectionSshTunnelArgs {
     comment?: pulumi.Input<string>;
     connectionSshTunnelId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -240,7 +237,7 @@ export interface ConnectionSshTunnelArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**

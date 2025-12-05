@@ -16,7 +16,7 @@ class SourceKafka extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new SourceKafka(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new SourceKafka(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of SourceKafka.  This is designed to work even
@@ -33,71 +33,71 @@ class SourceKafka extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["envelope"] = state ? state.envelope : undefined;
-            resourceInputs["exposeProgress"] = state ? state.exposeProgress : undefined;
-            resourceInputs["format"] = state ? state.format : undefined;
-            resourceInputs["includeHeaders"] = state ? state.includeHeaders : undefined;
-            resourceInputs["includeHeadersAlias"] = state ? state.includeHeadersAlias : undefined;
-            resourceInputs["includeKey"] = state ? state.includeKey : undefined;
-            resourceInputs["includeKeyAlias"] = state ? state.includeKeyAlias : undefined;
-            resourceInputs["includeOffset"] = state ? state.includeOffset : undefined;
-            resourceInputs["includeOffsetAlias"] = state ? state.includeOffsetAlias : undefined;
-            resourceInputs["includePartition"] = state ? state.includePartition : undefined;
-            resourceInputs["includePartitionAlias"] = state ? state.includePartitionAlias : undefined;
-            resourceInputs["includeTimestamp"] = state ? state.includeTimestamp : undefined;
-            resourceInputs["includeTimestampAlias"] = state ? state.includeTimestampAlias : undefined;
-            resourceInputs["kafkaConnection"] = state ? state.kafkaConnection : undefined;
-            resourceInputs["keyFormat"] = state ? state.keyFormat : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["sourceKafkaId"] = state ? state.sourceKafkaId : undefined;
-            resourceInputs["startOffsets"] = state ? state.startOffsets : undefined;
-            resourceInputs["startTimestamp"] = state ? state.startTimestamp : undefined;
-            resourceInputs["topic"] = state ? state.topic : undefined;
-            resourceInputs["valueFormat"] = state ? state.valueFormat : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["envelope"] = state?.envelope;
+            resourceInputs["exposeProgress"] = state?.exposeProgress;
+            resourceInputs["format"] = state?.format;
+            resourceInputs["includeHeaders"] = state?.includeHeaders;
+            resourceInputs["includeHeadersAlias"] = state?.includeHeadersAlias;
+            resourceInputs["includeKey"] = state?.includeKey;
+            resourceInputs["includeKeyAlias"] = state?.includeKeyAlias;
+            resourceInputs["includeOffset"] = state?.includeOffset;
+            resourceInputs["includeOffsetAlias"] = state?.includeOffsetAlias;
+            resourceInputs["includePartition"] = state?.includePartition;
+            resourceInputs["includePartitionAlias"] = state?.includePartitionAlias;
+            resourceInputs["includeTimestamp"] = state?.includeTimestamp;
+            resourceInputs["includeTimestampAlias"] = state?.includeTimestampAlias;
+            resourceInputs["kafkaConnection"] = state?.kafkaConnection;
+            resourceInputs["keyFormat"] = state?.keyFormat;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["sourceKafkaId"] = state?.sourceKafkaId;
+            resourceInputs["startOffsets"] = state?.startOffsets;
+            resourceInputs["startTimestamp"] = state?.startTimestamp;
+            resourceInputs["topic"] = state?.topic;
+            resourceInputs["valueFormat"] = state?.valueFormat;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.kafkaConnection === undefined) && !opts.urn) {
+            if (args?.kafkaConnection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kafkaConnection'");
             }
-            if ((!args || args.topic === undefined) && !opts.urn) {
+            if (args?.topic === undefined && !opts.urn) {
                 throw new Error("Missing required property 'topic'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["envelope"] = args ? args.envelope : undefined;
-            resourceInputs["exposeProgress"] = args ? args.exposeProgress : undefined;
-            resourceInputs["format"] = args ? args.format : undefined;
-            resourceInputs["includeHeaders"] = args ? args.includeHeaders : undefined;
-            resourceInputs["includeHeadersAlias"] = args ? args.includeHeadersAlias : undefined;
-            resourceInputs["includeKey"] = args ? args.includeKey : undefined;
-            resourceInputs["includeKeyAlias"] = args ? args.includeKeyAlias : undefined;
-            resourceInputs["includeOffset"] = args ? args.includeOffset : undefined;
-            resourceInputs["includeOffsetAlias"] = args ? args.includeOffsetAlias : undefined;
-            resourceInputs["includePartition"] = args ? args.includePartition : undefined;
-            resourceInputs["includePartitionAlias"] = args ? args.includePartitionAlias : undefined;
-            resourceInputs["includeTimestamp"] = args ? args.includeTimestamp : undefined;
-            resourceInputs["includeTimestampAlias"] = args ? args.includeTimestampAlias : undefined;
-            resourceInputs["kafkaConnection"] = args ? args.kafkaConnection : undefined;
-            resourceInputs["keyFormat"] = args ? args.keyFormat : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sourceKafkaId"] = args ? args.sourceKafkaId : undefined;
-            resourceInputs["startOffsets"] = args ? args.startOffsets : undefined;
-            resourceInputs["startTimestamp"] = args ? args.startTimestamp : undefined;
-            resourceInputs["topic"] = args ? args.topic : undefined;
-            resourceInputs["valueFormat"] = args ? args.valueFormat : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["envelope"] = args?.envelope;
+            resourceInputs["exposeProgress"] = args?.exposeProgress;
+            resourceInputs["format"] = args?.format;
+            resourceInputs["includeHeaders"] = args?.includeHeaders;
+            resourceInputs["includeHeadersAlias"] = args?.includeHeadersAlias;
+            resourceInputs["includeKey"] = args?.includeKey;
+            resourceInputs["includeKeyAlias"] = args?.includeKeyAlias;
+            resourceInputs["includeOffset"] = args?.includeOffset;
+            resourceInputs["includeOffsetAlias"] = args?.includeOffsetAlias;
+            resourceInputs["includePartition"] = args?.includePartition;
+            resourceInputs["includePartitionAlias"] = args?.includePartitionAlias;
+            resourceInputs["includeTimestamp"] = args?.includeTimestamp;
+            resourceInputs["includeTimestampAlias"] = args?.includeTimestampAlias;
+            resourceInputs["kafkaConnection"] = args?.kafkaConnection;
+            resourceInputs["keyFormat"] = args?.keyFormat;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sourceKafkaId"] = args?.sourceKafkaId;
+            resourceInputs["startOffsets"] = args?.startOffsets;
+            resourceInputs["startTimestamp"] = args?.startTimestamp;
+            resourceInputs["topic"] = args?.topic;
+            resourceInputs["valueFormat"] = args?.valueFormat;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
         }

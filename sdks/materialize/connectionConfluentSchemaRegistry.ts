@@ -37,72 +37,68 @@ export class ConnectionConfluentSchemaRegistry extends pulumi.CustomResource {
     /**
      * The AWS PrivateLink configuration for the Confluent Schema Registry.
      */
-    public readonly awsPrivatelink!: pulumi.Output<outputs.ConnectionConfluentSchemaRegistryAwsPrivatelink | undefined>;
+    declare public readonly awsPrivatelink: pulumi.Output<outputs.ConnectionConfluentSchemaRegistryAwsPrivatelink | undefined>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
-    public readonly connectionConfluentSchemaRegistryId!: pulumi.Output<string>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
+    declare public readonly connectionConfluentSchemaRegistryId: pulumi.Output<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
      * The identifier for the connection.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The password for the Confluent Schema Registry.
      */
-    public readonly password!: pulumi.Output<outputs.ConnectionConfluentSchemaRegistryPassword | undefined>;
+    declare public readonly password: pulumi.Output<outputs.ConnectionConfluentSchemaRegistryPassword | undefined>;
     /**
      * The fully qualified name of the connection.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
     /**
      * The SSH tunnel configuration for the Confluent Schema Registry.
      */
-    public readonly sshTunnel!: pulumi.Output<outputs.ConnectionConfluentSchemaRegistrySshTunnel | undefined>;
+    declare public readonly sshTunnel: pulumi.Output<outputs.ConnectionConfluentSchemaRegistrySshTunnel | undefined>;
     /**
-     * The client certificate for the Confluent Schema Registry.. Can be supplied as either free text using `text` or reference
-     * to a secret object using `secret`.
+     * The client certificate for the Confluent Schema Registry.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
-    public readonly sslCertificate!: pulumi.Output<outputs.ConnectionConfluentSchemaRegistrySslCertificate | undefined>;
+    declare public readonly sslCertificate: pulumi.Output<outputs.ConnectionConfluentSchemaRegistrySslCertificate | undefined>;
     /**
-     * The CA certificate for the Confluent Schema Registry.. Can be supplied as either free text using `text` or reference to
-     * a secret object using `secret`.
+     * The CA certificate for the Confluent Schema Registry.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
-    public readonly sslCertificateAuthority!: pulumi.Output<outputs.ConnectionConfluentSchemaRegistrySslCertificateAuthority | undefined>;
+    declare public readonly sslCertificateAuthority: pulumi.Output<outputs.ConnectionConfluentSchemaRegistrySslCertificateAuthority | undefined>;
     /**
      * The client key for the Confluent Schema Registry.
      */
-    public readonly sslKey!: pulumi.Output<outputs.ConnectionConfluentSchemaRegistrySslKey | undefined>;
+    declare public readonly sslKey: pulumi.Output<outputs.ConnectionConfluentSchemaRegistrySslKey | undefined>;
     /**
      * The URL of the Confluent Schema Registry.
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
     /**
-     * The username for the Confluent Schema Registry.. Can be supplied as either free text using `text` or reference to a
-     * secret object using `secret`.
+     * The username for the Confluent Schema Registry.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
-    public readonly username!: pulumi.Output<outputs.ConnectionConfluentSchemaRegistryUsername | undefined>;
+    declare public readonly username: pulumi.Output<outputs.ConnectionConfluentSchemaRegistryUsername | undefined>;
     /**
      * If the connection should wait for validation.
      */
-    public readonly validate!: pulumi.Output<boolean | undefined>;
+    declare public readonly validate: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a ConnectionConfluentSchemaRegistry resource with the given unique name, arguments, and options.
@@ -117,44 +113,44 @@ export class ConnectionConfluentSchemaRegistry extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConnectionConfluentSchemaRegistryState | undefined;
-            resourceInputs["awsPrivatelink"] = state ? state.awsPrivatelink : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["connectionConfluentSchemaRegistryId"] = state ? state.connectionConfluentSchemaRegistryId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["sshTunnel"] = state ? state.sshTunnel : undefined;
-            resourceInputs["sslCertificate"] = state ? state.sslCertificate : undefined;
-            resourceInputs["sslCertificateAuthority"] = state ? state.sslCertificateAuthority : undefined;
-            resourceInputs["sslKey"] = state ? state.sslKey : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
-            resourceInputs["validate"] = state ? state.validate : undefined;
+            resourceInputs["awsPrivatelink"] = state?.awsPrivatelink;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["connectionConfluentSchemaRegistryId"] = state?.connectionConfluentSchemaRegistryId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["sshTunnel"] = state?.sshTunnel;
+            resourceInputs["sslCertificate"] = state?.sslCertificate;
+            resourceInputs["sslCertificateAuthority"] = state?.sslCertificateAuthority;
+            resourceInputs["sslKey"] = state?.sslKey;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["username"] = state?.username;
+            resourceInputs["validate"] = state?.validate;
         } else {
             const args = argsOrState as ConnectionConfluentSchemaRegistryArgs | undefined;
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            resourceInputs["awsPrivatelink"] = args ? args.awsPrivatelink : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["connectionConfluentSchemaRegistryId"] = args ? args.connectionConfluentSchemaRegistryId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sshTunnel"] = args ? args.sshTunnel : undefined;
-            resourceInputs["sslCertificate"] = args ? args.sslCertificate : undefined;
-            resourceInputs["sslCertificateAuthority"] = args ? args.sslCertificateAuthority : undefined;
-            resourceInputs["sslKey"] = args ? args.sslKey : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
-            resourceInputs["validate"] = args ? args.validate : undefined;
+            resourceInputs["awsPrivatelink"] = args?.awsPrivatelink;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["connectionConfluentSchemaRegistryId"] = args?.connectionConfluentSchemaRegistryId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["password"] = args?.password;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sshTunnel"] = args?.sshTunnel;
+            resourceInputs["sslCertificate"] = args?.sslCertificate;
+            resourceInputs["sslCertificateAuthority"] = args?.sslCertificateAuthority;
+            resourceInputs["sslKey"] = args?.sslKey;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["username"] = args?.username;
+            resourceInputs["validate"] = args?.validate;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -176,8 +172,7 @@ export interface ConnectionConfluentSchemaRegistryState {
     comment?: pulumi.Input<string>;
     connectionConfluentSchemaRegistryId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -201,7 +196,7 @@ export interface ConnectionConfluentSchemaRegistryState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -209,13 +204,11 @@ export interface ConnectionConfluentSchemaRegistryState {
      */
     sshTunnel?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistrySshTunnel>;
     /**
-     * The client certificate for the Confluent Schema Registry.. Can be supplied as either free text using `text` or reference
-     * to a secret object using `secret`.
+     * The client certificate for the Confluent Schema Registry.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificate?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistrySslCertificate>;
     /**
-     * The CA certificate for the Confluent Schema Registry.. Can be supplied as either free text using `text` or reference to
-     * a secret object using `secret`.
+     * The CA certificate for the Confluent Schema Registry.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificateAuthority?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistrySslCertificateAuthority>;
     /**
@@ -227,8 +220,7 @@ export interface ConnectionConfluentSchemaRegistryState {
      */
     url?: pulumi.Input<string>;
     /**
-     * The username for the Confluent Schema Registry.. Can be supplied as either free text using `text` or reference to a
-     * secret object using `secret`.
+     * The username for the Confluent Schema Registry.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     username?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistryUsername>;
     /**
@@ -251,8 +243,7 @@ export interface ConnectionConfluentSchemaRegistryArgs {
     comment?: pulumi.Input<string>;
     connectionConfluentSchemaRegistryId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -272,7 +263,7 @@ export interface ConnectionConfluentSchemaRegistryArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -280,13 +271,11 @@ export interface ConnectionConfluentSchemaRegistryArgs {
      */
     sshTunnel?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistrySshTunnel>;
     /**
-     * The client certificate for the Confluent Schema Registry.. Can be supplied as either free text using `text` or reference
-     * to a secret object using `secret`.
+     * The client certificate for the Confluent Schema Registry.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificate?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistrySslCertificate>;
     /**
-     * The CA certificate for the Confluent Schema Registry.. Can be supplied as either free text using `text` or reference to
-     * a secret object using `secret`.
+     * The CA certificate for the Confluent Schema Registry.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificateAuthority?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistrySslCertificateAuthority>;
     /**
@@ -298,8 +287,7 @@ export interface ConnectionConfluentSchemaRegistryArgs {
      */
     url: pulumi.Input<string>;
     /**
-     * The username for the Confluent Schema Registry.. Can be supplied as either free text using `text` or reference to a
-     * secret object using `secret`.
+     * The username for the Confluent Schema Registry.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     username?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistryUsername>;
     /**

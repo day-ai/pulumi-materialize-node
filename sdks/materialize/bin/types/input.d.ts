@@ -16,7 +16,7 @@ export interface ClusterSchedulingOnRefresh {
      */
     hydrationTimeEstimate?: pulumi.Input<string>;
     /**
-     * Estimated time to rehydrate the cluster during refresh. This field is deprecated and will be removed in a future release. Use `hydration_time_estimate` instead.
+     * Estimated time to rehydrate the cluster during refresh. This field is deprecated and will be removed in a future release. Use <span pulumi-lang-nodejs="`hydrationTimeEstimate`" pulumi-lang-dotnet="`HydrationTimeEstimate`" pulumi-lang-go="`hydrationTimeEstimate`" pulumi-lang-python="`hydration_time_estimate`" pulumi-lang-yaml="`hydrationTimeEstimate`" pulumi-lang-java="`hydrationTimeEstimate`">`hydration_time_estimate`</span> instead.
      *
      * @deprecated Deprecated
      */
@@ -38,83 +38,83 @@ export interface ClusterWaitUntilReady {
 }
 export interface ConnectionAwsAccessKeyId {
     /**
-     * The `access_key_id` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`accessKeyId`" pulumi-lang-dotnet="`AccessKeyId`" pulumi-lang-go="`accessKeyId`" pulumi-lang-python="`access_key_id`" pulumi-lang-yaml="`accessKeyId`" pulumi-lang-java="`accessKeyId`">`access_key_id`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionAwsAccessKeyIdSecret>;
     /**
-     * The `access_key_id` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`accessKeyId`" pulumi-lang-dotnet="`AccessKeyId`" pulumi-lang-go="`accessKeyId`" pulumi-lang-python="`access_key_id`" pulumi-lang-yaml="`accessKeyId`" pulumi-lang-java="`accessKeyId`">`access_key_id`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionAwsAccessKeyIdSecret {
     /**
-     * The access_key_id database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" accessKeyId " pulumi-lang-dotnet=" AccessKeyId " pulumi-lang-go=" accessKeyId " pulumi-lang-python=" access_key_id " pulumi-lang-yaml=" accessKeyId " pulumi-lang-java=" accessKeyId "> access_key_id </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The access_key_id name.
+     * The<span pulumi-lang-nodejs=" accessKeyId " pulumi-lang-dotnet=" AccessKeyId " pulumi-lang-go=" accessKeyId " pulumi-lang-python=" access_key_id " pulumi-lang-yaml=" accessKeyId " pulumi-lang-java=" accessKeyId "> access_key_id </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The access_key_id schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" accessKeyId " pulumi-lang-dotnet=" AccessKeyId " pulumi-lang-go=" accessKeyId " pulumi-lang-python=" access_key_id " pulumi-lang-yaml=" accessKeyId " pulumi-lang-java=" accessKeyId "> access_key_id </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionAwsSecretAccessKey {
     /**
-     * The secret_access_key database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" secretAccessKey " pulumi-lang-dotnet=" SecretAccessKey " pulumi-lang-go=" secretAccessKey " pulumi-lang-python=" secret_access_key " pulumi-lang-yaml=" secretAccessKey " pulumi-lang-java=" secretAccessKey "> secret_access_key </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The secret_access_key name.
+     * The<span pulumi-lang-nodejs=" secretAccessKey " pulumi-lang-dotnet=" SecretAccessKey " pulumi-lang-go=" secretAccessKey " pulumi-lang-python=" secret_access_key " pulumi-lang-yaml=" secretAccessKey " pulumi-lang-java=" secretAccessKey "> secret_access_key </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The secret_access_key schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" secretAccessKey " pulumi-lang-dotnet=" SecretAccessKey " pulumi-lang-go=" secretAccessKey " pulumi-lang-python=" secret_access_key " pulumi-lang-yaml=" secretAccessKey " pulumi-lang-java=" secretAccessKey "> secret_access_key </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionAwsSessionToken {
     /**
-     * The `session_token` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`sessionToken`" pulumi-lang-dotnet="`SessionToken`" pulumi-lang-go="`sessionToken`" pulumi-lang-python="`session_token`" pulumi-lang-yaml="`sessionToken`" pulumi-lang-java="`sessionToken`">`session_token`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionAwsSessionTokenSecret>;
     /**
-     * The `session_token` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`sessionToken`" pulumi-lang-dotnet="`SessionToken`" pulumi-lang-go="`sessionToken`" pulumi-lang-python="`session_token`" pulumi-lang-yaml="`sessionToken`" pulumi-lang-java="`sessionToken`">`session_token`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionAwsSessionTokenSecret {
     /**
-     * The session_token database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sessionToken " pulumi-lang-dotnet=" SessionToken " pulumi-lang-go=" sessionToken " pulumi-lang-python=" session_token " pulumi-lang-yaml=" sessionToken " pulumi-lang-java=" sessionToken "> session_token </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The session_token name.
+     * The<span pulumi-lang-nodejs=" sessionToken " pulumi-lang-dotnet=" SessionToken " pulumi-lang-go=" sessionToken " pulumi-lang-python=" session_token " pulumi-lang-yaml=" sessionToken " pulumi-lang-java=" sessionToken "> session_token </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The session_token schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sessionToken " pulumi-lang-dotnet=" SessionToken " pulumi-lang-go=" sessionToken " pulumi-lang-python=" session_token " pulumi-lang-yaml=" sessionToken " pulumi-lang-java=" sessionToken "> session_token </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionConfluentSchemaRegistryAwsPrivatelink {
     /**
-     * The aws_privatelink database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The aws_privatelink name.
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The aws_privatelink schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionConfluentSchemaRegistryPassword {
     /**
-     * The password database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The password database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -122,99 +122,99 @@ export interface ConnectionConfluentSchemaRegistryPassword {
      */
     name: pulumi.Input<string>;
     /**
-     * The password schema name. Defaults to `public`.
+     * The password schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionConfluentSchemaRegistrySshTunnel {
     /**
-     * The ssh_tunnel database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssh_tunnel name.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssh_tunnel schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionConfluentSchemaRegistrySslCertificate {
     /**
-     * The `ssl_certificate` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`sslCertificate`" pulumi-lang-dotnet="`SslCertificate`" pulumi-lang-go="`sslCertificate`" pulumi-lang-python="`ssl_certificate`" pulumi-lang-yaml="`sslCertificate`" pulumi-lang-java="`sslCertificate`">`ssl_certificate`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistrySslCertificateSecret>;
     /**
-     * The `ssl_certificate` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`sslCertificate`" pulumi-lang-dotnet="`SslCertificate`" pulumi-lang-go="`sslCertificate`" pulumi-lang-python="`ssl_certificate`" pulumi-lang-yaml="`sslCertificate`" pulumi-lang-java="`sslCertificate`">`ssl_certificate`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionConfluentSchemaRegistrySslCertificateAuthority {
     /**
-     * The `ssl_certificate_authority` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`sslCertificateAuthority`" pulumi-lang-dotnet="`SslCertificateAuthority`" pulumi-lang-go="`sslCertificateAuthority`" pulumi-lang-python="`ssl_certificate_authority`" pulumi-lang-yaml="`sslCertificateAuthority`" pulumi-lang-java="`sslCertificateAuthority`">`ssl_certificate_authority`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistrySslCertificateAuthoritySecret>;
     /**
-     * The `ssl_certificate_authority` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`sslCertificateAuthority`" pulumi-lang-dotnet="`SslCertificateAuthority`" pulumi-lang-go="`sslCertificateAuthority`" pulumi-lang-python="`ssl_certificate_authority`" pulumi-lang-yaml="`sslCertificateAuthority`" pulumi-lang-java="`sslCertificateAuthority`">`ssl_certificate_authority`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionConfluentSchemaRegistrySslCertificateAuthoritySecret {
     /**
-     * The ssl_certificate_authority database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_certificate_authority name.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_certificate_authority schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionConfluentSchemaRegistrySslCertificateSecret {
     /**
-     * The ssl_certificate database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_certificate name.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_certificate schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionConfluentSchemaRegistrySslKey {
     /**
-     * The ssl_key database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_key name.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_key schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionConfluentSchemaRegistryUsername {
     /**
-     * The `username` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionConfluentSchemaRegistryUsernameSecret>;
     /**
-     * The `username` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionConfluentSchemaRegistryUsernameSecret {
     /**
-     * The username database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The username database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -222,21 +222,21 @@ export interface ConnectionConfluentSchemaRegistryUsernameSecret {
      */
     name: pulumi.Input<string>;
     /**
-     * The username schema name. Defaults to `public`.
+     * The username schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaAwsConnection {
     /**
-     * The aws_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" awsConnection " pulumi-lang-dotnet=" AwsConnection " pulumi-lang-go=" awsConnection " pulumi-lang-python=" aws_connection " pulumi-lang-yaml=" awsConnection " pulumi-lang-java=" awsConnection "> aws_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The aws_connection name.
+     * The<span pulumi-lang-nodejs=" awsConnection " pulumi-lang-dotnet=" AwsConnection " pulumi-lang-go=" awsConnection " pulumi-lang-python=" aws_connection " pulumi-lang-yaml=" awsConnection " pulumi-lang-java=" awsConnection "> aws_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The aws_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" awsConnection " pulumi-lang-dotnet=" AwsConnection " pulumi-lang-go=" awsConnection " pulumi-lang-python=" aws_connection " pulumi-lang-yaml=" awsConnection " pulumi-lang-java=" awsConnection "> aws_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -252,15 +252,15 @@ export interface ConnectionKafkaAwsPrivatelink {
 }
 export interface ConnectionKafkaAwsPrivatelinkPrivatelinkConnection {
     /**
-     * The privatelink_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" privatelinkConnection " pulumi-lang-dotnet=" PrivatelinkConnection " pulumi-lang-go=" privatelinkConnection " pulumi-lang-python=" privatelink_connection " pulumi-lang-yaml=" privatelinkConnection " pulumi-lang-java=" privatelinkConnection "> privatelink_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The privatelink_connection name.
+     * The<span pulumi-lang-nodejs=" privatelinkConnection " pulumi-lang-dotnet=" PrivatelinkConnection " pulumi-lang-go=" privatelinkConnection " pulumi-lang-python=" privatelink_connection " pulumi-lang-yaml=" privatelinkConnection " pulumi-lang-java=" privatelinkConnection "> privatelink_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The privatelink_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" privatelinkConnection " pulumi-lang-dotnet=" PrivatelinkConnection " pulumi-lang-go=" privatelinkConnection " pulumi-lang-python=" privatelink_connection " pulumi-lang-yaml=" privatelinkConnection " pulumi-lang-java=" privatelinkConnection "> privatelink_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -288,163 +288,163 @@ export interface ConnectionKafkaKafkaBroker {
 }
 export interface ConnectionKafkaKafkaBrokerPrivatelinkConnection {
     /**
-     * The privatelink_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" privatelinkConnection " pulumi-lang-dotnet=" PrivatelinkConnection " pulumi-lang-go=" privatelinkConnection " pulumi-lang-python=" privatelink_connection " pulumi-lang-yaml=" privatelinkConnection " pulumi-lang-java=" privatelinkConnection "> privatelink_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The privatelink_connection name.
+     * The<span pulumi-lang-nodejs=" privatelinkConnection " pulumi-lang-dotnet=" PrivatelinkConnection " pulumi-lang-go=" privatelinkConnection " pulumi-lang-python=" privatelink_connection " pulumi-lang-yaml=" privatelinkConnection " pulumi-lang-java=" privatelinkConnection "> privatelink_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The privatelink_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" privatelinkConnection " pulumi-lang-dotnet=" PrivatelinkConnection " pulumi-lang-go=" privatelinkConnection " pulumi-lang-python=" privatelink_connection " pulumi-lang-yaml=" privatelinkConnection " pulumi-lang-java=" privatelinkConnection "> privatelink_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaKafkaBrokerSshTunnel {
     /**
-     * The ssh_tunnel database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssh_tunnel name.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssh_tunnel schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaSaslPassword {
     /**
-     * The sasl_password database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" saslPassword " pulumi-lang-dotnet=" SaslPassword " pulumi-lang-go=" saslPassword " pulumi-lang-python=" sasl_password " pulumi-lang-yaml=" saslPassword " pulumi-lang-java=" saslPassword "> sasl_password </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The sasl_password name.
+     * The<span pulumi-lang-nodejs=" saslPassword " pulumi-lang-dotnet=" SaslPassword " pulumi-lang-go=" saslPassword " pulumi-lang-python=" sasl_password " pulumi-lang-yaml=" saslPassword " pulumi-lang-java=" saslPassword "> sasl_password </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The sasl_password schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" saslPassword " pulumi-lang-dotnet=" SaslPassword " pulumi-lang-go=" saslPassword " pulumi-lang-python=" sasl_password " pulumi-lang-yaml=" saslPassword " pulumi-lang-java=" saslPassword "> sasl_password </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaSaslUsername {
     /**
-     * The `sasl_username` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`saslUsername`" pulumi-lang-dotnet="`SaslUsername`" pulumi-lang-go="`saslUsername`" pulumi-lang-python="`sasl_username`" pulumi-lang-yaml="`saslUsername`" pulumi-lang-java="`saslUsername`">`sasl_username`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionKafkaSaslUsernameSecret>;
     /**
-     * The `sasl_username` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`saslUsername`" pulumi-lang-dotnet="`SaslUsername`" pulumi-lang-go="`saslUsername`" pulumi-lang-python="`sasl_username`" pulumi-lang-yaml="`saslUsername`" pulumi-lang-java="`saslUsername`">`sasl_username`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaSaslUsernameSecret {
     /**
-     * The sasl_username database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" saslUsername " pulumi-lang-dotnet=" SaslUsername " pulumi-lang-go=" saslUsername " pulumi-lang-python=" sasl_username " pulumi-lang-yaml=" saslUsername " pulumi-lang-java=" saslUsername "> sasl_username </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The sasl_username name.
+     * The<span pulumi-lang-nodejs=" saslUsername " pulumi-lang-dotnet=" SaslUsername " pulumi-lang-go=" saslUsername " pulumi-lang-python=" sasl_username " pulumi-lang-yaml=" saslUsername " pulumi-lang-java=" saslUsername "> sasl_username </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The sasl_username schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" saslUsername " pulumi-lang-dotnet=" SaslUsername " pulumi-lang-go=" saslUsername " pulumi-lang-python=" sasl_username " pulumi-lang-yaml=" saslUsername " pulumi-lang-java=" saslUsername "> sasl_username </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaSshTunnel {
     /**
-     * The ssh_tunnel database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssh_tunnel name.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssh_tunnel schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaSslCertificate {
     /**
-     * The `ssl_certificate` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`sslCertificate`" pulumi-lang-dotnet="`SslCertificate`" pulumi-lang-go="`sslCertificate`" pulumi-lang-python="`ssl_certificate`" pulumi-lang-yaml="`sslCertificate`" pulumi-lang-java="`sslCertificate`">`ssl_certificate`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionKafkaSslCertificateSecret>;
     /**
-     * The `ssl_certificate` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`sslCertificate`" pulumi-lang-dotnet="`SslCertificate`" pulumi-lang-go="`sslCertificate`" pulumi-lang-python="`ssl_certificate`" pulumi-lang-yaml="`sslCertificate`" pulumi-lang-java="`sslCertificate`">`ssl_certificate`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaSslCertificateAuthority {
     /**
-     * The `ssl_certificate_authority` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`sslCertificateAuthority`" pulumi-lang-dotnet="`SslCertificateAuthority`" pulumi-lang-go="`sslCertificateAuthority`" pulumi-lang-python="`ssl_certificate_authority`" pulumi-lang-yaml="`sslCertificateAuthority`" pulumi-lang-java="`sslCertificateAuthority`">`ssl_certificate_authority`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionKafkaSslCertificateAuthoritySecret>;
     /**
-     * The `ssl_certificate_authority` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`sslCertificateAuthority`" pulumi-lang-dotnet="`SslCertificateAuthority`" pulumi-lang-go="`sslCertificateAuthority`" pulumi-lang-python="`ssl_certificate_authority`" pulumi-lang-yaml="`sslCertificateAuthority`" pulumi-lang-java="`sslCertificateAuthority`">`ssl_certificate_authority`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaSslCertificateAuthoritySecret {
     /**
-     * The ssl_certificate_authority database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_certificate_authority name.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_certificate_authority schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaSslCertificateSecret {
     /**
-     * The ssl_certificate database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_certificate name.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_certificate schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionKafkaSslKey {
     /**
-     * The ssl_key database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_key name.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_key schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionMysqlAwsPrivatelink {
     /**
-     * The aws_privatelink database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The aws_privatelink name.
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The aws_privatelink schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionMysqlPassword {
     /**
-     * The password database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The password database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -452,99 +452,99 @@ export interface ConnectionMysqlPassword {
      */
     name: pulumi.Input<string>;
     /**
-     * The password schema name. Defaults to `public`.
+     * The password schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionMysqlSshTunnel {
     /**
-     * The ssh_tunnel database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssh_tunnel name.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssh_tunnel schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionMysqlSslCertificate {
     /**
-     * The `ssl_certificate` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`sslCertificate`" pulumi-lang-dotnet="`SslCertificate`" pulumi-lang-go="`sslCertificate`" pulumi-lang-python="`ssl_certificate`" pulumi-lang-yaml="`sslCertificate`" pulumi-lang-java="`sslCertificate`">`ssl_certificate`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionMysqlSslCertificateSecret>;
     /**
-     * The `ssl_certificate` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`sslCertificate`" pulumi-lang-dotnet="`SslCertificate`" pulumi-lang-go="`sslCertificate`" pulumi-lang-python="`ssl_certificate`" pulumi-lang-yaml="`sslCertificate`" pulumi-lang-java="`sslCertificate`">`ssl_certificate`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionMysqlSslCertificateAuthority {
     /**
-     * The `ssl_certificate_authority` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`sslCertificateAuthority`" pulumi-lang-dotnet="`SslCertificateAuthority`" pulumi-lang-go="`sslCertificateAuthority`" pulumi-lang-python="`ssl_certificate_authority`" pulumi-lang-yaml="`sslCertificateAuthority`" pulumi-lang-java="`sslCertificateAuthority`">`ssl_certificate_authority`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionMysqlSslCertificateAuthoritySecret>;
     /**
-     * The `ssl_certificate_authority` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`sslCertificateAuthority`" pulumi-lang-dotnet="`SslCertificateAuthority`" pulumi-lang-go="`sslCertificateAuthority`" pulumi-lang-python="`ssl_certificate_authority`" pulumi-lang-yaml="`sslCertificateAuthority`" pulumi-lang-java="`sslCertificateAuthority`">`ssl_certificate_authority`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionMysqlSslCertificateAuthoritySecret {
     /**
-     * The ssl_certificate_authority database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_certificate_authority name.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_certificate_authority schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionMysqlSslCertificateSecret {
     /**
-     * The ssl_certificate database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_certificate name.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_certificate schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionMysqlSslKey {
     /**
-     * The ssl_key database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_key name.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_key schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionMysqlUser {
     /**
-     * The `user` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`user`" pulumi-lang-dotnet="`User`" pulumi-lang-go="`user`" pulumi-lang-python="`user`" pulumi-lang-yaml="`user`" pulumi-lang-java="`user`">`user`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionMysqlUserSecret>;
     /**
-     * The `user` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`user`" pulumi-lang-dotnet="`User`" pulumi-lang-go="`user`" pulumi-lang-python="`user`" pulumi-lang-yaml="`user`" pulumi-lang-java="`user`">`user`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionMysqlUserSecret {
     /**
-     * The user database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The user database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -552,27 +552,27 @@ export interface ConnectionMysqlUserSecret {
      */
     name: pulumi.Input<string>;
     /**
-     * The user schema name. Defaults to `public`.
+     * The user schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionPostgresAwsPrivatelink {
     /**
-     * The aws_privatelink database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The aws_privatelink name.
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The aws_privatelink schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionPostgresPassword {
     /**
-     * The password database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The password database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -580,99 +580,99 @@ export interface ConnectionPostgresPassword {
      */
     name: pulumi.Input<string>;
     /**
-     * The password schema name. Defaults to `public`.
+     * The password schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionPostgresSshTunnel {
     /**
-     * The ssh_tunnel database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssh_tunnel name.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssh_tunnel schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionPostgresSslCertificate {
     /**
-     * The `ssl_certificate` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`sslCertificate`" pulumi-lang-dotnet="`SslCertificate`" pulumi-lang-go="`sslCertificate`" pulumi-lang-python="`ssl_certificate`" pulumi-lang-yaml="`sslCertificate`" pulumi-lang-java="`sslCertificate`">`ssl_certificate`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionPostgresSslCertificateSecret>;
     /**
-     * The `ssl_certificate` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`sslCertificate`" pulumi-lang-dotnet="`SslCertificate`" pulumi-lang-go="`sslCertificate`" pulumi-lang-python="`ssl_certificate`" pulumi-lang-yaml="`sslCertificate`" pulumi-lang-java="`sslCertificate`">`ssl_certificate`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionPostgresSslCertificateAuthority {
     /**
-     * The `ssl_certificate_authority` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`sslCertificateAuthority`" pulumi-lang-dotnet="`SslCertificateAuthority`" pulumi-lang-go="`sslCertificateAuthority`" pulumi-lang-python="`ssl_certificate_authority`" pulumi-lang-yaml="`sslCertificateAuthority`" pulumi-lang-java="`sslCertificateAuthority`">`ssl_certificate_authority`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionPostgresSslCertificateAuthoritySecret>;
     /**
-     * The `ssl_certificate_authority` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`sslCertificateAuthority`" pulumi-lang-dotnet="`SslCertificateAuthority`" pulumi-lang-go="`sslCertificateAuthority`" pulumi-lang-python="`ssl_certificate_authority`" pulumi-lang-yaml="`sslCertificateAuthority`" pulumi-lang-java="`sslCertificateAuthority`">`ssl_certificate_authority`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionPostgresSslCertificateAuthoritySecret {
     /**
-     * The ssl_certificate_authority database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_certificate_authority name.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_certificate_authority schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionPostgresSslCertificateSecret {
     /**
-     * The ssl_certificate database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_certificate name.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_certificate schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslCertificate " pulumi-lang-dotnet=" SslCertificate " pulumi-lang-go=" sslCertificate " pulumi-lang-python=" ssl_certificate " pulumi-lang-yaml=" sslCertificate " pulumi-lang-java=" sslCertificate "> ssl_certificate </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionPostgresSslKey {
     /**
-     * The ssl_key database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The ssl_key name.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The ssl_key schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" sslKey " pulumi-lang-dotnet=" SslKey " pulumi-lang-go=" sslKey " pulumi-lang-python=" ssl_key " pulumi-lang-yaml=" sslKey " pulumi-lang-java=" sslKey "> ssl_key </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface ConnectionPostgresUser {
     /**
-     * The `user` secret value. Conflicts with `text` within this block.
+     * The <span pulumi-lang-nodejs="`user`" pulumi-lang-dotnet="`User`" pulumi-lang-go="`user`" pulumi-lang-python="`user`" pulumi-lang-yaml="`user`" pulumi-lang-java="`user`">`user`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
      */
     secret?: pulumi.Input<inputs.ConnectionPostgresUserSecret>;
     /**
-     * The `user` text value. Conflicts with `secret` within this block
+     * The <span pulumi-lang-nodejs="`user`" pulumi-lang-dotnet="`User`" pulumi-lang-go="`user`" pulumi-lang-python="`user`" pulumi-lang-yaml="`user`" pulumi-lang-java="`user`">`user`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
      */
     text?: pulumi.Input<string>;
 }
 export interface ConnectionPostgresUserSecret {
     /**
-     * The user database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The user database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -680,7 +680,97 @@ export interface ConnectionPostgresUserSecret {
      */
     name: pulumi.Input<string>;
     /**
-     * The user schema name. Defaults to `public`.
+     * The user schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
+     */
+    schemaName?: pulumi.Input<string>;
+}
+export interface ConnectionSqlserverAwsPrivatelink {
+    /**
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
+     */
+    schemaName?: pulumi.Input<string>;
+}
+export interface ConnectionSqlserverPassword {
+    /**
+     * The password database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * The password name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The password schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
+     */
+    schemaName?: pulumi.Input<string>;
+}
+export interface ConnectionSqlserverSshTunnel {
+    /**
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" sshTunnel " pulumi-lang-dotnet=" SshTunnel " pulumi-lang-go=" sshTunnel " pulumi-lang-python=" ssh_tunnel " pulumi-lang-yaml=" sshTunnel " pulumi-lang-java=" sshTunnel "> ssh_tunnel </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
+     */
+    schemaName?: pulumi.Input<string>;
+}
+export interface ConnectionSqlserverSslCertificateAuthority {
+    /**
+     * The <span pulumi-lang-nodejs="`sslCertificateAuthority`" pulumi-lang-dotnet="`SslCertificateAuthority`" pulumi-lang-go="`sslCertificateAuthority`" pulumi-lang-python="`ssl_certificate_authority`" pulumi-lang-yaml="`sslCertificateAuthority`" pulumi-lang-java="`sslCertificateAuthority`">`ssl_certificate_authority`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
+     */
+    secret?: pulumi.Input<inputs.ConnectionSqlserverSslCertificateAuthoritySecret>;
+    /**
+     * The <span pulumi-lang-nodejs="`sslCertificateAuthority`" pulumi-lang-dotnet="`SslCertificateAuthority`" pulumi-lang-go="`sslCertificateAuthority`" pulumi-lang-python="`ssl_certificate_authority`" pulumi-lang-yaml="`sslCertificateAuthority`" pulumi-lang-java="`sslCertificateAuthority`">`ssl_certificate_authority`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
+     */
+    text?: pulumi.Input<string>;
+}
+export interface ConnectionSqlserverSslCertificateAuthoritySecret {
+    /**
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" sslCertificateAuthority " pulumi-lang-dotnet=" SslCertificateAuthority " pulumi-lang-go=" sslCertificateAuthority " pulumi-lang-python=" ssl_certificate_authority " pulumi-lang-yaml=" sslCertificateAuthority " pulumi-lang-java=" sslCertificateAuthority "> ssl_certificate_authority </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
+     */
+    schemaName?: pulumi.Input<string>;
+}
+export interface ConnectionSqlserverUser {
+    /**
+     * The <span pulumi-lang-nodejs="`user`" pulumi-lang-dotnet="`User`" pulumi-lang-go="`user`" pulumi-lang-python="`user`" pulumi-lang-yaml="`user`" pulumi-lang-java="`user`">`user`</span> secret value. Conflicts with <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> within this block.
+     */
+    secret?: pulumi.Input<inputs.ConnectionSqlserverUserSecret>;
+    /**
+     * The <span pulumi-lang-nodejs="`user`" pulumi-lang-dotnet="`User`" pulumi-lang-go="`user`" pulumi-lang-python="`user`" pulumi-lang-yaml="`user`" pulumi-lang-java="`user`">`user`</span> text value. Conflicts with <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span> within this block
+     */
+    text?: pulumi.Input<string>;
+}
+export interface ConnectionSqlserverUserSecret {
+    /**
+     * The user database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * The user name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The user schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -692,15 +782,15 @@ export interface IndexColExpr {
 }
 export interface IndexObjName {
     /**
-     * The obj_name database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" objName " pulumi-lang-dotnet=" ObjName " pulumi-lang-go=" objName " pulumi-lang-python=" obj_name " pulumi-lang-yaml=" objName " pulumi-lang-java=" objName "> obj_name </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The obj_name name.
+     * The<span pulumi-lang-nodejs=" objName " pulumi-lang-dotnet=" ObjName " pulumi-lang-go=" objName " pulumi-lang-python=" obj_name " pulumi-lang-yaml=" objName " pulumi-lang-java=" objName "> obj_name </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The obj_name schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" objName " pulumi-lang-dotnet=" ObjName " pulumi-lang-go=" objName " pulumi-lang-python=" obj_name " pulumi-lang-yaml=" objName " pulumi-lang-java=" objName "> obj_name </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -796,7 +886,7 @@ export interface SinkKafkaFormatAvroAvroDocColumn {
 }
 export interface SinkKafkaFormatAvroAvroDocColumnObject {
     /**
-     * The object database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The object database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -804,7 +894,7 @@ export interface SinkKafkaFormatAvroAvroDocColumnObject {
      */
     name: pulumi.Input<string>;
     /**
-     * The object schema name. Defaults to `public`.
+     * The object schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -828,7 +918,7 @@ export interface SinkKafkaFormatAvroAvroDocType {
 }
 export interface SinkKafkaFormatAvroAvroDocTypeObject {
     /**
-     * The object database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The object database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -836,27 +926,27 @@ export interface SinkKafkaFormatAvroAvroDocTypeObject {
      */
     name: pulumi.Input<string>;
     /**
-     * The object schema name. Defaults to `public`.
+     * The object schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface SinkKafkaFormatAvroSchemaRegistryConnection {
     /**
-     * The schema_registry_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The schema_registry_connection name.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The schema_registry_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface SinkKafkaFrom {
     /**
-     * The from database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The from database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -864,21 +954,21 @@ export interface SinkKafkaFrom {
      */
     name: pulumi.Input<string>;
     /**
-     * The from schema name. Defaults to `public`.
+     * The from schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface SinkKafkaKafkaConnection {
     /**
-     * The kafka_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" kafkaConnection " pulumi-lang-dotnet=" KafkaConnection " pulumi-lang-go=" kafkaConnection " pulumi-lang-python=" kafka_connection " pulumi-lang-yaml=" kafkaConnection " pulumi-lang-java=" kafkaConnection "> kafka_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The kafka_connection name.
+     * The<span pulumi-lang-nodejs=" kafkaConnection " pulumi-lang-dotnet=" KafkaConnection " pulumi-lang-go=" kafkaConnection " pulumi-lang-python=" kafka_connection " pulumi-lang-yaml=" kafkaConnection " pulumi-lang-java=" kafkaConnection "> kafka_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The kafka_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" kafkaConnection " pulumi-lang-dotnet=" KafkaConnection " pulumi-lang-go=" kafkaConnection " pulumi-lang-python=" kafka_connection " pulumi-lang-yaml=" kafkaConnection " pulumi-lang-java=" kafkaConnection "> kafka_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -914,7 +1004,7 @@ export interface SourceKafkaEnvelopeUpsertOptionsValueDecodingErrors {
 }
 export interface SourceKafkaEnvelopeUpsertOptionsValueDecodingErrorsInline {
     /**
-     * Specify an alias for the value decoding errors column, to use an alternative name for the error column. If not specified, the column name will be `error`.
+     * Specify an alias for the value decoding errors column, to use an alternative name for the error column. If not specified, the column name will be <span pulumi-lang-nodejs="`error`" pulumi-lang-dotnet="`Error`" pulumi-lang-go="`error`" pulumi-lang-python="`error`" pulumi-lang-yaml="`error`" pulumi-lang-java="`error`">`error`</span>.
      */
     alias?: pulumi.Input<string>;
     /**
@@ -924,15 +1014,15 @@ export interface SourceKafkaEnvelopeUpsertOptionsValueDecodingErrorsInline {
 }
 export interface SourceKafkaExposeProgress {
     /**
-     * The expose_progress database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The expose_progress name.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The expose_progress schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -978,15 +1068,15 @@ export interface SourceKafkaFormatAvro {
 }
 export interface SourceKafkaFormatAvroSchemaRegistryConnection {
     /**
-     * The schema_registry_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The schema_registry_connection name.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The schema_registry_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -1016,29 +1106,29 @@ export interface SourceKafkaFormatProtobuf {
 }
 export interface SourceKafkaFormatProtobufSchemaRegistryConnection {
     /**
-     * The schema_registry_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The schema_registry_connection name.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The schema_registry_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface SourceKafkaKafkaConnection {
     /**
-     * The kafka_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" kafkaConnection " pulumi-lang-dotnet=" KafkaConnection " pulumi-lang-go=" kafkaConnection " pulumi-lang-python=" kafka_connection " pulumi-lang-yaml=" kafkaConnection " pulumi-lang-java=" kafkaConnection "> kafka_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The kafka_connection name.
+     * The<span pulumi-lang-nodejs=" kafkaConnection " pulumi-lang-dotnet=" KafkaConnection " pulumi-lang-go=" kafkaConnection " pulumi-lang-python=" kafka_connection " pulumi-lang-yaml=" kafkaConnection " pulumi-lang-java=" kafkaConnection "> kafka_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The kafka_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" kafkaConnection " pulumi-lang-dotnet=" KafkaConnection " pulumi-lang-go=" kafkaConnection " pulumi-lang-python=" kafka_connection " pulumi-lang-yaml=" kafkaConnection " pulumi-lang-java=" kafkaConnection "> kafka_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -1084,15 +1174,15 @@ export interface SourceKafkaKeyFormatAvro {
 }
 export interface SourceKafkaKeyFormatAvroSchemaRegistryConnection {
     /**
-     * The schema_registry_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The schema_registry_connection name.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The schema_registry_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -1122,15 +1212,15 @@ export interface SourceKafkaKeyFormatProtobuf {
 }
 export interface SourceKafkaKeyFormatProtobufSchemaRegistryConnection {
     /**
-     * The schema_registry_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The schema_registry_connection name.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The schema_registry_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -1176,15 +1266,15 @@ export interface SourceKafkaValueFormatAvro {
 }
 export interface SourceKafkaValueFormatAvroSchemaRegistryConnection {
     /**
-     * The schema_registry_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The schema_registry_connection name.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The schema_registry_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -1214,15 +1304,15 @@ export interface SourceKafkaValueFormatProtobuf {
 }
 export interface SourceKafkaValueFormatProtobufSchemaRegistryConnection {
     /**
-     * The schema_registry_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The schema_registry_connection name.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The schema_registry_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" schemaRegistryConnection " pulumi-lang-dotnet=" SchemaRegistryConnection " pulumi-lang-go=" schemaRegistryConnection " pulumi-lang-python=" schema_registry_connection " pulumi-lang-yaml=" schemaRegistryConnection " pulumi-lang-java=" schemaRegistryConnection "> schema_registry_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -1238,69 +1328,19 @@ export interface SourceLoadGeneratorAuctionOptions {
      */
     tickInterval?: pulumi.Input<string>;
 }
-export interface SourceLoadGeneratorCounterOptions {
-    /**
-     * Causes the generator to delete old values to keep the collection at most a given size. Defaults to unlimited.
-     */
-    maxCardinality?: pulumi.Input<number>;
-    /**
-     * (Deprecated) The scale factor for the generator. Defaults to 0.01 (~ 10MB).
-     *
-     * @deprecated Deprecated
-     */
-    scaleFactor?: pulumi.Input<number>;
-    /**
-     * The interval at which the next datum should be emitted. Defaults to one second.
-     */
-    tickInterval?: pulumi.Input<string>;
-}
 export interface SourceLoadGeneratorExposeProgress {
     /**
-     * The expose_progress database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The expose_progress name.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The expose_progress schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
-}
-export interface SourceLoadGeneratorKeyValueOptions {
-    /**
-     * The number of keys per partition to produce in each update.
-     */
-    batchSize?: pulumi.Input<number>;
-    /**
-     * The number of keys in the source. This must be divisible by the product of 'partitions' and 'batch_size'.
-     */
-    keys: pulumi.Input<number>;
-    /**
-     * The number of partitions to spread the keys across.
-     */
-    partitions?: pulumi.Input<number>;
-    /**
-     * A per-source seed for seeding the random data.
-     */
-    seed?: pulumi.Input<number>;
-    /**
-     * The number of rounds of data to produce as the source starts up.
-     */
-    snapshotRounds?: pulumi.Input<number>;
-    /**
-     * The interval at which the next datum should be emitted. Defaults to one second.
-     */
-    tickInterval?: pulumi.Input<string>;
-    /**
-     * Whether to emit the snapshot as a singular transaction.
-     */
-    transactionalSnapshot?: pulumi.Input<boolean>;
-    /**
-     * The number of bytes in each value.
-     */
-    valueSize?: pulumi.Input<number>;
 }
 export interface SourceLoadGeneratorMarketingOptions {
     /**
@@ -1326,29 +1366,29 @@ export interface SourceLoadGeneratorTpchOptions {
 }
 export interface SourceMysqlExposeProgress {
     /**
-     * The expose_progress database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The expose_progress name.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The expose_progress schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface SourceMysqlMysqlConnection {
     /**
-     * The mysql_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" mysqlConnection " pulumi-lang-dotnet=" MysqlConnection " pulumi-lang-go=" mysqlConnection " pulumi-lang-python=" mysql_connection " pulumi-lang-yaml=" mysqlConnection " pulumi-lang-java=" mysqlConnection "> mysql_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The mysql_connection name.
+     * The<span pulumi-lang-nodejs=" mysqlConnection " pulumi-lang-dotnet=" MysqlConnection " pulumi-lang-go=" mysqlConnection " pulumi-lang-python=" mysql_connection " pulumi-lang-yaml=" mysqlConnection " pulumi-lang-java=" mysqlConnection "> mysql_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The mysql_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" mysqlConnection " pulumi-lang-dotnet=" MysqlConnection " pulumi-lang-go=" mysqlConnection " pulumi-lang-python=" mysql_connection " pulumi-lang-yaml=" mysqlConnection " pulumi-lang-java=" mysqlConnection "> mysql_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -1376,29 +1416,29 @@ export interface SourceMysqlTable {
 }
 export interface SourcePostgresExposeProgress {
     /**
-     * The expose_progress database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The expose_progress name.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The expose_progress schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
 export interface SourcePostgresPostgresConnection {
     /**
-     * The postgres_connection database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The<span pulumi-lang-nodejs=" postgresConnection " pulumi-lang-dotnet=" PostgresConnection " pulumi-lang-go=" postgresConnection " pulumi-lang-python=" postgres_connection " pulumi-lang-yaml=" postgresConnection " pulumi-lang-java=" postgresConnection "> postgres_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The postgres_connection name.
+     * The<span pulumi-lang-nodejs=" postgresConnection " pulumi-lang-dotnet=" PostgresConnection " pulumi-lang-go=" postgresConnection " pulumi-lang-python=" postgres_connection " pulumi-lang-yaml=" postgresConnection " pulumi-lang-java=" postgresConnection "> postgres_connection </span>name.
      */
     name: pulumi.Input<string>;
     /**
-     * The postgres_connection schema name. Defaults to `public`.
+     * The<span pulumi-lang-nodejs=" postgresConnection " pulumi-lang-dotnet=" PostgresConnection " pulumi-lang-go=" postgresConnection " pulumi-lang-python=" postgres_connection " pulumi-lang-yaml=" postgresConnection " pulumi-lang-java=" postgresConnection "> postgres_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -1424,13 +1464,77 @@ export interface SourcePostgresTable {
      */
     upstreamSchemaName?: pulumi.Input<string>;
 }
+export interface SourceSqlserverAwsPrivatelink {
+    /**
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" awsPrivatelink " pulumi-lang-dotnet=" AwsPrivatelink " pulumi-lang-go=" awsPrivatelink " pulumi-lang-python=" aws_privatelink " pulumi-lang-yaml=" awsPrivatelink " pulumi-lang-java=" awsPrivatelink "> aws_privatelink </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
+     */
+    schemaName?: pulumi.Input<string>;
+}
+export interface SourceSqlserverExposeProgress {
+    /**
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" exposeProgress " pulumi-lang-dotnet=" ExposeProgress " pulumi-lang-go=" exposeProgress " pulumi-lang-python=" expose_progress " pulumi-lang-yaml=" exposeProgress " pulumi-lang-java=" exposeProgress "> expose_progress </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
+     */
+    schemaName?: pulumi.Input<string>;
+}
+export interface SourceSqlserverSqlserverConnection {
+    /**
+     * The<span pulumi-lang-nodejs=" sqlserverConnection " pulumi-lang-dotnet=" SqlserverConnection " pulumi-lang-go=" sqlserverConnection " pulumi-lang-python=" sqlserver_connection " pulumi-lang-yaml=" sqlserverConnection " pulumi-lang-java=" sqlserverConnection "> sqlserver_connection </span>database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" sqlserverConnection " pulumi-lang-dotnet=" SqlserverConnection " pulumi-lang-go=" sqlserverConnection " pulumi-lang-python=" sqlserver_connection " pulumi-lang-yaml=" sqlserverConnection " pulumi-lang-java=" sqlserverConnection "> sqlserver_connection </span>name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The<span pulumi-lang-nodejs=" sqlserverConnection " pulumi-lang-dotnet=" SqlserverConnection " pulumi-lang-go=" sqlserverConnection " pulumi-lang-python=" sqlserver_connection " pulumi-lang-yaml=" sqlserverConnection " pulumi-lang-java=" sqlserverConnection "> sqlserver_connection </span>schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
+     */
+    schemaName?: pulumi.Input<string>;
+}
+export interface SourceSqlserverTable {
+    /**
+     * The database of the table in Materialize.
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * The name for the table, used in Materialize.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The schema of the table in Materialize.
+     */
+    schemaName?: pulumi.Input<string>;
+    /**
+     * The name of the table in the upstream SQL Server database.
+     */
+    upstreamName: pulumi.Input<string>;
+    /**
+     * The schema of the table in the upstream SQL Server database.
+     */
+    upstreamSchemaName?: pulumi.Input<string>;
+}
 export interface SourceWebhookCheckOption {
     /**
      * The alias for the check options.
      */
     alias?: pulumi.Input<string>;
     /**
-     * Change type to `bytea`.
+     * Change type to <span pulumi-lang-nodejs="`bytea`" pulumi-lang-dotnet="`Bytea`" pulumi-lang-go="`bytea`" pulumi-lang-python="`bytea`" pulumi-lang-yaml="`bytea`" pulumi-lang-java="`bytea`">`bytea`</span>.
      */
     bytes?: pulumi.Input<boolean>;
     /**
@@ -1454,7 +1558,7 @@ export interface SourceWebhookCheckOptionField {
 }
 export interface SourceWebhookCheckOptionFieldSecret {
     /**
-     * The secret database name. Defaults to `MZ_DATABASE` environment variable if set or `materialize` if environment variable is not set.
+     * The secret database name. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -1462,7 +1566,7 @@ export interface SourceWebhookCheckOptionFieldSecret {
      */
     name: pulumi.Input<string>;
     /**
-     * The secret schema name. Defaults to `public`.
+     * The secret schema name. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
 }
@@ -1472,7 +1576,7 @@ export interface SourceWebhookIncludeHeader {
      */
     alias?: pulumi.Input<string>;
     /**
-     * Change type to `bytea`.
+     * Change type to <span pulumi-lang-nodejs="`bytea`" pulumi-lang-dotnet="`Bytea`" pulumi-lang-go="`bytea`" pulumi-lang-python="`bytea`" pulumi-lang-yaml="`bytea`" pulumi-lang-java="`bytea`">`bytea`</span>.
      */
     bytes?: pulumi.Input<boolean>;
     /**

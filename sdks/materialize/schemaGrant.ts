@@ -35,24 +35,24 @@ export class SchemaGrant extends pulumi.CustomResource {
     /**
      * The database that the schema belongs to.
      */
-    public readonly databaseName!: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string>;
     /**
      * The privilege to grant to the object.
      */
-    public readonly privilege!: pulumi.Output<string>;
+    declare public readonly privilege: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The name of the role to grant privilege to.
      */
-    public readonly roleName!: pulumi.Output<string>;
-    public readonly schemaGrantId!: pulumi.Output<string>;
+    declare public readonly roleName: pulumi.Output<string>;
+    declare public readonly schemaGrantId: pulumi.Output<string>;
     /**
      * The schema that is being granted on.
      */
-    public readonly schemaName!: pulumi.Output<string>;
+    declare public readonly schemaName: pulumi.Output<string>;
 
     /**
      * Create a SchemaGrant resource with the given unique name, arguments, and options.
@@ -67,32 +67,32 @@ export class SchemaGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SchemaGrantState | undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
-            resourceInputs["schemaGrantId"] = state ? state.schemaGrantId : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
+            resourceInputs["schemaGrantId"] = state?.schemaGrantId;
+            resourceInputs["schemaName"] = state?.schemaName;
         } else {
             const args = argsOrState as SchemaGrantArgs | undefined;
-            if ((!args || args.databaseName === undefined) && !opts.urn) {
+            if (args?.databaseName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            if ((!args || args.schemaName === undefined) && !opts.urn) {
+            if (args?.schemaName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemaName'");
             }
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
-            resourceInputs["schemaGrantId"] = args ? args.schemaGrantId : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
+            resourceInputs["schemaGrantId"] = args?.schemaGrantId;
+            resourceInputs["schemaName"] = args?.schemaName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SchemaGrant.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

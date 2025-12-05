@@ -33,15 +33,14 @@ export class SsoDefaultRoles extends pulumi.CustomResource {
     }
 
     /**
-     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via
-     * SSO.
+     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via SSO.
      */
-    public readonly roles!: pulumi.Output<string[]>;
+    declare public readonly roles: pulumi.Output<string[]>;
     /**
      * The ID of the associated SSO configuration.
      */
-    public readonly ssoConfigId!: pulumi.Output<string>;
-    public readonly ssoDefaultRolesId!: pulumi.Output<string>;
+    declare public readonly ssoConfigId: pulumi.Output<string>;
+    declare public readonly ssoDefaultRolesId: pulumi.Output<string>;
 
     /**
      * Create a SsoDefaultRoles resource with the given unique name, arguments, and options.
@@ -56,20 +55,20 @@ export class SsoDefaultRoles extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SsoDefaultRolesState | undefined;
-            resourceInputs["roles"] = state ? state.roles : undefined;
-            resourceInputs["ssoConfigId"] = state ? state.ssoConfigId : undefined;
-            resourceInputs["ssoDefaultRolesId"] = state ? state.ssoDefaultRolesId : undefined;
+            resourceInputs["roles"] = state?.roles;
+            resourceInputs["ssoConfigId"] = state?.ssoConfigId;
+            resourceInputs["ssoDefaultRolesId"] = state?.ssoDefaultRolesId;
         } else {
             const args = argsOrState as SsoDefaultRolesArgs | undefined;
-            if ((!args || args.roles === undefined) && !opts.urn) {
+            if (args?.roles === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roles'");
             }
-            if ((!args || args.ssoConfigId === undefined) && !opts.urn) {
+            if (args?.ssoConfigId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ssoConfigId'");
             }
-            resourceInputs["roles"] = args ? args.roles : undefined;
-            resourceInputs["ssoConfigId"] = args ? args.ssoConfigId : undefined;
-            resourceInputs["ssoDefaultRolesId"] = args ? args.ssoDefaultRolesId : undefined;
+            resourceInputs["roles"] = args?.roles;
+            resourceInputs["ssoConfigId"] = args?.ssoConfigId;
+            resourceInputs["ssoDefaultRolesId"] = args?.ssoDefaultRolesId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SsoDefaultRoles.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
@@ -81,8 +80,7 @@ export class SsoDefaultRoles extends pulumi.CustomResource {
  */
 export interface SsoDefaultRolesState {
     /**
-     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via
-     * SSO.
+     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via SSO.
      */
     roles?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -97,8 +95,7 @@ export interface SsoDefaultRolesState {
  */
 export interface SsoDefaultRolesArgs {
     /**
-     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via
-     * SSO.
+     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via SSO.
      */
     roles: pulumi.Input<pulumi.Input<string>[]>;
     /**

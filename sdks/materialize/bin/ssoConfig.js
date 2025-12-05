@@ -16,7 +16,7 @@ class SsoConfig extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new SsoConfig(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new SsoConfig(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of SsoConfig.  This is designed to work even
@@ -33,40 +33,40 @@ class SsoConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["oidcClientId"] = state ? state.oidcClientId : undefined;
-            resourceInputs["oidcSecret"] = state ? state.oidcSecret : undefined;
-            resourceInputs["publicCertificate"] = state ? state.publicCertificate : undefined;
-            resourceInputs["signRequest"] = state ? state.signRequest : undefined;
-            resourceInputs["ssoConfigId"] = state ? state.ssoConfigId : undefined;
-            resourceInputs["ssoEndpoint"] = state ? state.ssoEndpoint : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["oidcClientId"] = state?.oidcClientId;
+            resourceInputs["oidcSecret"] = state?.oidcSecret;
+            resourceInputs["publicCertificate"] = state?.publicCertificate;
+            resourceInputs["signRequest"] = state?.signRequest;
+            resourceInputs["ssoConfigId"] = state?.ssoConfigId;
+            resourceInputs["ssoEndpoint"] = state?.ssoEndpoint;
+            resourceInputs["type"] = state?.type;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.publicCertificate === undefined) && !opts.urn) {
+            if (args?.publicCertificate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'publicCertificate'");
             }
-            if ((!args || args.signRequest === undefined) && !opts.urn) {
+            if (args?.signRequest === undefined && !opts.urn) {
                 throw new Error("Missing required property 'signRequest'");
             }
-            if ((!args || args.ssoEndpoint === undefined) && !opts.urn) {
+            if (args?.ssoEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ssoEndpoint'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["oidcClientId"] = args ? args.oidcClientId : undefined;
-            resourceInputs["oidcSecret"] = args ? args.oidcSecret : undefined;
-            resourceInputs["publicCertificate"] = args ? args.publicCertificate : undefined;
-            resourceInputs["signRequest"] = args ? args.signRequest : undefined;
-            resourceInputs["ssoConfigId"] = args ? args.ssoConfigId : undefined;
-            resourceInputs["ssoEndpoint"] = args ? args.ssoEndpoint : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["oidcClientId"] = args?.oidcClientId;
+            resourceInputs["oidcSecret"] = args?.oidcSecret;
+            resourceInputs["publicCertificate"] = args?.publicCertificate;
+            resourceInputs["signRequest"] = args?.signRequest;
+            resourceInputs["ssoConfigId"] = args?.ssoConfigId;
+            resourceInputs["ssoEndpoint"] = args?.ssoEndpoint;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SsoConfig.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

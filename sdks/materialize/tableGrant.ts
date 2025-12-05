@@ -35,28 +35,28 @@ export class TableGrant extends pulumi.CustomResource {
     /**
      * The database that the table belongs to.
      */
-    public readonly databaseName!: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string>;
     /**
      * The privilege to grant to the object.
      */
-    public readonly privilege!: pulumi.Output<string>;
+    declare public readonly privilege: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The name of the role to grant privilege to.
      */
-    public readonly roleName!: pulumi.Output<string>;
+    declare public readonly roleName: pulumi.Output<string>;
     /**
      * The schema that the table being to.
      */
-    public readonly schemaName!: pulumi.Output<string>;
-    public readonly tableGrantId!: pulumi.Output<string>;
+    declare public readonly schemaName: pulumi.Output<string>;
+    declare public readonly tableGrantId: pulumi.Output<string>;
     /**
      * The table that is being granted on.
      */
-    public readonly tableName!: pulumi.Output<string>;
+    declare public readonly tableName: pulumi.Output<string>;
 
     /**
      * Create a TableGrant resource with the given unique name, arguments, and options.
@@ -71,37 +71,37 @@ export class TableGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TableGrantState | undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["tableGrantId"] = state ? state.tableGrantId : undefined;
-            resourceInputs["tableName"] = state ? state.tableName : undefined;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["tableGrantId"] = state?.tableGrantId;
+            resourceInputs["tableName"] = state?.tableName;
         } else {
             const args = argsOrState as TableGrantArgs | undefined;
-            if ((!args || args.databaseName === undefined) && !opts.urn) {
+            if (args?.databaseName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            if ((!args || args.schemaName === undefined) && !opts.urn) {
+            if (args?.schemaName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemaName'");
             }
-            if ((!args || args.tableName === undefined) && !opts.urn) {
+            if (args?.tableName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tableName'");
             }
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["tableGrantId"] = args ? args.tableGrantId : undefined;
-            resourceInputs["tableName"] = args ? args.tableName : undefined;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["tableGrantId"] = args?.tableGrantId;
+            resourceInputs["tableName"] = args?.tableName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(TableGrant.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

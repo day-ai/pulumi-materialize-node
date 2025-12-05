@@ -37,48 +37,48 @@ export class Index extends pulumi.CustomResource {
     /**
      * The cluster to maintain this index.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * The expressions to use as the key for the index.
      */
-    public readonly colExprs!: pulumi.Output<outputs.IndexColExpr[] | undefined>;
+    declare public readonly colExprs: pulumi.Output<outputs.IndexColExpr[] | undefined>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
      * The identifier for the index database.
      */
-    public /*out*/ readonly databaseName!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseName: pulumi.Output<string>;
     /**
-     * Creates a default index using all inferred columns are used. Required if col_expr is not set.
+     * Creates a default index using all inferred columns are used. Required if<span pulumi-lang-nodejs=" colExpr " pulumi-lang-dotnet=" ColExpr " pulumi-lang-go=" colExpr " pulumi-lang-python=" col_expr " pulumi-lang-yaml=" colExpr " pulumi-lang-java=" colExpr "> col_expr </span>is not set.
      */
-    public readonly default!: pulumi.Output<boolean | undefined>;
-    public readonly indexId!: pulumi.Output<string>;
+    declare public readonly default: pulumi.Output<boolean | undefined>;
+    declare public readonly indexId: pulumi.Output<string>;
     /**
      * The name of the index method to use.
      */
-    public readonly method!: pulumi.Output<string | undefined>;
+    declare public readonly method: pulumi.Output<string | undefined>;
     /**
      * The identifier for the index.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The name of the source, view, or materialized view on which you want to create an index.
      */
-    public readonly objName!: pulumi.Output<outputs.IndexObjName>;
+    declare public readonly objName: pulumi.Output<outputs.IndexObjName>;
     /**
      * The fully qualified name of the index.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The identifier for the index schema.
      */
-    public /*out*/ readonly schemaName!: pulumi.Output<string>;
+    declare public /*out*/ readonly schemaName: pulumi.Output<string>;
 
     /**
      * Create a Index resource with the given unique name, arguments, and options.
@@ -93,35 +93,35 @@ export class Index extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as IndexState | undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["colExprs"] = state ? state.colExprs : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["default"] = state ? state.default : undefined;
-            resourceInputs["indexId"] = state ? state.indexId : undefined;
-            resourceInputs["method"] = state ? state.method : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["objName"] = state ? state.objName : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["colExprs"] = state?.colExprs;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["default"] = state?.default;
+            resourceInputs["indexId"] = state?.indexId;
+            resourceInputs["method"] = state?.method;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["objName"] = state?.objName;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
         } else {
             const args = argsOrState as IndexArgs | undefined;
-            if ((!args || args.clusterName === undefined) && !opts.urn) {
+            if (args?.clusterName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterName'");
             }
-            if ((!args || args.objName === undefined) && !opts.urn) {
+            if (args?.objName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'objName'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["colExprs"] = args ? args.colExprs : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["default"] = args ? args.default : undefined;
-            resourceInputs["indexId"] = args ? args.indexId : undefined;
-            resourceInputs["method"] = args ? args.method : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["objName"] = args ? args.objName : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["colExprs"] = args?.colExprs;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["default"] = args?.default;
+            resourceInputs["indexId"] = args?.indexId;
+            resourceInputs["method"] = args?.method;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["objName"] = args?.objName;
+            resourceInputs["region"] = args?.region;
             resourceInputs["databaseName"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["schemaName"] = undefined /*out*/;
@@ -152,7 +152,7 @@ export interface IndexState {
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * Creates a default index using all inferred columns are used. Required if col_expr is not set.
+     * Creates a default index using all inferred columns are used. Required if<span pulumi-lang-nodejs=" colExpr " pulumi-lang-dotnet=" ColExpr " pulumi-lang-go=" colExpr " pulumi-lang-python=" col_expr " pulumi-lang-yaml=" colExpr " pulumi-lang-java=" colExpr "> col_expr </span>is not set.
      */
     default?: pulumi.Input<boolean>;
     indexId?: pulumi.Input<string>;
@@ -199,7 +199,7 @@ export interface IndexArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * Creates a default index using all inferred columns are used. Required if col_expr is not set.
+     * Creates a default index using all inferred columns are used. Required if<span pulumi-lang-nodejs=" colExpr " pulumi-lang-dotnet=" ColExpr " pulumi-lang-go=" colExpr " pulumi-lang-python=" col_expr " pulumi-lang-yaml=" colExpr " pulumi-lang-java=" colExpr "> col_expr </span>is not set.
      */
     default?: pulumi.Input<boolean>;
     indexId?: pulumi.Input<string>;

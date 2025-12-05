@@ -16,7 +16,7 @@ class MaterializedViewGrant extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new MaterializedViewGrant(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new MaterializedViewGrant(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of MaterializedViewGrant.  This is designed to work even
@@ -33,38 +33,38 @@ class MaterializedViewGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["materializedViewGrantId"] = state ? state.materializedViewGrantId : undefined;
-            resourceInputs["materializedViewName"] = state ? state.materializedViewName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["materializedViewGrantId"] = state?.materializedViewGrantId;
+            resourceInputs["materializedViewName"] = state?.materializedViewName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
+            resourceInputs["schemaName"] = state?.schemaName;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.databaseName === undefined) && !opts.urn) {
+            if (args?.databaseName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseName'");
             }
-            if ((!args || args.materializedViewName === undefined) && !opts.urn) {
+            if (args?.materializedViewName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'materializedViewName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            if ((!args || args.schemaName === undefined) && !opts.urn) {
+            if (args?.schemaName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'schemaName'");
             }
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["materializedViewGrantId"] = args ? args.materializedViewGrantId : undefined;
-            resourceInputs["materializedViewName"] = args ? args.materializedViewName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["materializedViewGrantId"] = args?.materializedViewGrantId;
+            resourceInputs["materializedViewName"] = args?.materializedViewName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
+            resourceInputs["schemaName"] = args?.schemaName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(MaterializedViewGrant.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

@@ -37,63 +37,64 @@ export class SourcePostgres extends pulumi.CustomResource {
     /**
      * The cluster to maintain this source.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * Exclude specific columns when reading data from PostgreSQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
-    public readonly exposeProgress!: pulumi.Output<outputs.SourcePostgresExposeProgress | undefined>;
+    declare public readonly excludeColumns: pulumi.Output<string[] | undefined>;
+    /**
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
+     */
+    declare public readonly exposeProgress: pulumi.Output<outputs.SourcePostgresExposeProgress | undefined>;
     /**
      * The identifier for the source.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The PostgreSQL connection to use in the source.
      */
-    public readonly postgresConnection!: pulumi.Output<outputs.SourcePostgresPostgresConnection>;
+    declare public readonly postgresConnection: pulumi.Output<outputs.SourcePostgresPostgresConnection>;
     /**
      * The PostgreSQL publication (the replication data set containing the tables to be streamed to Materialize).
      */
-    public readonly publication!: pulumi.Output<string>;
+    declare public readonly publication: pulumi.Output<string>;
     /**
      * The fully qualified name of the source.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
     /**
      * The size of the cluster maintaining this source.
      */
-    public /*out*/ readonly size!: pulumi.Output<string>;
-    public readonly sourcePostgresId!: pulumi.Output<string>;
+    declare public /*out*/ readonly size: pulumi.Output<string>;
+    declare public readonly sourcePostgresId: pulumi.Output<string>;
     /**
      * Creates subsources for specific tables in the Postgres connection.
      */
-    public readonly tables!: pulumi.Output<outputs.SourcePostgresTable[]>;
+    declare public readonly tables: pulumi.Output<outputs.SourcePostgresTable[]>;
     /**
-     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be
-     * updated in place when also updating a corresponding `table` attribute.
+     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
-    public readonly textColumns!: pulumi.Output<string[] | undefined>;
+    declare public readonly textColumns: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a SourcePostgres resource with the given unique name, arguments, and options.
@@ -108,45 +109,47 @@ export class SourcePostgres extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SourcePostgresState | undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["exposeProgress"] = state ? state.exposeProgress : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["postgresConnection"] = state ? state.postgresConnection : undefined;
-            resourceInputs["publication"] = state ? state.publication : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["sourcePostgresId"] = state ? state.sourcePostgresId : undefined;
-            resourceInputs["tables"] = state ? state.tables : undefined;
-            resourceInputs["textColumns"] = state ? state.textColumns : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["excludeColumns"] = state?.excludeColumns;
+            resourceInputs["exposeProgress"] = state?.exposeProgress;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["postgresConnection"] = state?.postgresConnection;
+            resourceInputs["publication"] = state?.publication;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["sourcePostgresId"] = state?.sourcePostgresId;
+            resourceInputs["tables"] = state?.tables;
+            resourceInputs["textColumns"] = state?.textColumns;
         } else {
             const args = argsOrState as SourcePostgresArgs | undefined;
-            if ((!args || args.postgresConnection === undefined) && !opts.urn) {
+            if (args?.postgresConnection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'postgresConnection'");
             }
-            if ((!args || args.publication === undefined) && !opts.urn) {
+            if (args?.publication === undefined && !opts.urn) {
                 throw new Error("Missing required property 'publication'");
             }
-            if ((!args || args.tables === undefined) && !opts.urn) {
+            if (args?.tables === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tables'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["exposeProgress"] = args ? args.exposeProgress : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["postgresConnection"] = args ? args.postgresConnection : undefined;
-            resourceInputs["publication"] = args ? args.publication : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sourcePostgresId"] = args ? args.sourcePostgresId : undefined;
-            resourceInputs["tables"] = args ? args.tables : undefined;
-            resourceInputs["textColumns"] = args ? args.textColumns : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["excludeColumns"] = args?.excludeColumns;
+            resourceInputs["exposeProgress"] = args?.exposeProgress;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["postgresConnection"] = args?.postgresConnection;
+            resourceInputs["publication"] = args?.publication;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sourcePostgresId"] = args?.sourcePostgresId;
+            resourceInputs["tables"] = args?.tables;
+            resourceInputs["textColumns"] = args?.textColumns;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
         }
@@ -168,13 +171,15 @@ export interface SourcePostgresState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * Exclude specific columns when reading data from PostgreSQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     */
+    excludeColumns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourcePostgresExposeProgress>;
     /**
@@ -202,7 +207,7 @@ export interface SourcePostgresState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -215,8 +220,7 @@ export interface SourcePostgresState {
      */
     tables?: pulumi.Input<pulumi.Input<inputs.SourcePostgresTable>[]>;
     /**
-     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be
-     * updated in place when also updating a corresponding `table` attribute.
+     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     textColumns?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -234,13 +238,15 @@ export interface SourcePostgresArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * Exclude specific columns when reading data from PostgreSQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     */
+    excludeColumns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourcePostgresExposeProgress>;
     /**
@@ -264,7 +270,7 @@ export interface SourcePostgresArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sourcePostgresId?: pulumi.Input<string>;
@@ -273,8 +279,7 @@ export interface SourcePostgresArgs {
      */
     tables: pulumi.Input<pulumi.Input<inputs.SourcePostgresTable>[]>;
     /**
-     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be
-     * updated in place when also updating a corresponding `table` attribute.
+     * Decode data as text for specific columns that contain PostgreSQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     textColumns?: pulumi.Input<pulumi.Input<string>[]>;
 }

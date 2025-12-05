@@ -35,24 +35,22 @@ export class User extends pulumi.CustomResource {
     /**
      * The authentication provider for the user.
      */
-    public /*out*/ readonly authProvider!: pulumi.Output<string>;
+    declare public /*out*/ readonly authProvider: pulumi.Output<string>;
     /**
      * The email address of the user. This must be unique across all users in the organization.
      */
-    public readonly email!: pulumi.Output<string>;
-    public /*out*/ readonly metadata!: pulumi.Output<string>;
+    declare public readonly email: pulumi.Output<string>;
+    declare public /*out*/ readonly metadata: pulumi.Output<string>;
     /**
      * The roles to assign to the user. Allowed values are 'Member' and 'Admin'.
      */
-    public readonly roles!: pulumi.Output<string[]>;
+    declare public readonly roles: pulumi.Output<string[]>;
     /**
-     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to
-     * join the organization, if the user already exists in another organization. Changing this property after the resource is
-     * created has no effect.
+     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to join the organization, if the user already exists in another organization. Changing this property after the resource is created has no effect.
      */
-    public readonly sendActivationEmail!: pulumi.Output<boolean | undefined>;
-    public readonly userId!: pulumi.Output<string>;
-    public /*out*/ readonly verified!: pulumi.Output<boolean>;
+    declare public readonly sendActivationEmail: pulumi.Output<boolean | undefined>;
+    declare public readonly userId: pulumi.Output<string>;
+    declare public /*out*/ readonly verified: pulumi.Output<boolean>;
 
     /**
      * Create a User resource with the given unique name, arguments, and options.
@@ -67,25 +65,25 @@ export class User extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserState | undefined;
-            resourceInputs["authProvider"] = state ? state.authProvider : undefined;
-            resourceInputs["email"] = state ? state.email : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["roles"] = state ? state.roles : undefined;
-            resourceInputs["sendActivationEmail"] = state ? state.sendActivationEmail : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
-            resourceInputs["verified"] = state ? state.verified : undefined;
+            resourceInputs["authProvider"] = state?.authProvider;
+            resourceInputs["email"] = state?.email;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["roles"] = state?.roles;
+            resourceInputs["sendActivationEmail"] = state?.sendActivationEmail;
+            resourceInputs["userId"] = state?.userId;
+            resourceInputs["verified"] = state?.verified;
         } else {
             const args = argsOrState as UserArgs | undefined;
-            if ((!args || args.email === undefined) && !opts.urn) {
+            if (args?.email === undefined && !opts.urn) {
                 throw new Error("Missing required property 'email'");
             }
-            if ((!args || args.roles === undefined) && !opts.urn) {
+            if (args?.roles === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roles'");
             }
-            resourceInputs["email"] = args ? args.email : undefined;
-            resourceInputs["roles"] = args ? args.roles : undefined;
-            resourceInputs["sendActivationEmail"] = args ? args.sendActivationEmail : undefined;
-            resourceInputs["userId"] = args ? args.userId : undefined;
+            resourceInputs["email"] = args?.email;
+            resourceInputs["roles"] = args?.roles;
+            resourceInputs["sendActivationEmail"] = args?.sendActivationEmail;
+            resourceInputs["userId"] = args?.userId;
             resourceInputs["authProvider"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;
             resourceInputs["verified"] = undefined /*out*/;
@@ -113,9 +111,7 @@ export interface UserState {
      */
     roles?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to
-     * join the organization, if the user already exists in another organization. Changing this property after the resource is
-     * created has no effect.
+     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to join the organization, if the user already exists in another organization. Changing this property after the resource is created has no effect.
      */
     sendActivationEmail?: pulumi.Input<boolean>;
     userId?: pulumi.Input<string>;
@@ -135,9 +131,7 @@ export interface UserArgs {
      */
     roles: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to
-     * join the organization, if the user already exists in another organization. Changing this property after the resource is
-     * created has no effect.
+     * Whether to send an email either inviting the user to activate their account, if the user is new, or inviting the user to join the organization, if the user already exists in another organization. Changing this property after the resource is created has no effect.
      */
     sendActivationEmail?: pulumi.Input<boolean>;
     userId?: pulumi.Input<string>;

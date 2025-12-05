@@ -16,7 +16,7 @@ class ConnectionSshTunnel extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new ConnectionSshTunnel(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new ConnectionSshTunnel(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of ConnectionSshTunnel.  This is designed to work even
@@ -33,43 +33,43 @@ class ConnectionSshTunnel extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["connectionSshTunnelId"] = state ? state.connectionSshTunnelId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["host"] = state ? state.host : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["publicKey1"] = state ? state.publicKey1 : undefined;
-            resourceInputs["publicKey2"] = state ? state.publicKey2 : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["user"] = state ? state.user : undefined;
-            resourceInputs["validate"] = state ? state.validate : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["connectionSshTunnelId"] = state?.connectionSshTunnelId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["host"] = state?.host;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["publicKey1"] = state?.publicKey1;
+            resourceInputs["publicKey2"] = state?.publicKey2;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["user"] = state?.user;
+            resourceInputs["validate"] = state?.validate;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.host === undefined) && !opts.urn) {
+            if (args?.host === undefined && !opts.urn) {
                 throw new Error("Missing required property 'host'");
             }
-            if ((!args || args.port === undefined) && !opts.urn) {
+            if (args?.port === undefined && !opts.urn) {
                 throw new Error("Missing required property 'port'");
             }
-            if ((!args || args.user === undefined) && !opts.urn) {
+            if (args?.user === undefined && !opts.urn) {
                 throw new Error("Missing required property 'user'");
             }
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["connectionSshTunnelId"] = args ? args.connectionSshTunnelId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["host"] = args ? args.host : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["user"] = args ? args.user : undefined;
-            resourceInputs["validate"] = args ? args.validate : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["connectionSshTunnelId"] = args?.connectionSshTunnelId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["host"] = args?.host;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["user"] = args?.user;
+            resourceInputs["validate"] = args?.validate;
             resourceInputs["publicKey1"] = undefined /*out*/;
             resourceInputs["publicKey2"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;

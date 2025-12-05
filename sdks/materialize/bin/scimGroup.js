@@ -16,7 +16,7 @@ class ScimGroup extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new ScimGroup(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new ScimGroup(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of ScimGroup.  This is designed to work even
@@ -33,15 +33,15 @@ class ScimGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["scimGroupId"] = state ? state.scimGroupId : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["scimGroupId"] = state?.scimGroupId;
         }
         else {
             const args = argsOrState;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["scimGroupId"] = args ? args.scimGroupId : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["scimGroupId"] = args?.scimGroupId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ScimGroup.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

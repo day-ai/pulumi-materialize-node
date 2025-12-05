@@ -16,7 +16,7 @@ class User extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new User(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new User(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of User.  This is designed to work even
@@ -33,26 +33,26 @@ class User extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["authProvider"] = state ? state.authProvider : undefined;
-            resourceInputs["email"] = state ? state.email : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["roles"] = state ? state.roles : undefined;
-            resourceInputs["sendActivationEmail"] = state ? state.sendActivationEmail : undefined;
-            resourceInputs["userId"] = state ? state.userId : undefined;
-            resourceInputs["verified"] = state ? state.verified : undefined;
+            resourceInputs["authProvider"] = state?.authProvider;
+            resourceInputs["email"] = state?.email;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["roles"] = state?.roles;
+            resourceInputs["sendActivationEmail"] = state?.sendActivationEmail;
+            resourceInputs["userId"] = state?.userId;
+            resourceInputs["verified"] = state?.verified;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.email === undefined) && !opts.urn) {
+            if (args?.email === undefined && !opts.urn) {
                 throw new Error("Missing required property 'email'");
             }
-            if ((!args || args.roles === undefined) && !opts.urn) {
+            if (args?.roles === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roles'");
             }
-            resourceInputs["email"] = args ? args.email : undefined;
-            resourceInputs["roles"] = args ? args.roles : undefined;
-            resourceInputs["sendActivationEmail"] = args ? args.sendActivationEmail : undefined;
-            resourceInputs["userId"] = args ? args.userId : undefined;
+            resourceInputs["email"] = args?.email;
+            resourceInputs["roles"] = args?.roles;
+            resourceInputs["sendActivationEmail"] = args?.sendActivationEmail;
+            resourceInputs["userId"] = args?.userId;
             resourceInputs["authProvider"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;
             resourceInputs["verified"] = undefined /*out*/;

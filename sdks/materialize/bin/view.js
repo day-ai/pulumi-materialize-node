@@ -16,7 +16,7 @@ class View extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new View(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new View(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of View.  This is designed to work even
@@ -33,30 +33,30 @@ class View extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["createSql"] = state ? state.createSql : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["statement"] = state ? state.statement : undefined;
-            resourceInputs["viewId"] = state ? state.viewId : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["createSql"] = state?.createSql;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["statement"] = state?.statement;
+            resourceInputs["viewId"] = state?.viewId;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.statement === undefined) && !opts.urn) {
+            if (args?.statement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'statement'");
             }
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["statement"] = args ? args.statement : undefined;
-            resourceInputs["viewId"] = args ? args.viewId : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["statement"] = args?.statement;
+            resourceInputs["viewId"] = args?.viewId;
             resourceInputs["createSql"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }

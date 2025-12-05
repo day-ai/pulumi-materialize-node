@@ -16,8 +16,7 @@ export declare class SsoDomain extends pulumi.CustomResource {
      */
     static isInstance(obj: any): obj is SsoDomain;
     /**
-     * The domain name for the SSO domain configuration. This domain will be used to validate the SSO configuration and needs
-     * to be unique across all SSO configurations.
+     * The domain name for the SSO domain configuration. This domain will be used to validate the SSO configuration and needs to be unique across all SSO configurations.
      */
     readonly domain: pulumi.Output<string>;
     /**
@@ -43,8 +42,7 @@ export declare class SsoDomain extends pulumi.CustomResource {
  */
 export interface SsoDomainState {
     /**
-     * The domain name for the SSO domain configuration. This domain will be used to validate the SSO configuration and needs
-     * to be unique across all SSO configurations.
+     * The domain name for the SSO domain configuration. This domain will be used to validate the SSO configuration and needs to be unique across all SSO configurations.
      */
     domain?: pulumi.Input<string>;
     /**
@@ -62,8 +60,7 @@ export interface SsoDomainState {
  */
 export interface SsoDomainArgs {
     /**
-     * The domain name for the SSO domain configuration. This domain will be used to validate the SSO configuration and needs
-     * to be unique across all SSO configurations.
+     * The domain name for the SSO domain configuration. This domain will be used to validate the SSO configuration and needs to be unique across all SSO configurations.
      */
     domain: pulumi.Input<string>;
     /**

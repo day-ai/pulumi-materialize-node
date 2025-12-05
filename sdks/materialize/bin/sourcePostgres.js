@@ -16,7 +16,7 @@ class SourcePostgres extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new SourcePostgres(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new SourcePostgres(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of SourcePostgres.  This is designed to work even
@@ -33,46 +33,48 @@ class SourcePostgres extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["exposeProgress"] = state ? state.exposeProgress : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["postgresConnection"] = state ? state.postgresConnection : undefined;
-            resourceInputs["publication"] = state ? state.publication : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["sourcePostgresId"] = state ? state.sourcePostgresId : undefined;
-            resourceInputs["tables"] = state ? state.tables : undefined;
-            resourceInputs["textColumns"] = state ? state.textColumns : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["excludeColumns"] = state?.excludeColumns;
+            resourceInputs["exposeProgress"] = state?.exposeProgress;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["postgresConnection"] = state?.postgresConnection;
+            resourceInputs["publication"] = state?.publication;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["sourcePostgresId"] = state?.sourcePostgresId;
+            resourceInputs["tables"] = state?.tables;
+            resourceInputs["textColumns"] = state?.textColumns;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.postgresConnection === undefined) && !opts.urn) {
+            if (args?.postgresConnection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'postgresConnection'");
             }
-            if ((!args || args.publication === undefined) && !opts.urn) {
+            if (args?.publication === undefined && !opts.urn) {
                 throw new Error("Missing required property 'publication'");
             }
-            if ((!args || args.tables === undefined) && !opts.urn) {
+            if (args?.tables === undefined && !opts.urn) {
                 throw new Error("Missing required property 'tables'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["exposeProgress"] = args ? args.exposeProgress : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["postgresConnection"] = args ? args.postgresConnection : undefined;
-            resourceInputs["publication"] = args ? args.publication : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sourcePostgresId"] = args ? args.sourcePostgresId : undefined;
-            resourceInputs["tables"] = args ? args.tables : undefined;
-            resourceInputs["textColumns"] = args ? args.textColumns : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["excludeColumns"] = args?.excludeColumns;
+            resourceInputs["exposeProgress"] = args?.exposeProgress;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["postgresConnection"] = args?.postgresConnection;
+            resourceInputs["publication"] = args?.publication;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sourcePostgresId"] = args?.sourcePostgresId;
+            resourceInputs["tables"] = args?.tables;
+            resourceInputs["textColumns"] = args?.textColumns;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
         }

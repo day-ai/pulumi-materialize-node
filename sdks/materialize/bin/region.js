@@ -16,7 +16,7 @@ class Region extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new Region(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new Region(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of Region.  This is designed to work even
@@ -33,21 +33,21 @@ class Region extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["enabledAt"] = state ? state.enabledAt : undefined;
-            resourceInputs["httpAddress"] = state ? state.httpAddress : undefined;
-            resourceInputs["materializeRegionId"] = state ? state.materializeRegionId : undefined;
-            resourceInputs["regionId"] = state ? state.regionId : undefined;
-            resourceInputs["regionState"] = state ? state.regionState : undefined;
-            resourceInputs["resolvable"] = state ? state.resolvable : undefined;
-            resourceInputs["sqlAddress"] = state ? state.sqlAddress : undefined;
+            resourceInputs["enabledAt"] = state?.enabledAt;
+            resourceInputs["httpAddress"] = state?.httpAddress;
+            resourceInputs["materializeRegionId"] = state?.materializeRegionId;
+            resourceInputs["regionId"] = state?.regionId;
+            resourceInputs["regionState"] = state?.regionState;
+            resourceInputs["resolvable"] = state?.resolvable;
+            resourceInputs["sqlAddress"] = state?.sqlAddress;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.regionId === undefined) && !opts.urn) {
+            if (args?.regionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'regionId'");
             }
-            resourceInputs["materializeRegionId"] = args ? args.materializeRegionId : undefined;
-            resourceInputs["regionId"] = args ? args.regionId : undefined;
+            resourceInputs["materializeRegionId"] = args?.materializeRegionId;
+            resourceInputs["regionId"] = args?.regionId;
             resourceInputs["enabledAt"] = undefined /*out*/;
             resourceInputs["httpAddress"] = undefined /*out*/;
             resourceInputs["regionState"] = undefined /*out*/;

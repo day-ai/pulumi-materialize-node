@@ -16,7 +16,7 @@ class ConnectionAws extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new ConnectionAws(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new ConnectionAws(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of ConnectionAws.  This is designed to work even
@@ -33,41 +33,41 @@ class ConnectionAws extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["accessKeyId"] = state ? state.accessKeyId : undefined;
-            resourceInputs["assumeRoleArn"] = state ? state.assumeRoleArn : undefined;
-            resourceInputs["assumeRoleSessionName"] = state ? state.assumeRoleSessionName : undefined;
-            resourceInputs["awsRegion"] = state ? state.awsRegion : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["connectionAwsId"] = state ? state.connectionAwsId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["endpoint"] = state ? state.endpoint : undefined;
-            resourceInputs["externalId"] = state ? state.externalId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["secretAccessKey"] = state ? state.secretAccessKey : undefined;
-            resourceInputs["sessionToken"] = state ? state.sessionToken : undefined;
-            resourceInputs["validate"] = state ? state.validate : undefined;
+            resourceInputs["accessKeyId"] = state?.accessKeyId;
+            resourceInputs["assumeRoleArn"] = state?.assumeRoleArn;
+            resourceInputs["assumeRoleSessionName"] = state?.assumeRoleSessionName;
+            resourceInputs["awsRegion"] = state?.awsRegion;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["connectionAwsId"] = state?.connectionAwsId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["endpoint"] = state?.endpoint;
+            resourceInputs["externalId"] = state?.externalId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["secretAccessKey"] = state?.secretAccessKey;
+            resourceInputs["sessionToken"] = state?.sessionToken;
+            resourceInputs["validate"] = state?.validate;
         }
         else {
             const args = argsOrState;
-            resourceInputs["accessKeyId"] = args ? args.accessKeyId : undefined;
-            resourceInputs["assumeRoleArn"] = args ? args.assumeRoleArn : undefined;
-            resourceInputs["assumeRoleSessionName"] = args ? args.assumeRoleSessionName : undefined;
-            resourceInputs["awsRegion"] = args ? args.awsRegion : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["connectionAwsId"] = args ? args.connectionAwsId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["endpoint"] = args ? args.endpoint : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["secretAccessKey"] = args ? args.secretAccessKey : undefined;
-            resourceInputs["sessionToken"] = args ? args.sessionToken : undefined;
-            resourceInputs["validate"] = args ? args.validate : undefined;
+            resourceInputs["accessKeyId"] = args?.accessKeyId;
+            resourceInputs["assumeRoleArn"] = args?.assumeRoleArn;
+            resourceInputs["assumeRoleSessionName"] = args?.assumeRoleSessionName;
+            resourceInputs["awsRegion"] = args?.awsRegion;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["connectionAwsId"] = args?.connectionAwsId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["endpoint"] = args?.endpoint;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["secretAccessKey"] = args?.secretAccessKey;
+            resourceInputs["sessionToken"] = args?.sessionToken;
+            resourceInputs["validate"] = args?.validate;
             resourceInputs["externalId"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }

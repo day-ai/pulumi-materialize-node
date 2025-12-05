@@ -26,18 +26,15 @@ export declare class SourceMysql extends pulumi.CustomResource {
      */
     readonly comment: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     readonly exposeProgress: pulumi.Output<outputs.SourceMysqlExposeProgress | undefined>;
     /**
-     * Ignore specific columns when reading data from MySQL. Can only be updated in place when also updating a corresponding
-     * `table` attribute.
+     * Ignore specific columns when reading data from MySQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     readonly ignoreColumns: pulumi.Output<string[] | undefined>;
     /**
@@ -61,7 +58,7 @@ export declare class SourceMysql extends pulumi.CustomResource {
      */
     readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
@@ -74,8 +71,7 @@ export declare class SourceMysql extends pulumi.CustomResource {
      */
     readonly tables: pulumi.Output<outputs.SourceMysqlTable[] | undefined>;
     /**
-     * Decode data as text for specific columns that contain MySQL types that are unsupported in Materialize. Can only be
-     * updated in place when also updating a corresponding `table` attribute.
+     * Decode data as text for specific columns that contain MySQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     readonly textColumns: pulumi.Output<string[] | undefined>;
     /**
@@ -100,18 +96,15 @@ export interface SourceMysqlState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourceMysqlExposeProgress>;
     /**
-     * Ignore specific columns when reading data from MySQL. Can only be updated in place when also updating a corresponding
-     * `table` attribute.
+     * Ignore specific columns when reading data from MySQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     ignoreColumns?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -135,7 +128,7 @@ export interface SourceMysqlState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -148,8 +141,7 @@ export interface SourceMysqlState {
      */
     tables?: pulumi.Input<pulumi.Input<inputs.SourceMysqlTable>[]>;
     /**
-     * Decode data as text for specific columns that contain MySQL types that are unsupported in Materialize. Can only be
-     * updated in place when also updating a corresponding `table` attribute.
+     * Decode data as text for specific columns that contain MySQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     textColumns?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -166,18 +158,15 @@ export interface SourceMysqlArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourceMysqlExposeProgress>;
     /**
-     * Ignore specific columns when reading data from MySQL. Can only be updated in place when also updating a corresponding
-     * `table` attribute.
+     * Ignore specific columns when reading data from MySQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     ignoreColumns?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -197,7 +186,7 @@ export interface SourceMysqlArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sourceMysqlId?: pulumi.Input<string>;
@@ -206,8 +195,7 @@ export interface SourceMysqlArgs {
      */
     tables?: pulumi.Input<pulumi.Input<inputs.SourceMysqlTable>[]>;
     /**
-     * Decode data as text for specific columns that contain MySQL types that are unsupported in Materialize. Can only be
-     * updated in place when also updating a corresponding `table` attribute.
+     * Decode data as text for specific columns that contain MySQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     textColumns?: pulumi.Input<pulumi.Input<string>[]>;
 }

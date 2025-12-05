@@ -31,8 +31,7 @@ export declare class ConnectionPostgres extends pulumi.CustomResource {
      */
     readonly database: pulumi.Output<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
@@ -64,7 +63,7 @@ export declare class ConnectionPostgres extends pulumi.CustomResource {
      */
     readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
@@ -72,13 +71,11 @@ export declare class ConnectionPostgres extends pulumi.CustomResource {
      */
     readonly sshTunnel: pulumi.Output<outputs.ConnectionPostgresSshTunnel | undefined>;
     /**
-     * The client certificate for the Postgres database.. Can be supplied as either free text using `text` or reference to a
-     * secret object using `secret`.
+     * The client certificate for the Postgres database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly sslCertificate: pulumi.Output<outputs.ConnectionPostgresSslCertificate | undefined>;
     /**
-     * The CA certificate for the Postgres database.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The CA certificate for the Postgres database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly sslCertificateAuthority: pulumi.Output<outputs.ConnectionPostgresSslCertificateAuthority | undefined>;
     /**
@@ -90,8 +87,7 @@ export declare class ConnectionPostgres extends pulumi.CustomResource {
      */
     readonly sslMode: pulumi.Output<string | undefined>;
     /**
-     * The Postgres database username.. Can be supplied as either free text using `text` or reference to a secret object using
-     * `secret`.
+     * The Postgres database username.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly user: pulumi.Output<outputs.ConnectionPostgresUser>;
     /**
@@ -125,8 +121,7 @@ export interface ConnectionPostgresState {
      */
     database?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -158,7 +153,7 @@ export interface ConnectionPostgresState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -166,13 +161,11 @@ export interface ConnectionPostgresState {
      */
     sshTunnel?: pulumi.Input<inputs.ConnectionPostgresSshTunnel>;
     /**
-     * The client certificate for the Postgres database.. Can be supplied as either free text using `text` or reference to a
-     * secret object using `secret`.
+     * The client certificate for the Postgres database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificate?: pulumi.Input<inputs.ConnectionPostgresSslCertificate>;
     /**
-     * The CA certificate for the Postgres database.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The CA certificate for the Postgres database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificateAuthority?: pulumi.Input<inputs.ConnectionPostgresSslCertificateAuthority>;
     /**
@@ -184,8 +177,7 @@ export interface ConnectionPostgresState {
      */
     sslMode?: pulumi.Input<string>;
     /**
-     * The Postgres database username.. Can be supplied as either free text using `text` or reference to a secret object using
-     * `secret`.
+     * The Postgres database username.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     user?: pulumi.Input<inputs.ConnectionPostgresUser>;
     /**
@@ -211,8 +203,7 @@ export interface ConnectionPostgresArgs {
      */
     database: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -240,7 +231,7 @@ export interface ConnectionPostgresArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -248,13 +239,11 @@ export interface ConnectionPostgresArgs {
      */
     sshTunnel?: pulumi.Input<inputs.ConnectionPostgresSshTunnel>;
     /**
-     * The client certificate for the Postgres database.. Can be supplied as either free text using `text` or reference to a
-     * secret object using `secret`.
+     * The client certificate for the Postgres database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificate?: pulumi.Input<inputs.ConnectionPostgresSslCertificate>;
     /**
-     * The CA certificate for the Postgres database.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The CA certificate for the Postgres database.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificateAuthority?: pulumi.Input<inputs.ConnectionPostgresSslCertificateAuthority>;
     /**
@@ -266,8 +255,7 @@ export interface ConnectionPostgresArgs {
      */
     sslMode?: pulumi.Input<string>;
     /**
-     * The Postgres database username.. Can be supplied as either free text using `text` or reference to a secret object using
-     * `secret`.
+     * The Postgres database username.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     user: pulumi.Input<inputs.ConnectionPostgresUser>;
     /**

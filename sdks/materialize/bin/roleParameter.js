@@ -16,7 +16,7 @@ class RoleParameter extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new RoleParameter(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new RoleParameter(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of RoleParameter.  This is designed to work even
@@ -33,28 +33,28 @@ class RoleParameter extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
-            resourceInputs["roleParameterId"] = state ? state.roleParameterId : undefined;
-            resourceInputs["variableName"] = state ? state.variableName : undefined;
-            resourceInputs["variableValue"] = state ? state.variableValue : undefined;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
+            resourceInputs["roleParameterId"] = state?.roleParameterId;
+            resourceInputs["variableName"] = state?.variableName;
+            resourceInputs["variableValue"] = state?.variableValue;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            if ((!args || args.variableName === undefined) && !opts.urn) {
+            if (args?.variableName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'variableName'");
             }
-            if ((!args || args.variableValue === undefined) && !opts.urn) {
+            if (args?.variableValue === undefined && !opts.urn) {
                 throw new Error("Missing required property 'variableValue'");
             }
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
-            resourceInputs["roleParameterId"] = args ? args.roleParameterId : undefined;
-            resourceInputs["variableName"] = args ? args.variableName : undefined;
-            resourceInputs["variableValue"] = args ? args.variableValue : undefined;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
+            resourceInputs["roleParameterId"] = args?.roleParameterId;
+            resourceInputs["variableName"] = args?.variableName;
+            resourceInputs["variableValue"] = args?.variableValue;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RoleParameter.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

@@ -29,8 +29,7 @@ export declare class ClusterReplica extends pulumi.CustomResource {
      */
     readonly comment: pulumi.Output<string | undefined>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */
@@ -82,8 +81,7 @@ export interface ClusterReplicaState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */
@@ -127,8 +125,7 @@ export interface ClusterReplicaArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */

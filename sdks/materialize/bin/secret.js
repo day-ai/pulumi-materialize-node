@@ -16,7 +16,7 @@ class Secret extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new Secret(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new Secret(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of Secret.  This is designed to work even
@@ -33,33 +33,34 @@ class Secret extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["secretId"] = state ? state.secretId : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["secretId"] = state?.secretId;
+            resourceInputs["value"] = state?.value;
+            resourceInputs["valueWo"] = state?.valueWo;
+            resourceInputs["valueWoVersion"] = state?.valueWoVersion;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.value === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'value'");
-            }
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["secretId"] = args ? args.secretId : undefined;
-            resourceInputs["value"] = (args === null || args === void 0 ? void 0 : args.value) ? pulumi.secret(args.value) : undefined;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["secretId"] = args?.secretId;
+            resourceInputs["value"] = args?.value ? pulumi.secret(args.value) : undefined;
+            resourceInputs["valueWo"] = args?.valueWo ? pulumi.secret(args.valueWo) : undefined;
+            resourceInputs["valueWoVersion"] = args?.valueWoVersion;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["value"] };
+        const secretOpts = { additionalSecretOutputs: ["value", "valueWo"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Secret.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
     }

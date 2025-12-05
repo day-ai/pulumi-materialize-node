@@ -33,40 +33,34 @@ export class SsoConfig extends pulumi.CustomResource {
     }
 
     /**
-     * Whether SSO is enabled or not. If enabled, users will be redirected to the SSO endpoint for authentication. The
-     * configuration needs to be valid for SSO to work.
+     * Whether SSO is enabled or not. If enabled, users will be redirected to the SSO endpoint for authentication. The configuration needs to be valid for SSO to work.
      */
-    public readonly enabled!: pulumi.Output<boolean>;
+    declare public readonly enabled: pulumi.Output<boolean>;
     /**
-     * The client ID of the OIDC application. This is used to identify the application to the OIDC service. This is required if
-     * the type is OIDC.
+     * The client ID of the OIDC application. This is used to identify the application to the OIDC service. This is required if the type is OIDC.
      */
-    public readonly oidcClientId!: pulumi.Output<string | undefined>;
+    declare public readonly oidcClientId: pulumi.Output<string | undefined>;
     /**
-     * The client secret of the OIDC application. This is used to authenticate the application to the OIDC service. This is
-     * required if the type is OIDC.
+     * The client secret of the OIDC application. This is used to authenticate the application to the OIDC service. This is required if the type is OIDC.
      */
-    public readonly oidcSecret!: pulumi.Output<string | undefined>;
+    declare public readonly oidcSecret: pulumi.Output<string | undefined>;
     /**
-     * The public certificate of the SSO service. This is used to verify the SSO response. The certificate must be in PEM
-     * format. The certificate must be accessible from the browser. If the certificate is not accessible from the browser, you
-     * can use the public certificate of the Identity Provider (IdP) instead.
+     * The public certificate of the SSO service. This is used to verify the SSO response. The certificate must be in PEM format. The certificate must be accessible from the browser. If the certificate is not accessible from the browser, you can use the public certificate of the Identity Provider (IdP) instead.
      */
-    public readonly publicCertificate!: pulumi.Output<string>;
+    declare public readonly publicCertificate: pulumi.Output<string>;
     /**
      * Indicates whether the SSO request needs to be digitally signed.
      */
-    public readonly signRequest!: pulumi.Output<boolean>;
-    public readonly ssoConfigId!: pulumi.Output<string>;
+    declare public readonly signRequest: pulumi.Output<boolean>;
+    declare public readonly ssoConfigId: pulumi.Output<string>;
     /**
-     * The URL endpoint for the SSO service. This is the URL that users will be redirected to for authentication. The URL must
-     * be accessible from the browser.
+     * The URL endpoint for the SSO service. This is the URL that users will be redirected to for authentication. The URL must be accessible from the browser.
      */
-    public readonly ssoEndpoint!: pulumi.Output<string>;
+    declare public readonly ssoEndpoint: pulumi.Output<string>;
     /**
      * Defines the type of SSO protocol being used (e.g., saml, oidc).
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a SsoConfig resource with the given unique name, arguments, and options.
@@ -81,39 +75,39 @@ export class SsoConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SsoConfigState | undefined;
-            resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["oidcClientId"] = state ? state.oidcClientId : undefined;
-            resourceInputs["oidcSecret"] = state ? state.oidcSecret : undefined;
-            resourceInputs["publicCertificate"] = state ? state.publicCertificate : undefined;
-            resourceInputs["signRequest"] = state ? state.signRequest : undefined;
-            resourceInputs["ssoConfigId"] = state ? state.ssoConfigId : undefined;
-            resourceInputs["ssoEndpoint"] = state ? state.ssoEndpoint : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["enabled"] = state?.enabled;
+            resourceInputs["oidcClientId"] = state?.oidcClientId;
+            resourceInputs["oidcSecret"] = state?.oidcSecret;
+            resourceInputs["publicCertificate"] = state?.publicCertificate;
+            resourceInputs["signRequest"] = state?.signRequest;
+            resourceInputs["ssoConfigId"] = state?.ssoConfigId;
+            resourceInputs["ssoEndpoint"] = state?.ssoEndpoint;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as SsoConfigArgs | undefined;
-            if ((!args || args.enabled === undefined) && !opts.urn) {
+            if (args?.enabled === undefined && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
             }
-            if ((!args || args.publicCertificate === undefined) && !opts.urn) {
+            if (args?.publicCertificate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'publicCertificate'");
             }
-            if ((!args || args.signRequest === undefined) && !opts.urn) {
+            if (args?.signRequest === undefined && !opts.urn) {
                 throw new Error("Missing required property 'signRequest'");
             }
-            if ((!args || args.ssoEndpoint === undefined) && !opts.urn) {
+            if (args?.ssoEndpoint === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ssoEndpoint'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["oidcClientId"] = args ? args.oidcClientId : undefined;
-            resourceInputs["oidcSecret"] = args ? args.oidcSecret : undefined;
-            resourceInputs["publicCertificate"] = args ? args.publicCertificate : undefined;
-            resourceInputs["signRequest"] = args ? args.signRequest : undefined;
-            resourceInputs["ssoConfigId"] = args ? args.ssoConfigId : undefined;
-            resourceInputs["ssoEndpoint"] = args ? args.ssoEndpoint : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["enabled"] = args?.enabled;
+            resourceInputs["oidcClientId"] = args?.oidcClientId;
+            resourceInputs["oidcSecret"] = args?.oidcSecret;
+            resourceInputs["publicCertificate"] = args?.publicCertificate;
+            resourceInputs["signRequest"] = args?.signRequest;
+            resourceInputs["ssoConfigId"] = args?.ssoConfigId;
+            resourceInputs["ssoEndpoint"] = args?.ssoEndpoint;
+            resourceInputs["type"] = args?.type;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SsoConfig.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
@@ -125,24 +119,19 @@ export class SsoConfig extends pulumi.CustomResource {
  */
 export interface SsoConfigState {
     /**
-     * Whether SSO is enabled or not. If enabled, users will be redirected to the SSO endpoint for authentication. The
-     * configuration needs to be valid for SSO to work.
+     * Whether SSO is enabled or not. If enabled, users will be redirected to the SSO endpoint for authentication. The configuration needs to be valid for SSO to work.
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * The client ID of the OIDC application. This is used to identify the application to the OIDC service. This is required if
-     * the type is OIDC.
+     * The client ID of the OIDC application. This is used to identify the application to the OIDC service. This is required if the type is OIDC.
      */
     oidcClientId?: pulumi.Input<string>;
     /**
-     * The client secret of the OIDC application. This is used to authenticate the application to the OIDC service. This is
-     * required if the type is OIDC.
+     * The client secret of the OIDC application. This is used to authenticate the application to the OIDC service. This is required if the type is OIDC.
      */
     oidcSecret?: pulumi.Input<string>;
     /**
-     * The public certificate of the SSO service. This is used to verify the SSO response. The certificate must be in PEM
-     * format. The certificate must be accessible from the browser. If the certificate is not accessible from the browser, you
-     * can use the public certificate of the Identity Provider (IdP) instead.
+     * The public certificate of the SSO service. This is used to verify the SSO response. The certificate must be in PEM format. The certificate must be accessible from the browser. If the certificate is not accessible from the browser, you can use the public certificate of the Identity Provider (IdP) instead.
      */
     publicCertificate?: pulumi.Input<string>;
     /**
@@ -151,8 +140,7 @@ export interface SsoConfigState {
     signRequest?: pulumi.Input<boolean>;
     ssoConfigId?: pulumi.Input<string>;
     /**
-     * The URL endpoint for the SSO service. This is the URL that users will be redirected to for authentication. The URL must
-     * be accessible from the browser.
+     * The URL endpoint for the SSO service. This is the URL that users will be redirected to for authentication. The URL must be accessible from the browser.
      */
     ssoEndpoint?: pulumi.Input<string>;
     /**
@@ -166,24 +154,19 @@ export interface SsoConfigState {
  */
 export interface SsoConfigArgs {
     /**
-     * Whether SSO is enabled or not. If enabled, users will be redirected to the SSO endpoint for authentication. The
-     * configuration needs to be valid for SSO to work.
+     * Whether SSO is enabled or not. If enabled, users will be redirected to the SSO endpoint for authentication. The configuration needs to be valid for SSO to work.
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * The client ID of the OIDC application. This is used to identify the application to the OIDC service. This is required if
-     * the type is OIDC.
+     * The client ID of the OIDC application. This is used to identify the application to the OIDC service. This is required if the type is OIDC.
      */
     oidcClientId?: pulumi.Input<string>;
     /**
-     * The client secret of the OIDC application. This is used to authenticate the application to the OIDC service. This is
-     * required if the type is OIDC.
+     * The client secret of the OIDC application. This is used to authenticate the application to the OIDC service. This is required if the type is OIDC.
      */
     oidcSecret?: pulumi.Input<string>;
     /**
-     * The public certificate of the SSO service. This is used to verify the SSO response. The certificate must be in PEM
-     * format. The certificate must be accessible from the browser. If the certificate is not accessible from the browser, you
-     * can use the public certificate of the Identity Provider (IdP) instead.
+     * The public certificate of the SSO service. This is used to verify the SSO response. The certificate must be in PEM format. The certificate must be accessible from the browser. If the certificate is not accessible from the browser, you can use the public certificate of the Identity Provider (IdP) instead.
      */
     publicCertificate: pulumi.Input<string>;
     /**
@@ -192,8 +175,7 @@ export interface SsoConfigArgs {
     signRequest: pulumi.Input<boolean>;
     ssoConfigId?: pulumi.Input<string>;
     /**
-     * The URL endpoint for the SSO service. This is the URL that users will be redirected to for authentication. The URL must
-     * be accessible from the browser.
+     * The URL endpoint for the SSO service. This is the URL that users will be redirected to for authentication. The URL must be accessible from the browser.
      */
     ssoEndpoint: pulumi.Input<string>;
     /**

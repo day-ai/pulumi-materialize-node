@@ -16,7 +16,7 @@ class ScimGroupUsers extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new ScimGroupUsers(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new ScimGroupUsers(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of ScimGroupUsers.  This is designed to work even
@@ -33,18 +33,18 @@ class ScimGroupUsers extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["scimGroupUsersId"] = state ? state.scimGroupUsersId : undefined;
-            resourceInputs["users"] = state ? state.users : undefined;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["scimGroupUsersId"] = state?.scimGroupUsersId;
+            resourceInputs["users"] = state?.users;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["scimGroupUsersId"] = args ? args.scimGroupUsersId : undefined;
-            resourceInputs["users"] = args ? args.users : undefined;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["scimGroupUsersId"] = args?.scimGroupUsersId;
+            resourceInputs["users"] = args?.users;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ScimGroupUsers.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

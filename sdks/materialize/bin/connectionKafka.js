@@ -16,7 +16,7 @@ class ConnectionKafka extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new ConnectionKafka(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new ConnectionKafka(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of ConnectionKafka.  This is designed to work even
@@ -33,52 +33,52 @@ class ConnectionKafka extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["awsConnection"] = state ? state.awsConnection : undefined;
-            resourceInputs["awsPrivatelink"] = state ? state.awsPrivatelink : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["connectionKafkaId"] = state ? state.connectionKafkaId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["kafkaBrokers"] = state ? state.kafkaBrokers : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["progressTopic"] = state ? state.progressTopic : undefined;
-            resourceInputs["progressTopicReplicationFactor"] = state ? state.progressTopicReplicationFactor : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["saslMechanisms"] = state ? state.saslMechanisms : undefined;
-            resourceInputs["saslPassword"] = state ? state.saslPassword : undefined;
-            resourceInputs["saslUsername"] = state ? state.saslUsername : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["securityProtocol"] = state ? state.securityProtocol : undefined;
-            resourceInputs["sshTunnel"] = state ? state.sshTunnel : undefined;
-            resourceInputs["sslCertificate"] = state ? state.sslCertificate : undefined;
-            resourceInputs["sslCertificateAuthority"] = state ? state.sslCertificateAuthority : undefined;
-            resourceInputs["sslKey"] = state ? state.sslKey : undefined;
-            resourceInputs["validate"] = state ? state.validate : undefined;
+            resourceInputs["awsConnection"] = state?.awsConnection;
+            resourceInputs["awsPrivatelink"] = state?.awsPrivatelink;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["connectionKafkaId"] = state?.connectionKafkaId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["kafkaBrokers"] = state?.kafkaBrokers;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["progressTopic"] = state?.progressTopic;
+            resourceInputs["progressTopicReplicationFactor"] = state?.progressTopicReplicationFactor;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["saslMechanisms"] = state?.saslMechanisms;
+            resourceInputs["saslPassword"] = state?.saslPassword;
+            resourceInputs["saslUsername"] = state?.saslUsername;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["securityProtocol"] = state?.securityProtocol;
+            resourceInputs["sshTunnel"] = state?.sshTunnel;
+            resourceInputs["sslCertificate"] = state?.sslCertificate;
+            resourceInputs["sslCertificateAuthority"] = state?.sslCertificateAuthority;
+            resourceInputs["sslKey"] = state?.sslKey;
+            resourceInputs["validate"] = state?.validate;
         }
         else {
             const args = argsOrState;
-            resourceInputs["awsConnection"] = args ? args.awsConnection : undefined;
-            resourceInputs["awsPrivatelink"] = args ? args.awsPrivatelink : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["connectionKafkaId"] = args ? args.connectionKafkaId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["kafkaBrokers"] = args ? args.kafkaBrokers : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["progressTopic"] = args ? args.progressTopic : undefined;
-            resourceInputs["progressTopicReplicationFactor"] = args ? args.progressTopicReplicationFactor : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["saslMechanisms"] = args ? args.saslMechanisms : undefined;
-            resourceInputs["saslPassword"] = args ? args.saslPassword : undefined;
-            resourceInputs["saslUsername"] = args ? args.saslUsername : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["securityProtocol"] = args ? args.securityProtocol : undefined;
-            resourceInputs["sshTunnel"] = args ? args.sshTunnel : undefined;
-            resourceInputs["sslCertificate"] = args ? args.sslCertificate : undefined;
-            resourceInputs["sslCertificateAuthority"] = args ? args.sslCertificateAuthority : undefined;
-            resourceInputs["sslKey"] = args ? args.sslKey : undefined;
-            resourceInputs["validate"] = args ? args.validate : undefined;
+            resourceInputs["awsConnection"] = args?.awsConnection;
+            resourceInputs["awsPrivatelink"] = args?.awsPrivatelink;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["connectionKafkaId"] = args?.connectionKafkaId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["kafkaBrokers"] = args?.kafkaBrokers;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["progressTopic"] = args?.progressTopic;
+            resourceInputs["progressTopicReplicationFactor"] = args?.progressTopicReplicationFactor;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["saslMechanisms"] = args?.saslMechanisms;
+            resourceInputs["saslPassword"] = args?.saslPassword;
+            resourceInputs["saslUsername"] = args?.saslUsername;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["securityProtocol"] = args?.securityProtocol;
+            resourceInputs["sshTunnel"] = args?.sshTunnel;
+            resourceInputs["sslCertificate"] = args?.sslCertificate;
+            resourceInputs["sslCertificateAuthority"] = args?.sslCertificateAuthority;
+            resourceInputs["sslKey"] = args?.sslKey;
+            resourceInputs["validate"] = args?.validate;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -32,23 +32,23 @@ export class ClusterGrant extends pulumi.CustomResource {
         return obj['__pulumiType'] === ClusterGrant.__pulumiType;
     }
 
-    public readonly clusterGrantId!: pulumi.Output<string>;
+    declare public readonly clusterGrantId: pulumi.Output<string>;
     /**
      * The cluster that is being granted on.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * The privilege to grant to the object.
      */
-    public readonly privilege!: pulumi.Output<string>;
+    declare public readonly privilege: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The name of the role to grant privilege to.
      */
-    public readonly roleName!: pulumi.Output<string>;
+    declare public readonly roleName: pulumi.Output<string>;
 
     /**
      * Create a ClusterGrant resource with the given unique name, arguments, and options.
@@ -63,27 +63,27 @@ export class ClusterGrant extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterGrantState | undefined;
-            resourceInputs["clusterGrantId"] = state ? state.clusterGrantId : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["roleName"] = state ? state.roleName : undefined;
+            resourceInputs["clusterGrantId"] = state?.clusterGrantId;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["roleName"] = state?.roleName;
         } else {
             const args = argsOrState as ClusterGrantArgs | undefined;
-            if ((!args || args.clusterName === undefined) && !opts.urn) {
+            if (args?.clusterName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.roleName === undefined) && !opts.urn) {
+            if (args?.roleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleName'");
             }
-            resourceInputs["clusterGrantId"] = args ? args.clusterGrantId : undefined;
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["roleName"] = args ? args.roleName : undefined;
+            resourceInputs["clusterGrantId"] = args?.clusterGrantId;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["roleName"] = args?.roleName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ClusterGrant.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

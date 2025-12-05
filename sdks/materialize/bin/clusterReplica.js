@@ -16,7 +16,7 @@ class ClusterReplica extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new ClusterReplica(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new ClusterReplica(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of ClusterReplica.  This is designed to work even
@@ -33,35 +33,35 @@ class ClusterReplica extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["availabilityZone"] = state ? state.availabilityZone : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["clusterReplicaId"] = state ? state.clusterReplicaId : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["disk"] = state ? state.disk : undefined;
-            resourceInputs["introspectionDebugging"] = state ? state.introspectionDebugging : undefined;
-            resourceInputs["introspectionInterval"] = state ? state.introspectionInterval : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
+            resourceInputs["availabilityZone"] = state?.availabilityZone;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["clusterReplicaId"] = state?.clusterReplicaId;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["disk"] = state?.disk;
+            resourceInputs["introspectionDebugging"] = state?.introspectionDebugging;
+            resourceInputs["introspectionInterval"] = state?.introspectionInterval;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["size"] = state?.size;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.clusterName === undefined) && !opts.urn) {
+            if (args?.clusterName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterName'");
             }
-            if ((!args || args.size === undefined) && !opts.urn) {
+            if (args?.size === undefined && !opts.urn) {
                 throw new Error("Missing required property 'size'");
             }
-            resourceInputs["availabilityZone"] = args ? args.availabilityZone : undefined;
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["clusterReplicaId"] = args ? args.clusterReplicaId : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["disk"] = args ? args.disk : undefined;
-            resourceInputs["introspectionDebugging"] = args ? args.introspectionDebugging : undefined;
-            resourceInputs["introspectionInterval"] = args ? args.introspectionInterval : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["size"] = args ? args.size : undefined;
+            resourceInputs["availabilityZone"] = args?.availabilityZone;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["clusterReplicaId"] = args?.clusterReplicaId;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["disk"] = args?.disk;
+            resourceInputs["introspectionDebugging"] = args?.introspectionDebugging;
+            resourceInputs["introspectionInterval"] = args?.introspectionInterval;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["size"] = args?.size;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ClusterReplica.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

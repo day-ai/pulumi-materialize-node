@@ -35,12 +35,12 @@ export class ScimGroupRoles extends pulumi.CustomResource {
     /**
      * The ID of the SCIM group.
      */
-    public readonly groupId!: pulumi.Output<string>;
+    declare public readonly groupId: pulumi.Output<string>;
     /**
      * The set of role names to assign to the SCIM group.
      */
-    public readonly roles!: pulumi.Output<string[] | undefined>;
-    public readonly scimGroupRolesId!: pulumi.Output<string>;
+    declare public readonly roles: pulumi.Output<string[] | undefined>;
+    declare public readonly scimGroupRolesId: pulumi.Output<string>;
 
     /**
      * Create a ScimGroupRoles resource with the given unique name, arguments, and options.
@@ -55,17 +55,17 @@ export class ScimGroupRoles extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ScimGroupRolesState | undefined;
-            resourceInputs["groupId"] = state ? state.groupId : undefined;
-            resourceInputs["roles"] = state ? state.roles : undefined;
-            resourceInputs["scimGroupRolesId"] = state ? state.scimGroupRolesId : undefined;
+            resourceInputs["groupId"] = state?.groupId;
+            resourceInputs["roles"] = state?.roles;
+            resourceInputs["scimGroupRolesId"] = state?.scimGroupRolesId;
         } else {
             const args = argsOrState as ScimGroupRolesArgs | undefined;
-            if ((!args || args.groupId === undefined) && !opts.urn) {
+            if (args?.groupId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupId'");
             }
-            resourceInputs["groupId"] = args ? args.groupId : undefined;
-            resourceInputs["roles"] = args ? args.roles : undefined;
-            resourceInputs["scimGroupRolesId"] = args ? args.scimGroupRolesId : undefined;
+            resourceInputs["groupId"] = args?.groupId;
+            resourceInputs["roles"] = args?.roles;
+            resourceInputs["scimGroupRolesId"] = args?.scimGroupRolesId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ScimGroupRoles.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

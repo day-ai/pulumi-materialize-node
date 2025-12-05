@@ -4,6 +4,6 @@ description: Scaffold/harness Pulumi project to be able to auto-compile Material
 packages:
   materialize:
     source: terraform-provider
-    version: 0.13.0
+    version: 1.0.2
     parameters:
       - MaterializeInc/materialize

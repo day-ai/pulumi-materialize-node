@@ -16,7 +16,7 @@ class SourceMysql extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new SourceMysql(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new SourceMysql(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of SourceMysql.  This is designed to work even
@@ -33,40 +33,40 @@ class SourceMysql extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["exposeProgress"] = state ? state.exposeProgress : undefined;
-            resourceInputs["ignoreColumns"] = state ? state.ignoreColumns : undefined;
-            resourceInputs["mysqlConnection"] = state ? state.mysqlConnection : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["sourceMysqlId"] = state ? state.sourceMysqlId : undefined;
-            resourceInputs["tables"] = state ? state.tables : undefined;
-            resourceInputs["textColumns"] = state ? state.textColumns : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["exposeProgress"] = state?.exposeProgress;
+            resourceInputs["ignoreColumns"] = state?.ignoreColumns;
+            resourceInputs["mysqlConnection"] = state?.mysqlConnection;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["sourceMysqlId"] = state?.sourceMysqlId;
+            resourceInputs["tables"] = state?.tables;
+            resourceInputs["textColumns"] = state?.textColumns;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.mysqlConnection === undefined) && !opts.urn) {
+            if (args?.mysqlConnection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'mysqlConnection'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["exposeProgress"] = args ? args.exposeProgress : undefined;
-            resourceInputs["ignoreColumns"] = args ? args.ignoreColumns : undefined;
-            resourceInputs["mysqlConnection"] = args ? args.mysqlConnection : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sourceMysqlId"] = args ? args.sourceMysqlId : undefined;
-            resourceInputs["tables"] = args ? args.tables : undefined;
-            resourceInputs["textColumns"] = args ? args.textColumns : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["exposeProgress"] = args?.exposeProgress;
+            resourceInputs["ignoreColumns"] = args?.ignoreColumns;
+            resourceInputs["mysqlConnection"] = args?.mysqlConnection;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sourceMysqlId"] = args?.sourceMysqlId;
+            resourceInputs["tables"] = args?.tables;
+            resourceInputs["textColumns"] = args?.textColumns;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
         }

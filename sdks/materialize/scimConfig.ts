@@ -35,30 +35,29 @@ export class ScimConfig extends pulumi.CustomResource {
     /**
      * The name of the SCIM 2.0 connection. It must be unique.
      */
-    public readonly connectionName!: pulumi.Output<string>;
+    declare public readonly connectionName: pulumi.Output<string>;
     /**
      * The creation timestamp of the SCIM 2.0 configuration.
      */
-    public /*out*/ readonly createdAt!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdAt: pulumi.Output<string>;
     /**
      * The provisioning URL of the SCIM 2.0 configuration.
      */
-    public /*out*/ readonly provisioningUrl!: pulumi.Output<string>;
-    public readonly scimConfigId!: pulumi.Output<string>;
+    declare public /*out*/ readonly provisioningUrl: pulumi.Output<string>;
+    declare public readonly scimConfigId: pulumi.Output<string>;
     /**
-     * The source of the SCIM 2.0 configuration. Supported values are `okta`, `azure-ad`, and `other`.
+     * The source of the SCIM 2.0 configuration. Supported values are <span pulumi-lang-nodejs="`okta`" pulumi-lang-dotnet="`Okta`" pulumi-lang-go="`okta`" pulumi-lang-python="`okta`" pulumi-lang-yaml="`okta`" pulumi-lang-java="`okta`">`okta`</span>, `azure-ad`, and <span pulumi-lang-nodejs="`other`" pulumi-lang-dotnet="`Other`" pulumi-lang-go="`other`" pulumi-lang-python="`other`" pulumi-lang-yaml="`other`" pulumi-lang-java="`other`">`other`</span>.
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
     /**
-     * Indicates whether automatic synchronization of data with the IdP is enabled, ensuring that changes in details or status
-     * in the IdP are updated accordingly.
+     * Indicates whether automatic synchronization of data with the IdP is enabled, ensuring that changes in details or status in the IdP are updated accordingly.
      */
-    public /*out*/ readonly syncToUserManagement!: pulumi.Output<boolean>;
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly syncToUserManagement: pulumi.Output<boolean>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * The token of the SCIM 2.0 configuration.
      */
-    public /*out*/ readonly token!: pulumi.Output<string>;
+    declare public /*out*/ readonly token: pulumi.Output<string>;
 
     /**
      * Create a ScimConfig resource with the given unique name, arguments, and options.
@@ -73,25 +72,25 @@ export class ScimConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ScimConfigState | undefined;
-            resourceInputs["connectionName"] = state ? state.connectionName : undefined;
-            resourceInputs["createdAt"] = state ? state.createdAt : undefined;
-            resourceInputs["provisioningUrl"] = state ? state.provisioningUrl : undefined;
-            resourceInputs["scimConfigId"] = state ? state.scimConfigId : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["syncToUserManagement"] = state ? state.syncToUserManagement : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["token"] = state ? state.token : undefined;
+            resourceInputs["connectionName"] = state?.connectionName;
+            resourceInputs["createdAt"] = state?.createdAt;
+            resourceInputs["provisioningUrl"] = state?.provisioningUrl;
+            resourceInputs["scimConfigId"] = state?.scimConfigId;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["syncToUserManagement"] = state?.syncToUserManagement;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["token"] = state?.token;
         } else {
             const args = argsOrState as ScimConfigArgs | undefined;
-            if ((!args || args.connectionName === undefined) && !opts.urn) {
+            if (args?.connectionName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'connectionName'");
             }
-            if ((!args || args.source === undefined) && !opts.urn) {
+            if (args?.source === undefined && !opts.urn) {
                 throw new Error("Missing required property 'source'");
             }
-            resourceInputs["connectionName"] = args ? args.connectionName : undefined;
-            resourceInputs["scimConfigId"] = args ? args.scimConfigId : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
+            resourceInputs["connectionName"] = args?.connectionName;
+            resourceInputs["scimConfigId"] = args?.scimConfigId;
+            resourceInputs["source"] = args?.source;
             resourceInputs["createdAt"] = undefined /*out*/;
             resourceInputs["provisioningUrl"] = undefined /*out*/;
             resourceInputs["syncToUserManagement"] = undefined /*out*/;
@@ -123,12 +122,11 @@ export interface ScimConfigState {
     provisioningUrl?: pulumi.Input<string>;
     scimConfigId?: pulumi.Input<string>;
     /**
-     * The source of the SCIM 2.0 configuration. Supported values are `okta`, `azure-ad`, and `other`.
+     * The source of the SCIM 2.0 configuration. Supported values are <span pulumi-lang-nodejs="`okta`" pulumi-lang-dotnet="`Okta`" pulumi-lang-go="`okta`" pulumi-lang-python="`okta`" pulumi-lang-yaml="`okta`" pulumi-lang-java="`okta`">`okta`</span>, `azure-ad`, and <span pulumi-lang-nodejs="`other`" pulumi-lang-dotnet="`Other`" pulumi-lang-go="`other`" pulumi-lang-python="`other`" pulumi-lang-yaml="`other`" pulumi-lang-java="`other`">`other`</span>.
      */
     source?: pulumi.Input<string>;
     /**
-     * Indicates whether automatic synchronization of data with the IdP is enabled, ensuring that changes in details or status
-     * in the IdP are updated accordingly.
+     * Indicates whether automatic synchronization of data with the IdP is enabled, ensuring that changes in details or status in the IdP are updated accordingly.
      */
     syncToUserManagement?: pulumi.Input<boolean>;
     tenantId?: pulumi.Input<string>;
@@ -148,7 +146,7 @@ export interface ScimConfigArgs {
     connectionName: pulumi.Input<string>;
     scimConfigId?: pulumi.Input<string>;
     /**
-     * The source of the SCIM 2.0 configuration. Supported values are `okta`, `azure-ad`, and `other`.
+     * The source of the SCIM 2.0 configuration. Supported values are <span pulumi-lang-nodejs="`okta`" pulumi-lang-dotnet="`Okta`" pulumi-lang-go="`okta`" pulumi-lang-python="`okta`" pulumi-lang-yaml="`okta`" pulumi-lang-java="`okta`">`okta`</span>, `azure-ad`, and <span pulumi-lang-nodejs="`other`" pulumi-lang-dotnet="`Other`" pulumi-lang-go="`other`" pulumi-lang-python="`other`" pulumi-lang-yaml="`other`" pulumi-lang-java="`other`">`other`</span>.
      */
     source: pulumi.Input<string>;
 }

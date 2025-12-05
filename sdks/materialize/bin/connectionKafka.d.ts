@@ -22,7 +22,7 @@ export declare class ConnectionKafka extends pulumi.CustomResource {
      */
     readonly awsConnection: pulumi.Output<outputs.ConnectionKafkaAwsConnection | undefined>;
     /**
-     * AWS PrivateLink configuration. Conflicts with `kafka_broker`.
+     * AWS PrivateLink configuration. Conflicts with <span pulumi-lang-nodejs="`kafkaBroker`" pulumi-lang-dotnet="`KafkaBroker`" pulumi-lang-go="`kafkaBroker`" pulumi-lang-python="`kafka_broker`" pulumi-lang-yaml="`kafkaBroker`" pulumi-lang-java="`kafkaBroker`">`kafka_broker`</span>.
      */
     readonly awsPrivatelink: pulumi.Output<outputs.ConnectionKafkaAwsPrivatelink | undefined>;
     /**
@@ -31,8 +31,7 @@ export declare class ConnectionKafka extends pulumi.CustomResource {
     readonly comment: pulumi.Output<string | undefined>;
     readonly connectionKafkaId: pulumi.Output<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
@@ -72,12 +71,11 @@ export declare class ConnectionKafka extends pulumi.CustomResource {
      */
     readonly saslPassword: pulumi.Output<outputs.ConnectionKafkaSaslPassword | undefined>;
     /**
-     * The SASL username for the Kafka broker.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The SASL username for the Kafka broker.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly saslUsername: pulumi.Output<outputs.ConnectionKafkaSaslUsername | undefined>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
@@ -89,13 +87,11 @@ export declare class ConnectionKafka extends pulumi.CustomResource {
      */
     readonly sshTunnel: pulumi.Output<outputs.ConnectionKafkaSshTunnel | undefined>;
     /**
-     * The client certificate for the Kafka broker.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The client certificate for the Kafka broker.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly sslCertificate: pulumi.Output<outputs.ConnectionKafkaSslCertificate | undefined>;
     /**
-     * The CA certificate for the Kafka broker.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The CA certificate for the Kafka broker.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     readonly sslCertificateAuthority: pulumi.Output<outputs.ConnectionKafkaSslCertificateAuthority | undefined>;
     /**
@@ -124,7 +120,7 @@ export interface ConnectionKafkaState {
      */
     awsConnection?: pulumi.Input<inputs.ConnectionKafkaAwsConnection>;
     /**
-     * AWS PrivateLink configuration. Conflicts with `kafka_broker`.
+     * AWS PrivateLink configuration. Conflicts with <span pulumi-lang-nodejs="`kafkaBroker`" pulumi-lang-dotnet="`KafkaBroker`" pulumi-lang-go="`kafkaBroker`" pulumi-lang-python="`kafka_broker`" pulumi-lang-yaml="`kafkaBroker`" pulumi-lang-java="`kafkaBroker`">`kafka_broker`</span>.
      */
     awsPrivatelink?: pulumi.Input<inputs.ConnectionKafkaAwsPrivatelink>;
     /**
@@ -133,8 +129,7 @@ export interface ConnectionKafkaState {
     comment?: pulumi.Input<string>;
     connectionKafkaId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -174,12 +169,11 @@ export interface ConnectionKafkaState {
      */
     saslPassword?: pulumi.Input<inputs.ConnectionKafkaSaslPassword>;
     /**
-     * The SASL username for the Kafka broker.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The SASL username for the Kafka broker.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     saslUsername?: pulumi.Input<inputs.ConnectionKafkaSaslUsername>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -191,13 +185,11 @@ export interface ConnectionKafkaState {
      */
     sshTunnel?: pulumi.Input<inputs.ConnectionKafkaSshTunnel>;
     /**
-     * The client certificate for the Kafka broker.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The client certificate for the Kafka broker.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificate?: pulumi.Input<inputs.ConnectionKafkaSslCertificate>;
     /**
-     * The CA certificate for the Kafka broker.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The CA certificate for the Kafka broker.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificateAuthority?: pulumi.Input<inputs.ConnectionKafkaSslCertificateAuthority>;
     /**
@@ -218,7 +210,7 @@ export interface ConnectionKafkaArgs {
      */
     awsConnection?: pulumi.Input<inputs.ConnectionKafkaAwsConnection>;
     /**
-     * AWS PrivateLink configuration. Conflicts with `kafka_broker`.
+     * AWS PrivateLink configuration. Conflicts with <span pulumi-lang-nodejs="`kafkaBroker`" pulumi-lang-dotnet="`KafkaBroker`" pulumi-lang-go="`kafkaBroker`" pulumi-lang-python="`kafka_broker`" pulumi-lang-yaml="`kafkaBroker`" pulumi-lang-java="`kafkaBroker`">`kafka_broker`</span>.
      */
     awsPrivatelink?: pulumi.Input<inputs.ConnectionKafkaAwsPrivatelink>;
     /**
@@ -227,8 +219,7 @@ export interface ConnectionKafkaArgs {
     comment?: pulumi.Input<string>;
     connectionKafkaId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -264,12 +255,11 @@ export interface ConnectionKafkaArgs {
      */
     saslPassword?: pulumi.Input<inputs.ConnectionKafkaSaslPassword>;
     /**
-     * The SASL username for the Kafka broker.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The SASL username for the Kafka broker.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     saslUsername?: pulumi.Input<inputs.ConnectionKafkaSaslUsername>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -281,13 +271,11 @@ export interface ConnectionKafkaArgs {
      */
     sshTunnel?: pulumi.Input<inputs.ConnectionKafkaSshTunnel>;
     /**
-     * The client certificate for the Kafka broker.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The client certificate for the Kafka broker.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificate?: pulumi.Input<inputs.ConnectionKafkaSslCertificate>;
     /**
-     * The CA certificate for the Kafka broker.. Can be supplied as either free text using `text` or reference to a secret
-     * object using `secret`.
+     * The CA certificate for the Kafka broker.. Can be supplied as either free text using <span pulumi-lang-nodejs="`text`" pulumi-lang-dotnet="`Text`" pulumi-lang-go="`text`" pulumi-lang-python="`text`" pulumi-lang-yaml="`text`" pulumi-lang-java="`text`">`text`</span> or reference to a secret object using <span pulumi-lang-nodejs="`secret`" pulumi-lang-dotnet="`Secret`" pulumi-lang-go="`secret`" pulumi-lang-python="`secret`" pulumi-lang-yaml="`secret`" pulumi-lang-java="`secret`">`secret`</span>.
      */
     sslCertificateAuthority?: pulumi.Input<inputs.ConnectionKafkaSslCertificateAuthority>;
     /**

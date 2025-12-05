@@ -27,17 +27,13 @@ export declare class Cluster extends pulumi.CustomResource {
      */
     readonly comment: pulumi.Output<string | undefined>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */
     readonly disk: pulumi.Output<boolean>;
     /**
-     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is
-     * particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID
-     * changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is
-     * updated.
+     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is updated.
      */
     readonly identifyByName: pulumi.Output<boolean | undefined>;
     /**
@@ -99,17 +95,13 @@ export interface ClusterState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */
     disk?: pulumi.Input<boolean>;
     /**
-     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is
-     * particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID
-     * changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is
-     * updated.
+     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is updated.
      */
     identifyByName?: pulumi.Input<boolean>;
     /**
@@ -163,17 +155,13 @@ export interface ClusterArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should
-     * use 'cc' sizes for disk access.
+     * **Deprecated**. This attribute is maintained for backward compatibility with existing configurations. New users should use 'cc' sizes for disk access.
      *
      * @deprecated Deprecated
      */
     disk?: pulumi.Input<boolean>;
     /**
-     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is
-     * particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID
-     * changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is
-     * updated.
+     * Use the cluster name as the resource identifier in your state file, rather than the internal cluster ID. This is particularly useful in scenarios like dbt-materialize blue/green deployments, where clusters are swapped but the ID changes. By identifying by name, the resource can be managed consistently even when the underlying cluster ID is updated.
      */
     identifyByName?: pulumi.Input<boolean>;
     /**

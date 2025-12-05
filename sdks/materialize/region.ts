@@ -35,28 +35,28 @@ export class Region extends pulumi.CustomResource {
     /**
      * The timestamp when the region was enabled.
      */
-    public /*out*/ readonly enabledAt!: pulumi.Output<string>;
+    declare public /*out*/ readonly enabledAt: pulumi.Output<string>;
     /**
      * The HTTP address of the region.
      */
-    public /*out*/ readonly httpAddress!: pulumi.Output<string>;
-    public readonly materializeRegionId!: pulumi.Output<string>;
+    declare public /*out*/ readonly httpAddress: pulumi.Output<string>;
+    declare public readonly materializeRegionId: pulumi.Output<string>;
     /**
      * The ID of the region to manage. Example: aws/us-west-2
      */
-    public readonly regionId!: pulumi.Output<string>;
+    declare public readonly regionId: pulumi.Output<string>;
     /**
      * The state of the region. True if enabled, false otherwise.
      */
-    public /*out*/ readonly regionState!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly regionState: pulumi.Output<boolean>;
     /**
      * Indicates if the region is resolvable.
      */
-    public /*out*/ readonly resolvable!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly resolvable: pulumi.Output<boolean>;
     /**
      * The SQL address of the region.
      */
-    public /*out*/ readonly sqlAddress!: pulumi.Output<string>;
+    declare public /*out*/ readonly sqlAddress: pulumi.Output<string>;
 
     /**
      * Create a Region resource with the given unique name, arguments, and options.
@@ -71,20 +71,20 @@ export class Region extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RegionState | undefined;
-            resourceInputs["enabledAt"] = state ? state.enabledAt : undefined;
-            resourceInputs["httpAddress"] = state ? state.httpAddress : undefined;
-            resourceInputs["materializeRegionId"] = state ? state.materializeRegionId : undefined;
-            resourceInputs["regionId"] = state ? state.regionId : undefined;
-            resourceInputs["regionState"] = state ? state.regionState : undefined;
-            resourceInputs["resolvable"] = state ? state.resolvable : undefined;
-            resourceInputs["sqlAddress"] = state ? state.sqlAddress : undefined;
+            resourceInputs["enabledAt"] = state?.enabledAt;
+            resourceInputs["httpAddress"] = state?.httpAddress;
+            resourceInputs["materializeRegionId"] = state?.materializeRegionId;
+            resourceInputs["regionId"] = state?.regionId;
+            resourceInputs["regionState"] = state?.regionState;
+            resourceInputs["resolvable"] = state?.resolvable;
+            resourceInputs["sqlAddress"] = state?.sqlAddress;
         } else {
             const args = argsOrState as RegionArgs | undefined;
-            if ((!args || args.regionId === undefined) && !opts.urn) {
+            if (args?.regionId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'regionId'");
             }
-            resourceInputs["materializeRegionId"] = args ? args.materializeRegionId : undefined;
-            resourceInputs["regionId"] = args ? args.regionId : undefined;
+            resourceInputs["materializeRegionId"] = args?.materializeRegionId;
+            resourceInputs["regionId"] = args?.regionId;
             resourceInputs["enabledAt"] = undefined /*out*/;
             resourceInputs["httpAddress"] = undefined /*out*/;
             resourceInputs["regionState"] = undefined /*out*/;

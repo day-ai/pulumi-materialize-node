@@ -37,8 +37,7 @@ export declare class ConnectionGrantDefaultPrivilege extends pulumi.CustomResour
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
     readonly targetRoleName: pulumi.Output<string>;
     /**
@@ -76,8 +75,7 @@ export interface ConnectionGrantDefaultPrivilegeState {
      */
     schemaName?: pulumi.Input<string>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
     targetRoleName?: pulumi.Input<string>;
 }
@@ -107,8 +105,7 @@ export interface ConnectionGrantDefaultPrivilegeArgs {
      */
     schemaName?: pulumi.Input<string>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
     targetRoleName: pulumi.Input<string>;
 }

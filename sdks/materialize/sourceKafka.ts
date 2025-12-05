@@ -37,118 +37,116 @@ export class SourceKafka extends pulumi.CustomResource {
     /**
      * The cluster to maintain this source.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
      * How Materialize should interpret records (e.g. append-only, upsert)..
      */
-    public readonly envelope!: pulumi.Output<outputs.SourceKafkaEnvelope | undefined>;
+    declare public readonly envelope: pulumi.Output<outputs.SourceKafkaEnvelope | undefined>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
-    public readonly exposeProgress!: pulumi.Output<outputs.SourceKafkaExposeProgress | undefined>;
+    declare public readonly exposeProgress: pulumi.Output<outputs.SourceKafkaExposeProgress | undefined>;
     /**
      * How to decode raw bytes from different formats into data structures Materialize can understand at runtime.
      */
-    public readonly format!: pulumi.Output<outputs.SourceKafkaFormat | undefined>;
+    declare public readonly format: pulumi.Output<outputs.SourceKafkaFormat | undefined>;
     /**
      * Include message headers.
      */
-    public readonly includeHeaders!: pulumi.Output<boolean | undefined>;
+    declare public readonly includeHeaders: pulumi.Output<boolean | undefined>;
     /**
      * Provide an alias for the headers column.
      */
-    public readonly includeHeadersAlias!: pulumi.Output<string | undefined>;
+    declare public readonly includeHeadersAlias: pulumi.Output<string | undefined>;
     /**
      * Include a column containing the Kafka message key.
      */
-    public readonly includeKey!: pulumi.Output<boolean | undefined>;
+    declare public readonly includeKey: pulumi.Output<boolean | undefined>;
     /**
      * Provide an alias for the key column.
      */
-    public readonly includeKeyAlias!: pulumi.Output<string | undefined>;
+    declare public readonly includeKeyAlias: pulumi.Output<string | undefined>;
     /**
      * Include an offset column containing the Kafka message offset.
      */
-    public readonly includeOffset!: pulumi.Output<boolean | undefined>;
+    declare public readonly includeOffset: pulumi.Output<boolean | undefined>;
     /**
      * Provide an alias for the offset column.
      */
-    public readonly includeOffsetAlias!: pulumi.Output<string | undefined>;
+    declare public readonly includeOffsetAlias: pulumi.Output<string | undefined>;
     /**
      * Include a partition column containing the Kafka message partition
      */
-    public readonly includePartition!: pulumi.Output<boolean | undefined>;
+    declare public readonly includePartition: pulumi.Output<boolean | undefined>;
     /**
      * Provide an alias for the partition column.
      */
-    public readonly includePartitionAlias!: pulumi.Output<string | undefined>;
+    declare public readonly includePartitionAlias: pulumi.Output<string | undefined>;
     /**
      * Include a timestamp column containing the Kafka message timestamp.
      */
-    public readonly includeTimestamp!: pulumi.Output<boolean | undefined>;
+    declare public readonly includeTimestamp: pulumi.Output<boolean | undefined>;
     /**
      * Provide an alias for the timestamp column.
      */
-    public readonly includeTimestampAlias!: pulumi.Output<string | undefined>;
+    declare public readonly includeTimestampAlias: pulumi.Output<string | undefined>;
     /**
      * The Kafka connection to use in the source.
      */
-    public readonly kafkaConnection!: pulumi.Output<outputs.SourceKafkaKafkaConnection>;
+    declare public readonly kafkaConnection: pulumi.Output<outputs.SourceKafkaKafkaConnection>;
     /**
      * Set the key format explicitly.
      */
-    public readonly keyFormat!: pulumi.Output<outputs.SourceKafkaKeyFormat | undefined>;
+    declare public readonly keyFormat: pulumi.Output<outputs.SourceKafkaKeyFormat | undefined>;
     /**
      * The identifier for the source.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The fully qualified name of the source.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
     /**
      * The size of the cluster maintaining this source.
      */
-    public /*out*/ readonly size!: pulumi.Output<string>;
-    public readonly sourceKafkaId!: pulumi.Output<string>;
+    declare public /*out*/ readonly size: pulumi.Output<string>;
+    declare public readonly sourceKafkaId: pulumi.Output<string>;
     /**
      * Read partitions from the specified offset.
      */
-    public readonly startOffsets!: pulumi.Output<number[] | undefined>;
+    declare public readonly startOffsets: pulumi.Output<number[] | undefined>;
     /**
      * Use the specified value to set `START OFFSET` based on the Kafka timestamp.
      */
-    public readonly startTimestamp!: pulumi.Output<number | undefined>;
+    declare public readonly startTimestamp: pulumi.Output<number | undefined>;
     /**
      * The Kafka topic you want to subscribe to.
      */
-    public readonly topic!: pulumi.Output<string>;
+    declare public readonly topic: pulumi.Output<string>;
     /**
      * Set the value format explicitly.
      */
-    public readonly valueFormat!: pulumi.Output<outputs.SourceKafkaValueFormat | undefined>;
+    declare public readonly valueFormat: pulumi.Output<outputs.SourceKafkaValueFormat | undefined>;
 
     /**
      * Create a SourceKafka resource with the given unique name, arguments, and options.
@@ -163,70 +161,70 @@ export class SourceKafka extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SourceKafkaState | undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["envelope"] = state ? state.envelope : undefined;
-            resourceInputs["exposeProgress"] = state ? state.exposeProgress : undefined;
-            resourceInputs["format"] = state ? state.format : undefined;
-            resourceInputs["includeHeaders"] = state ? state.includeHeaders : undefined;
-            resourceInputs["includeHeadersAlias"] = state ? state.includeHeadersAlias : undefined;
-            resourceInputs["includeKey"] = state ? state.includeKey : undefined;
-            resourceInputs["includeKeyAlias"] = state ? state.includeKeyAlias : undefined;
-            resourceInputs["includeOffset"] = state ? state.includeOffset : undefined;
-            resourceInputs["includeOffsetAlias"] = state ? state.includeOffsetAlias : undefined;
-            resourceInputs["includePartition"] = state ? state.includePartition : undefined;
-            resourceInputs["includePartitionAlias"] = state ? state.includePartitionAlias : undefined;
-            resourceInputs["includeTimestamp"] = state ? state.includeTimestamp : undefined;
-            resourceInputs["includeTimestampAlias"] = state ? state.includeTimestampAlias : undefined;
-            resourceInputs["kafkaConnection"] = state ? state.kafkaConnection : undefined;
-            resourceInputs["keyFormat"] = state ? state.keyFormat : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["size"] = state ? state.size : undefined;
-            resourceInputs["sourceKafkaId"] = state ? state.sourceKafkaId : undefined;
-            resourceInputs["startOffsets"] = state ? state.startOffsets : undefined;
-            resourceInputs["startTimestamp"] = state ? state.startTimestamp : undefined;
-            resourceInputs["topic"] = state ? state.topic : undefined;
-            resourceInputs["valueFormat"] = state ? state.valueFormat : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["envelope"] = state?.envelope;
+            resourceInputs["exposeProgress"] = state?.exposeProgress;
+            resourceInputs["format"] = state?.format;
+            resourceInputs["includeHeaders"] = state?.includeHeaders;
+            resourceInputs["includeHeadersAlias"] = state?.includeHeadersAlias;
+            resourceInputs["includeKey"] = state?.includeKey;
+            resourceInputs["includeKeyAlias"] = state?.includeKeyAlias;
+            resourceInputs["includeOffset"] = state?.includeOffset;
+            resourceInputs["includeOffsetAlias"] = state?.includeOffsetAlias;
+            resourceInputs["includePartition"] = state?.includePartition;
+            resourceInputs["includePartitionAlias"] = state?.includePartitionAlias;
+            resourceInputs["includeTimestamp"] = state?.includeTimestamp;
+            resourceInputs["includeTimestampAlias"] = state?.includeTimestampAlias;
+            resourceInputs["kafkaConnection"] = state?.kafkaConnection;
+            resourceInputs["keyFormat"] = state?.keyFormat;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["size"] = state?.size;
+            resourceInputs["sourceKafkaId"] = state?.sourceKafkaId;
+            resourceInputs["startOffsets"] = state?.startOffsets;
+            resourceInputs["startTimestamp"] = state?.startTimestamp;
+            resourceInputs["topic"] = state?.topic;
+            resourceInputs["valueFormat"] = state?.valueFormat;
         } else {
             const args = argsOrState as SourceKafkaArgs | undefined;
-            if ((!args || args.kafkaConnection === undefined) && !opts.urn) {
+            if (args?.kafkaConnection === undefined && !opts.urn) {
                 throw new Error("Missing required property 'kafkaConnection'");
             }
-            if ((!args || args.topic === undefined) && !opts.urn) {
+            if (args?.topic === undefined && !opts.urn) {
                 throw new Error("Missing required property 'topic'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["envelope"] = args ? args.envelope : undefined;
-            resourceInputs["exposeProgress"] = args ? args.exposeProgress : undefined;
-            resourceInputs["format"] = args ? args.format : undefined;
-            resourceInputs["includeHeaders"] = args ? args.includeHeaders : undefined;
-            resourceInputs["includeHeadersAlias"] = args ? args.includeHeadersAlias : undefined;
-            resourceInputs["includeKey"] = args ? args.includeKey : undefined;
-            resourceInputs["includeKeyAlias"] = args ? args.includeKeyAlias : undefined;
-            resourceInputs["includeOffset"] = args ? args.includeOffset : undefined;
-            resourceInputs["includeOffsetAlias"] = args ? args.includeOffsetAlias : undefined;
-            resourceInputs["includePartition"] = args ? args.includePartition : undefined;
-            resourceInputs["includePartitionAlias"] = args ? args.includePartitionAlias : undefined;
-            resourceInputs["includeTimestamp"] = args ? args.includeTimestamp : undefined;
-            resourceInputs["includeTimestampAlias"] = args ? args.includeTimestampAlias : undefined;
-            resourceInputs["kafkaConnection"] = args ? args.kafkaConnection : undefined;
-            resourceInputs["keyFormat"] = args ? args.keyFormat : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["sourceKafkaId"] = args ? args.sourceKafkaId : undefined;
-            resourceInputs["startOffsets"] = args ? args.startOffsets : undefined;
-            resourceInputs["startTimestamp"] = args ? args.startTimestamp : undefined;
-            resourceInputs["topic"] = args ? args.topic : undefined;
-            resourceInputs["valueFormat"] = args ? args.valueFormat : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["envelope"] = args?.envelope;
+            resourceInputs["exposeProgress"] = args?.exposeProgress;
+            resourceInputs["format"] = args?.format;
+            resourceInputs["includeHeaders"] = args?.includeHeaders;
+            resourceInputs["includeHeadersAlias"] = args?.includeHeadersAlias;
+            resourceInputs["includeKey"] = args?.includeKey;
+            resourceInputs["includeKeyAlias"] = args?.includeKeyAlias;
+            resourceInputs["includeOffset"] = args?.includeOffset;
+            resourceInputs["includeOffsetAlias"] = args?.includeOffsetAlias;
+            resourceInputs["includePartition"] = args?.includePartition;
+            resourceInputs["includePartitionAlias"] = args?.includePartitionAlias;
+            resourceInputs["includeTimestamp"] = args?.includeTimestamp;
+            resourceInputs["includeTimestampAlias"] = args?.includeTimestampAlias;
+            resourceInputs["kafkaConnection"] = args?.kafkaConnection;
+            resourceInputs["keyFormat"] = args?.keyFormat;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["sourceKafkaId"] = args?.sourceKafkaId;
+            resourceInputs["startOffsets"] = args?.startOffsets;
+            resourceInputs["startTimestamp"] = args?.startTimestamp;
+            resourceInputs["topic"] = args?.topic;
+            resourceInputs["valueFormat"] = args?.valueFormat;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
         }
@@ -248,8 +246,7 @@ export interface SourceKafkaState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -257,8 +254,7 @@ export interface SourceKafkaState {
      */
     envelope?: pulumi.Input<inputs.SourceKafkaEnvelope>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourceKafkaExposeProgress>;
     /**
@@ -330,7 +326,7 @@ export interface SourceKafkaState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -369,8 +365,7 @@ export interface SourceKafkaArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -378,8 +373,7 @@ export interface SourceKafkaArgs {
      */
     envelope?: pulumi.Input<inputs.SourceKafkaEnvelope>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourceKafkaExposeProgress>;
     /**
@@ -447,7 +441,7 @@ export interface SourceKafkaArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sourceKafkaId?: pulumi.Input<string>;

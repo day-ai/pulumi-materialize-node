@@ -16,7 +16,7 @@ class MaterializedView extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new MaterializedView(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new MaterializedView(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of MaterializedView.  This is designed to work even
@@ -33,37 +33,37 @@ class MaterializedView extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["createSql"] = state ? state.createSql : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["materializedViewId"] = state ? state.materializedViewId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["notNullAssertions"] = state ? state.notNullAssertions : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["statement"] = state ? state.statement : undefined;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["createSql"] = state?.createSql;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["materializedViewId"] = state?.materializedViewId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["notNullAssertions"] = state?.notNullAssertions;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["statement"] = state?.statement;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.clusterName === undefined) && !opts.urn) {
+            if (args?.clusterName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterName'");
             }
-            if ((!args || args.statement === undefined) && !opts.urn) {
+            if (args?.statement === undefined && !opts.urn) {
                 throw new Error("Missing required property 'statement'");
             }
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["materializedViewId"] = args ? args.materializedViewId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["notNullAssertions"] = args ? args.notNullAssertions : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["statement"] = args ? args.statement : undefined;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["materializedViewId"] = args?.materializedViewId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["notNullAssertions"] = args?.notNullAssertions;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["statement"] = args?.statement;
             resourceInputs["createSql"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }

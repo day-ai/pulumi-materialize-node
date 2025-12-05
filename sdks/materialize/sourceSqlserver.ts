@@ -6,9 +6,9 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
-export class SourceMysql extends pulumi.CustomResource {
+export class SourceSqlserver extends pulumi.CustomResource {
     /**
-     * Get an existing SourceMysql resource's state with the given name, ID, and optional extra
+     * Get an existing SourceSqlserver resource's state with the given name, ID, and optional extra
      * properties used to qualify the lookup.
      *
      * @param name The _unique_ name of the resulting resource.
@@ -16,24 +16,28 @@ export class SourceMysql extends pulumi.CustomResource {
      * @param state Any extra arguments used during the lookup.
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
-    public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: SourceMysqlState, opts?: pulumi.CustomResourceOptions): SourceMysql {
-        return new SourceMysql(name, <any>state, { ...opts, id: id });
+    public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: SourceSqlserverState, opts?: pulumi.CustomResourceOptions): SourceSqlserver {
+        return new SourceSqlserver(name, <any>state, { ...opts, id: id });
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'materialize:index/sourceMysql:SourceMysql';
+    public static readonly __pulumiType = 'materialize:index/sourceSqlserver:SourceSqlserver';
 
     /**
-     * Returns true if the given object is an instance of SourceMysql.  This is designed to work even
+     * Returns true if the given object is an instance of SourceSqlserver.  This is designed to work even
      * when multiple copies of the Pulumi SDK have been loaded into the same process.
      */
-    public static isInstance(obj: any): obj is SourceMysql {
+    public static isInstance(obj: any): obj is SourceSqlserver {
         if (obj === undefined || obj === null) {
             return false;
         }
-        return obj['__pulumiType'] === SourceMysql.__pulumiType;
+        return obj['__pulumiType'] === SourceSqlserver.__pulumiType;
     }
 
+    /**
+     * The AWS PrivateLink configuration for the SQL Server database.
+     */
+    declare public readonly awsPrivatelink: pulumi.Output<outputs.SourceSqlserverAwsPrivatelink | undefined>;
     /**
      * The cluster to maintain this source.
      */
@@ -47,17 +51,13 @@ export class SourceMysql extends pulumi.CustomResource {
      */
     declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
+     * Exclude specific columns when reading data from SQL Server. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     */
+    declare public readonly excludeColumns: pulumi.Output<string[] | undefined>;
+    /**
      * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
-    declare public readonly exposeProgress: pulumi.Output<outputs.SourceMysqlExposeProgress | undefined>;
-    /**
-     * Ignore specific columns when reading data from MySQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
-     */
-    declare public readonly ignoreColumns: pulumi.Output<string[] | undefined>;
-    /**
-     * The MySQL connection to use in the source.
-     */
-    declare public readonly mysqlConnection: pulumi.Output<outputs.SourceMysqlMysqlConnection>;
+    declare public readonly exposeProgress: pulumi.Output<outputs.SourceSqlserverExposeProgress | undefined>;
     /**
      * The identifier for the source.
      */
@@ -82,74 +82,84 @@ export class SourceMysql extends pulumi.CustomResource {
      * The size of the cluster maintaining this source.
      */
     declare public /*out*/ readonly size: pulumi.Output<string>;
-    declare public readonly sourceMysqlId: pulumi.Output<string>;
+    declare public readonly sourceSqlserverId: pulumi.Output<string>;
+    /**
+     * The SQL Server connection to use in the source.
+     */
+    declare public readonly sqlserverConnection: pulumi.Output<outputs.SourceSqlserverSqlserverConnection>;
     /**
      * Specify the tables to be included in the source. If not specified, all tables are included.
      */
-    declare public readonly tables: pulumi.Output<outputs.SourceMysqlTable[] | undefined>;
+    declare public readonly tables: pulumi.Output<outputs.SourceSqlserverTable[] | undefined>;
     /**
-     * Decode data as text for specific columns that contain MySQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     * Decode data as text for specific columns that contain SQL Server types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     declare public readonly textColumns: pulumi.Output<string[] | undefined>;
 
     /**
-     * Create a SourceMysql resource with the given unique name, arguments, and options.
+     * Create a SourceSqlserver resource with the given unique name, arguments, and options.
      *
      * @param name The _unique_ name of the resource.
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: SourceMysqlArgs, opts?: pulumi.CustomResourceOptions)
-    constructor(name: string, argsOrState?: SourceMysqlArgs | SourceMysqlState, opts?: pulumi.CustomResourceOptions) {
+    constructor(name: string, args: SourceSqlserverArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, argsOrState?: SourceSqlserverArgs | SourceSqlserverState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
-            const state = argsOrState as SourceMysqlState | undefined;
+            const state = argsOrState as SourceSqlserverState | undefined;
+            resourceInputs["awsPrivatelink"] = state?.awsPrivatelink;
             resourceInputs["clusterName"] = state?.clusterName;
             resourceInputs["comment"] = state?.comment;
             resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["excludeColumns"] = state?.excludeColumns;
             resourceInputs["exposeProgress"] = state?.exposeProgress;
-            resourceInputs["ignoreColumns"] = state?.ignoreColumns;
-            resourceInputs["mysqlConnection"] = state?.mysqlConnection;
             resourceInputs["name"] = state?.name;
             resourceInputs["ownershipRole"] = state?.ownershipRole;
             resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
             resourceInputs["region"] = state?.region;
             resourceInputs["schemaName"] = state?.schemaName;
             resourceInputs["size"] = state?.size;
-            resourceInputs["sourceMysqlId"] = state?.sourceMysqlId;
+            resourceInputs["sourceSqlserverId"] = state?.sourceSqlserverId;
+            resourceInputs["sqlserverConnection"] = state?.sqlserverConnection;
             resourceInputs["tables"] = state?.tables;
             resourceInputs["textColumns"] = state?.textColumns;
         } else {
-            const args = argsOrState as SourceMysqlArgs | undefined;
-            if (args?.mysqlConnection === undefined && !opts.urn) {
-                throw new Error("Missing required property 'mysqlConnection'");
+            const args = argsOrState as SourceSqlserverArgs | undefined;
+            if (args?.sqlserverConnection === undefined && !opts.urn) {
+                throw new Error("Missing required property 'sqlserverConnection'");
             }
+            resourceInputs["awsPrivatelink"] = args?.awsPrivatelink;
             resourceInputs["clusterName"] = args?.clusterName;
             resourceInputs["comment"] = args?.comment;
             resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["excludeColumns"] = args?.excludeColumns;
             resourceInputs["exposeProgress"] = args?.exposeProgress;
-            resourceInputs["ignoreColumns"] = args?.ignoreColumns;
-            resourceInputs["mysqlConnection"] = args?.mysqlConnection;
             resourceInputs["name"] = args?.name;
             resourceInputs["ownershipRole"] = args?.ownershipRole;
             resourceInputs["region"] = args?.region;
             resourceInputs["schemaName"] = args?.schemaName;
-            resourceInputs["sourceMysqlId"] = args?.sourceMysqlId;
+            resourceInputs["sourceSqlserverId"] = args?.sourceSqlserverId;
+            resourceInputs["sqlserverConnection"] = args?.sqlserverConnection;
             resourceInputs["tables"] = args?.tables;
             resourceInputs["textColumns"] = args?.textColumns;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
             resourceInputs["size"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        super(SourceMysql.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
+        super(SourceSqlserver.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
     }
 }
 
 /**
- * Input properties used for looking up and filtering SourceMysql resources.
+ * Input properties used for looking up and filtering SourceSqlserver resources.
  */
-export interface SourceMysqlState {
+export interface SourceSqlserverState {
+    /**
+     * The AWS PrivateLink configuration for the SQL Server database.
+     */
+    awsPrivatelink?: pulumi.Input<inputs.SourceSqlserverAwsPrivatelink>;
     /**
      * The cluster to maintain this source.
      */
@@ -163,17 +173,13 @@ export interface SourceMysqlState {
      */
     databaseName?: pulumi.Input<string>;
     /**
+     * Exclude specific columns when reading data from SQL Server. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     */
+    excludeColumns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
-    exposeProgress?: pulumi.Input<inputs.SourceMysqlExposeProgress>;
-    /**
-     * Ignore specific columns when reading data from MySQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
-     */
-    ignoreColumns?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The MySQL connection to use in the source.
-     */
-    mysqlConnection?: pulumi.Input<inputs.SourceMysqlMysqlConnection>;
+    exposeProgress?: pulumi.Input<inputs.SourceSqlserverExposeProgress>;
     /**
      * The identifier for the source.
      */
@@ -198,21 +204,29 @@ export interface SourceMysqlState {
      * The size of the cluster maintaining this source.
      */
     size?: pulumi.Input<string>;
-    sourceMysqlId?: pulumi.Input<string>;
+    sourceSqlserverId?: pulumi.Input<string>;
+    /**
+     * The SQL Server connection to use in the source.
+     */
+    sqlserverConnection?: pulumi.Input<inputs.SourceSqlserverSqlserverConnection>;
     /**
      * Specify the tables to be included in the source. If not specified, all tables are included.
      */
-    tables?: pulumi.Input<pulumi.Input<inputs.SourceMysqlTable>[]>;
+    tables?: pulumi.Input<pulumi.Input<inputs.SourceSqlserverTable>[]>;
     /**
-     * Decode data as text for specific columns that contain MySQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     * Decode data as text for specific columns that contain SQL Server types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     textColumns?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 /**
- * The set of arguments for constructing a SourceMysql resource.
+ * The set of arguments for constructing a SourceSqlserver resource.
  */
-export interface SourceMysqlArgs {
+export interface SourceSqlserverArgs {
+    /**
+     * The AWS PrivateLink configuration for the SQL Server database.
+     */
+    awsPrivatelink?: pulumi.Input<inputs.SourceSqlserverAwsPrivatelink>;
     /**
      * The cluster to maintain this source.
      */
@@ -226,17 +240,13 @@ export interface SourceMysqlArgs {
      */
     databaseName?: pulumi.Input<string>;
     /**
+     * Exclude specific columns when reading data from SQL Server. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     */
+    excludeColumns?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
-    exposeProgress?: pulumi.Input<inputs.SourceMysqlExposeProgress>;
-    /**
-     * Ignore specific columns when reading data from MySQL. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
-     */
-    ignoreColumns?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * The MySQL connection to use in the source.
-     */
-    mysqlConnection: pulumi.Input<inputs.SourceMysqlMysqlConnection>;
+    exposeProgress?: pulumi.Input<inputs.SourceSqlserverExposeProgress>;
     /**
      * The identifier for the source.
      */
@@ -253,13 +263,17 @@ export interface SourceMysqlArgs {
      * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
-    sourceMysqlId?: pulumi.Input<string>;
+    sourceSqlserverId?: pulumi.Input<string>;
+    /**
+     * The SQL Server connection to use in the source.
+     */
+    sqlserverConnection: pulumi.Input<inputs.SourceSqlserverSqlserverConnection>;
     /**
      * Specify the tables to be included in the source. If not specified, all tables are included.
      */
-    tables?: pulumi.Input<pulumi.Input<inputs.SourceMysqlTable>[]>;
+    tables?: pulumi.Input<pulumi.Input<inputs.SourceSqlserverTable>[]>;
     /**
-     * Decode data as text for specific columns that contain MySQL types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
+     * Decode data as text for specific columns that contain SQL Server types that are unsupported in Materialize. Can only be updated in place when also updating a corresponding <span pulumi-lang-nodejs="`table`" pulumi-lang-dotnet="`Table`" pulumi-lang-go="`table`" pulumi-lang-python="`table`" pulumi-lang-yaml="`table`" pulumi-lang-java="`table`">`table`</span> attribute.
      */
     textColumns?: pulumi.Input<pulumi.Input<string>[]>;
 }

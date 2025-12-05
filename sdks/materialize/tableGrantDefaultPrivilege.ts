@@ -35,29 +35,28 @@ export class TableGrantDefaultPrivilege extends pulumi.CustomResource {
     /**
      * The default privilege will apply only to objects created in this database, if specified.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
      * The role name that will gain the default privilege. Use the `PUBLIC` pseudo-role to grant privileges to all roles.
      */
-    public readonly granteeName!: pulumi.Output<string>;
+    declare public readonly granteeName: pulumi.Output<string>;
     /**
      * The privilege to grant to the object.
      */
-    public readonly privilege!: pulumi.Output<string>;
+    declare public readonly privilege: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * The default privilege will apply only to objects created in this schema, if specified.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
-    public readonly tableGrantDefaultPrivilegeId!: pulumi.Output<string>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
+    declare public readonly tableGrantDefaultPrivilegeId: pulumi.Output<string>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
-    public readonly targetRoleName!: pulumi.Output<string>;
+    declare public readonly targetRoleName: pulumi.Output<string>;
 
     /**
      * Create a TableGrantDefaultPrivilege resource with the given unique name, arguments, and options.
@@ -72,31 +71,31 @@ export class TableGrantDefaultPrivilege extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TableGrantDefaultPrivilegeState | undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["granteeName"] = state ? state.granteeName : undefined;
-            resourceInputs["privilege"] = state ? state.privilege : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["tableGrantDefaultPrivilegeId"] = state ? state.tableGrantDefaultPrivilegeId : undefined;
-            resourceInputs["targetRoleName"] = state ? state.targetRoleName : undefined;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["granteeName"] = state?.granteeName;
+            resourceInputs["privilege"] = state?.privilege;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["tableGrantDefaultPrivilegeId"] = state?.tableGrantDefaultPrivilegeId;
+            resourceInputs["targetRoleName"] = state?.targetRoleName;
         } else {
             const args = argsOrState as TableGrantDefaultPrivilegeArgs | undefined;
-            if ((!args || args.granteeName === undefined) && !opts.urn) {
+            if (args?.granteeName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'granteeName'");
             }
-            if ((!args || args.privilege === undefined) && !opts.urn) {
+            if (args?.privilege === undefined && !opts.urn) {
                 throw new Error("Missing required property 'privilege'");
             }
-            if ((!args || args.targetRoleName === undefined) && !opts.urn) {
+            if (args?.targetRoleName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'targetRoleName'");
             }
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["granteeName"] = args ? args.granteeName : undefined;
-            resourceInputs["privilege"] = args ? args.privilege : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["tableGrantDefaultPrivilegeId"] = args ? args.tableGrantDefaultPrivilegeId : undefined;
-            resourceInputs["targetRoleName"] = args ? args.targetRoleName : undefined;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["granteeName"] = args?.granteeName;
+            resourceInputs["privilege"] = args?.privilege;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["tableGrantDefaultPrivilegeId"] = args?.tableGrantDefaultPrivilegeId;
+            resourceInputs["targetRoleName"] = args?.targetRoleName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(TableGrantDefaultPrivilege.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());
@@ -129,8 +128,7 @@ export interface TableGrantDefaultPrivilegeState {
     schemaName?: pulumi.Input<string>;
     tableGrantDefaultPrivilegeId?: pulumi.Input<string>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
     targetRoleName?: pulumi.Input<string>;
 }
@@ -161,8 +159,7 @@ export interface TableGrantDefaultPrivilegeArgs {
     schemaName?: pulumi.Input<string>;
     tableGrantDefaultPrivilegeId?: pulumi.Input<string>;
     /**
-     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is
-     * assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
+     * The default privilege will apply to objects created by this role. If this is left blank, then the current role is assumed. Use the `PUBLIC` pseudo-role to target objects created by all roles.
      */
     targetRoleName: pulumi.Input<string>;
 }

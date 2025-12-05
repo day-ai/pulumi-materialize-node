@@ -30,25 +30,15 @@ export declare class SourceLoadGenerator extends pulumi.CustomResource {
      */
     readonly comment: pulumi.Output<string | undefined>;
     /**
-     * Counter Options.
-     */
-    readonly counterOptions: pulumi.Output<outputs.SourceLoadGeneratorCounterOptions | undefined>;
-    /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     readonly exposeProgress: pulumi.Output<outputs.SourceLoadGeneratorExposeProgress | undefined>;
     /**
-     * KEY VALUE Load Generator Options.
-     */
-    readonly keyValueOptions: pulumi.Output<outputs.SourceLoadGeneratorKeyValueOptions | undefined>;
-    /**
-     * The load generator types: [AUCTION MARKETING COUNTER TPCH KEY VALUE].
+     * The load generator types: [AUCTION MARKETING TPCH].
      */
     readonly loadGeneratorType: pulumi.Output<string>;
     /**
@@ -72,7 +62,7 @@ export declare class SourceLoadGenerator extends pulumi.CustomResource {
      */
     readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     /**
@@ -110,25 +100,15 @@ export interface SourceLoadGeneratorState {
      */
     comment?: pulumi.Input<string>;
     /**
-     * Counter Options.
-     */
-    counterOptions?: pulumi.Input<inputs.SourceLoadGeneratorCounterOptions>;
-    /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourceLoadGeneratorExposeProgress>;
     /**
-     * KEY VALUE Load Generator Options.
-     */
-    keyValueOptions?: pulumi.Input<inputs.SourceLoadGeneratorKeyValueOptions>;
-    /**
-     * The load generator types: [AUCTION MARKETING COUNTER TPCH KEY VALUE].
+     * The load generator types: [AUCTION MARKETING TPCH].
      */
     loadGeneratorType?: pulumi.Input<string>;
     /**
@@ -152,7 +132,7 @@ export interface SourceLoadGeneratorState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -182,25 +162,15 @@ export interface SourceLoadGeneratorArgs {
      */
     comment?: pulumi.Input<string>;
     /**
-     * Counter Options.
-     */
-    counterOptions?: pulumi.Input<inputs.SourceLoadGeneratorCounterOptions>;
-    /**
-     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the source database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
-     * The name of the progress collection for the source. If this is not specified, the collection will be named
-     * `<src_name>_progress`.
+     * The name of the progress collection for the source. If this is not specified, the collection will be named `<src_name>_progress`.
      */
     exposeProgress?: pulumi.Input<inputs.SourceLoadGeneratorExposeProgress>;
     /**
-     * KEY VALUE Load Generator Options.
-     */
-    keyValueOptions?: pulumi.Input<inputs.SourceLoadGeneratorKeyValueOptions>;
-    /**
-     * The load generator types: [AUCTION MARKETING COUNTER TPCH KEY VALUE].
+     * The load generator types: [AUCTION MARKETING TPCH].
      */
     loadGeneratorType: pulumi.Input<string>;
     /**
@@ -220,7 +190,7 @@ export interface SourceLoadGeneratorArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the source schema in Materialize. Defaults to `public`.
+     * The identifier for the source schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sourceLoadGeneratorId?: pulumi.Input<string>;

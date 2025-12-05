@@ -16,7 +16,7 @@ class SsoDefaultRoles extends pulumi.CustomResource {
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
     static get(name, id, state, opts) {
-        return new SsoDefaultRoles(name, state, Object.assign(Object.assign({}, opts), { id: id }));
+        return new SsoDefaultRoles(name, state, { ...opts, id: id });
     }
     /**
      * Returns true if the given object is an instance of SsoDefaultRoles.  This is designed to work even
@@ -33,21 +33,21 @@ class SsoDefaultRoles extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState;
-            resourceInputs["roles"] = state ? state.roles : undefined;
-            resourceInputs["ssoConfigId"] = state ? state.ssoConfigId : undefined;
-            resourceInputs["ssoDefaultRolesId"] = state ? state.ssoDefaultRolesId : undefined;
+            resourceInputs["roles"] = state?.roles;
+            resourceInputs["ssoConfigId"] = state?.ssoConfigId;
+            resourceInputs["ssoDefaultRolesId"] = state?.ssoDefaultRolesId;
         }
         else {
             const args = argsOrState;
-            if ((!args || args.roles === undefined) && !opts.urn) {
+            if (args?.roles === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roles'");
             }
-            if ((!args || args.ssoConfigId === undefined) && !opts.urn) {
+            if (args?.ssoConfigId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ssoConfigId'");
             }
-            resourceInputs["roles"] = args ? args.roles : undefined;
-            resourceInputs["ssoConfigId"] = args ? args.ssoConfigId : undefined;
-            resourceInputs["ssoDefaultRolesId"] = args ? args.ssoDefaultRolesId : undefined;
+            resourceInputs["roles"] = args?.roles;
+            resourceInputs["ssoConfigId"] = args?.ssoConfigId;
+            resourceInputs["ssoDefaultRolesId"] = args?.ssoDefaultRolesId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SsoDefaultRoles.__pulumiType, name, resourceInputs, opts, false /*dependency*/, utilities.getPackage());

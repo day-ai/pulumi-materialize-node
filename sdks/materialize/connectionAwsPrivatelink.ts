@@ -35,49 +35,48 @@ export class ConnectionAwsPrivatelink extends pulumi.CustomResource {
     /**
      * The availability zones of the AWS PrivateLink service.
      */
-    public readonly availabilityZones!: pulumi.Output<string[]>;
+    declare public readonly availabilityZones: pulumi.Output<string[]>;
     /**
      * Comment on an object in the database.
      */
-    public readonly comment!: pulumi.Output<string | undefined>;
-    public readonly connectionAwsPrivatelinkId!: pulumi.Output<string>;
+    declare public readonly comment: pulumi.Output<string | undefined>;
+    declare public readonly connectionAwsPrivatelinkId: pulumi.Output<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
-    public readonly databaseName!: pulumi.Output<string | undefined>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
     /**
      * The identifier for the connection.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The owernship role of the object.
      */
-    public readonly ownershipRole!: pulumi.Output<string>;
+    declare public readonly ownershipRole: pulumi.Output<string>;
     /**
      * The principal of the AWS PrivateLink service.
      */
-    public /*out*/ readonly principal!: pulumi.Output<string>;
+    declare public /*out*/ readonly principal: pulumi.Output<string>;
     /**
      * The fully qualified name of the connection.
      */
-    public /*out*/ readonly qualifiedSqlName!: pulumi.Output<string>;
+    declare public /*out*/ readonly qualifiedSqlName: pulumi.Output<string>;
     /**
      * The region to use for the resource connection. If not set, the default region is used.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
-    public readonly schemaName!: pulumi.Output<string | undefined>;
+    declare public readonly schemaName: pulumi.Output<string | undefined>;
     /**
      * The name of the AWS PrivateLink service.
      */
-    public readonly serviceName!: pulumi.Output<string>;
+    declare public readonly serviceName: pulumi.Output<string>;
     /**
      * If the connection should wait for validation.
      */
-    public readonly validate!: pulumi.Output<boolean | undefined>;
+    declare public readonly validate: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a ConnectionAwsPrivatelink resource with the given unique name, arguments, and options.
@@ -92,36 +91,36 @@ export class ConnectionAwsPrivatelink extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConnectionAwsPrivatelinkState | undefined;
-            resourceInputs["availabilityZones"] = state ? state.availabilityZones : undefined;
-            resourceInputs["comment"] = state ? state.comment : undefined;
-            resourceInputs["connectionAwsPrivatelinkId"] = state ? state.connectionAwsPrivatelinkId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownershipRole"] = state ? state.ownershipRole : undefined;
-            resourceInputs["principal"] = state ? state.principal : undefined;
-            resourceInputs["qualifiedSqlName"] = state ? state.qualifiedSqlName : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["schemaName"] = state ? state.schemaName : undefined;
-            resourceInputs["serviceName"] = state ? state.serviceName : undefined;
-            resourceInputs["validate"] = state ? state.validate : undefined;
+            resourceInputs["availabilityZones"] = state?.availabilityZones;
+            resourceInputs["comment"] = state?.comment;
+            resourceInputs["connectionAwsPrivatelinkId"] = state?.connectionAwsPrivatelinkId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownershipRole"] = state?.ownershipRole;
+            resourceInputs["principal"] = state?.principal;
+            resourceInputs["qualifiedSqlName"] = state?.qualifiedSqlName;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["schemaName"] = state?.schemaName;
+            resourceInputs["serviceName"] = state?.serviceName;
+            resourceInputs["validate"] = state?.validate;
         } else {
             const args = argsOrState as ConnectionAwsPrivatelinkArgs | undefined;
-            if ((!args || args.availabilityZones === undefined) && !opts.urn) {
+            if (args?.availabilityZones === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityZones'");
             }
-            if ((!args || args.serviceName === undefined) && !opts.urn) {
+            if (args?.serviceName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceName'");
             }
-            resourceInputs["availabilityZones"] = args ? args.availabilityZones : undefined;
-            resourceInputs["comment"] = args ? args.comment : undefined;
-            resourceInputs["connectionAwsPrivatelinkId"] = args ? args.connectionAwsPrivatelinkId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownershipRole"] = args ? args.ownershipRole : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["schemaName"] = args ? args.schemaName : undefined;
-            resourceInputs["serviceName"] = args ? args.serviceName : undefined;
-            resourceInputs["validate"] = args ? args.validate : undefined;
+            resourceInputs["availabilityZones"] = args?.availabilityZones;
+            resourceInputs["comment"] = args?.comment;
+            resourceInputs["connectionAwsPrivatelinkId"] = args?.connectionAwsPrivatelinkId;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownershipRole"] = args?.ownershipRole;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["schemaName"] = args?.schemaName;
+            resourceInputs["serviceName"] = args?.serviceName;
+            resourceInputs["validate"] = args?.validate;
             resourceInputs["principal"] = undefined /*out*/;
             resourceInputs["qualifiedSqlName"] = undefined /*out*/;
         }
@@ -146,8 +145,7 @@ export interface ConnectionAwsPrivatelinkState {
     comment?: pulumi.Input<string>;
     connectionAwsPrivatelinkId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -171,7 +169,7 @@ export interface ConnectionAwsPrivatelinkState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**
@@ -198,8 +196,7 @@ export interface ConnectionAwsPrivatelinkArgs {
     comment?: pulumi.Input<string>;
     connectionAwsPrivatelinkId?: pulumi.Input<string>;
     /**
-     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the connection database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -215,7 +212,7 @@ export interface ConnectionAwsPrivatelinkArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the connection schema in Materialize. Defaults to `public`.
+     * The identifier for the connection schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     /**

@@ -30,8 +30,7 @@ export declare class SinkKafka extends pulumi.CustomResource {
      */
     readonly compressionType: pulumi.Output<string | undefined>;
     /**
-     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     readonly databaseName: pulumi.Output<string | undefined>;
     /**
@@ -47,8 +46,7 @@ export declare class SinkKafka extends pulumi.CustomResource {
      */
     readonly from: pulumi.Output<outputs.SinkKafkaFrom>;
     /**
-     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of
-     * type map[text => text] or map[text => bytea].
+     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of type map[text => text] or map[text => bytea].
      */
     readonly headers: pulumi.Output<string | undefined>;
     /**
@@ -84,7 +82,7 @@ export declare class SinkKafka extends pulumi.CustomResource {
      */
     readonly region: pulumi.Output<string>;
     /**
-     * The identifier for the sink schema in Materialize. Defaults to `public`.
+     * The identifier for the sink schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     readonly schemaName: pulumi.Output<string | undefined>;
     readonly sinkKafkaId: pulumi.Output<string>;
@@ -140,8 +138,7 @@ export interface SinkKafkaState {
      */
     compressionType?: pulumi.Input<string>;
     /**
-     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -157,8 +154,7 @@ export interface SinkKafkaState {
      */
     from?: pulumi.Input<inputs.SinkKafkaFrom>;
     /**
-     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of
-     * type map[text => text] or map[text => bytea].
+     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of type map[text => text] or map[text => bytea].
      */
     headers?: pulumi.Input<string>;
     /**
@@ -194,7 +190,7 @@ export interface SinkKafkaState {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the sink schema in Materialize. Defaults to `public`.
+     * The identifier for the sink schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sinkKafkaId?: pulumi.Input<string>;
@@ -242,8 +238,7 @@ export interface SinkKafkaArgs {
      */
     compressionType?: pulumi.Input<string>;
     /**
-     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or
-     * `materialize` if environment variable is not set.
+     * The identifier for the sink database in Materialize. Defaults to `MZ_DATABASE` environment variable if set or <span pulumi-lang-nodejs="`materialize`" pulumi-lang-dotnet="`Materialize`" pulumi-lang-go="`materialize`" pulumi-lang-python="`materialize`" pulumi-lang-yaml="`materialize`" pulumi-lang-java="`materialize`">`materialize`</span> if environment variable is not set.
      */
     databaseName?: pulumi.Input<string>;
     /**
@@ -259,8 +254,7 @@ export interface SinkKafkaArgs {
      */
     from: pulumi.Input<inputs.SinkKafkaFrom>;
     /**
-     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of
-     * type map[text => text] or map[text => bytea].
+     * The name of a column containing additional headers to add to each message emitted by the sink. The column must be of type map[text => text] or map[text => bytea].
      */
     headers?: pulumi.Input<string>;
     /**
@@ -292,7 +286,7 @@ export interface SinkKafkaArgs {
      */
     region?: pulumi.Input<string>;
     /**
-     * The identifier for the sink schema in Materialize. Defaults to `public`.
+     * The identifier for the sink schema in Materialize. Defaults to <span pulumi-lang-nodejs="`public`" pulumi-lang-dotnet="`Public`" pulumi-lang-go="`public`" pulumi-lang-python="`public`" pulumi-lang-yaml="`public`" pulumi-lang-java="`public`">`public`</span>.
      */
     schemaName?: pulumi.Input<string>;
     sinkKafkaId?: pulumi.Input<string>;

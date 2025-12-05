@@ -16,8 +16,7 @@ export declare class SsoDefaultRoles extends pulumi.CustomResource {
      */
     static isInstance(obj: any): obj is SsoDefaultRoles;
     /**
-     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via
-     * SSO.
+     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via SSO.
      */
     readonly roles: pulumi.Output<string[]>;
     /**
@@ -39,8 +38,7 @@ export declare class SsoDefaultRoles extends pulumi.CustomResource {
  */
 export interface SsoDefaultRolesState {
     /**
-     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via
-     * SSO.
+     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via SSO.
      */
     roles?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -54,8 +52,7 @@ export interface SsoDefaultRolesState {
  */
 export interface SsoDefaultRolesArgs {
     /**
-     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via
-     * SSO.
+     * Set of default role names for the SSO configuration. These roles will be assigned by default to users who sign up via SSO.
      */
     roles: pulumi.Input<pulumi.Input<string>[]>;
     /**

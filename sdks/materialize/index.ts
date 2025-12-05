@@ -70,6 +70,11 @@ export type ConnectionPostgres = import("./connectionPostgres").ConnectionPostgr
 export const ConnectionPostgres: typeof import("./connectionPostgres").ConnectionPostgres = null as any;
 utilities.lazyLoad(exports, ["ConnectionPostgres"], () => require("./connectionPostgres"));
 
+export { ConnectionSqlserverArgs, ConnectionSqlserverState } from "./connectionSqlserver";
+export type ConnectionSqlserver = import("./connectionSqlserver").ConnectionSqlserver;
+export const ConnectionSqlserver: typeof import("./connectionSqlserver").ConnectionSqlserver = null as any;
+utilities.lazyLoad(exports, ["ConnectionSqlserver"], () => require("./connectionSqlserver"));
+
 export { ConnectionSshTunnelArgs, ConnectionSshTunnelState } from "./connectionSshTunnel";
 export type ConnectionSshTunnel = import("./connectionSshTunnel").ConnectionSshTunnel;
 export const ConnectionSshTunnel: typeof import("./connectionSshTunnel").ConnectionSshTunnel = null as any;
@@ -338,6 +343,11 @@ export type SourcePostgres = import("./sourcePostgres").SourcePostgres;
 export const SourcePostgres: typeof import("./sourcePostgres").SourcePostgres = null as any;
 utilities.lazyLoad(exports, ["SourcePostgres"], () => require("./sourcePostgres"));
 
+export { SourceSqlserverArgs, SourceSqlserverState } from "./sourceSqlserver";
+export type SourceSqlserver = import("./sourceSqlserver").SourceSqlserver;
+export const SourceSqlserver: typeof import("./sourceSqlserver").SourceSqlserver = null as any;
+utilities.lazyLoad(exports, ["SourceSqlserver"], () => require("./sourceSqlserver"));
+
 export { SourceWebhookArgs, SourceWebhookState } from "./sourceWebhook";
 export type SourceWebhook = import("./sourceWebhook").SourceWebhook;
 export const SourceWebhook: typeof import("./sourceWebhook").SourceWebhook = null as any;
@@ -453,6 +463,8 @@ const _module = {
                 return new ConnectionMysql(name, <any>undefined, { urn })
             case "materialize:index/connectionPostgres:ConnectionPostgres":
                 return new ConnectionPostgres(name, <any>undefined, { urn })
+            case "materialize:index/connectionSqlserver:ConnectionSqlserver":
+                return new ConnectionSqlserver(name, <any>undefined, { urn })
             case "materialize:index/connectionSshTunnel:ConnectionSshTunnel":
                 return new ConnectionSshTunnel(name, <any>undefined, { urn })
             case "materialize:index/database:Database":
@@ -511,6 +523,8 @@ const _module = {
                 return new SourceMysql(name, <any>undefined, { urn })
             case "materialize:index/sourcePostgres:SourcePostgres":
                 return new SourcePostgres(name, <any>undefined, { urn })
+            case "materialize:index/sourceSqlserver:SourceSqlserver":
+                return new SourceSqlserver(name, <any>undefined, { urn })
             case "materialize:index/sourceWebhook:SourceWebhook":
                 return new SourceWebhook(name, <any>undefined, { urn })
             case "materialize:index/ssoConfig:SsoConfig":
@@ -559,6 +573,7 @@ pulumi.runtime.registerResourceModule("materialize", "index/connectionGrantDefau
 pulumi.runtime.registerResourceModule("materialize", "index/connectionKafka", _module)
 pulumi.runtime.registerResourceModule("materialize", "index/connectionMysql", _module)
 pulumi.runtime.registerResourceModule("materialize", "index/connectionPostgres", _module)
+pulumi.runtime.registerResourceModule("materialize", "index/connectionSqlserver", _module)
 pulumi.runtime.registerResourceModule("materialize", "index/connectionSshTunnel", _module)
 pulumi.runtime.registerResourceModule("materialize", "index/database", _module)
 pulumi.runtime.registerResourceModule("materialize", "index/databaseGrant", _module)
@@ -588,6 +603,7 @@ pulumi.runtime.registerResourceModule("materialize", "index/sourceKafka", _modul
 pulumi.runtime.registerResourceModule("materialize", "index/sourceLoadGenerator", _module)
 pulumi.runtime.registerResourceModule("materialize", "index/sourceMysql", _module)
 pulumi.runtime.registerResourceModule("materialize", "index/sourcePostgres", _module)
+pulumi.runtime.registerResourceModule("materialize", "index/sourceSqlserver", _module)
 pulumi.runtime.registerResourceModule("materialize", "index/sourceWebhook", _module)
 pulumi.runtime.registerResourceModule("materialize", "index/ssoConfig", _module)
 pulumi.runtime.registerResourceModule("materialize", "index/ssoDefaultRoles", _module)
